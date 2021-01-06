@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Functions and Iteration</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Hunter Glanz &amp; Kelly Bodwin" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Functions and Iteration
+## Day 2
+### Hunter Glanz &amp; Kelly Bodwin
+
+---
+
+
+
+
+
+
+# Since the Beginning
+
+* Functions allow you to automate common tasks in a more powerful and reproducible way than copy-and-pasting
+
+--
+
+  * Case in point, we've been using functions since Day 1
+  
+  * Data wrangling, visualizations, summaries...all things we do OFTEN
+  
+--
+
+* Writing your OWN functions has 3 big advantages over copy-and-paste:
+
+1. You can give a function an informative name that makes your code easier to understand
+
+2. As requirements change, you only need to update code in one place, instead of many
+
+3. You eliminate the chance of making incidental mistakes when you copy and paste
+
+---
+
+# When should you write a function?
+
+* Consider writing a function whenever you've copied and pasted a block of code more than twice
+
+--
+
+* Consider the following bit of code. What does it do?
+
+
+```r
+myiris &lt;- iris
+
+myiris$Sepal.Length &lt;- (myiris$Sepal.Length - mean(myiris$Sepal.Length)) / sd(myiris$Sepal.Length)
+myiris$Sepal.Width &lt;- (myiris$Sepal.Width - mean(myiris$Sepal.Length)) / sd(myiris$Sepal.Width)
+myiris$Petal.Length &lt;- (myiris$Petal.Length - mean(myiris$Petal.Length)) / sd(myiris$Petal.Length)
+myiris$Petal.Width &lt;- (myiris$Petal.Width - mean(myiris$Petal.Width)) / sd(myiris$Petal.Width)
+```
+
+--
+
+* That's right, this code standardizes each of the variables in `myiris` to have mean 0 and standard deviation 1
+
+--
+
+* ...or does it?
+
+---
+
+# Let's Make This a Function
+
+* Three key steps to creating a function:
+
+1. Pick a **name** for the function: informative and usually a **verb**
+
+2. List the inputs, or **arguments**, of the function inside `function()`
+
+3. Place the code we've developed in the **body** of the function, a `{` block following `function()`
+
+--
+
+
+```r
+standardize &lt;- function(data) {
+  (data - mean(data)) / sd(data)
+}
+
+# OR
+
+standardize &lt;- function(data) {
+  newdata &lt;- (data - mean(data)) / sd(data)
+  return(newdata)
+}
+
+standardize(myiris$Sepal.Length)
+```
+
+---
+
+# Intermediate Steps - Function Building Blocks
+
+
+* Functions can get complex quickly
+
+* It's often a good idea to pull out intermediate calculations into named variables to increase clarity
+
+
+```r
+standardize &lt;- function(data) {
+  deviations &lt;- data - mean(data)
+  newdata &lt;- deviations / sd(data)
+  return(newdata)
+}
+```
+
+---
+
+# Pump The Breaks a Bit
+
+* As exciting as working in R and writing functions can be, testing is **important**
+
+--
+
+* The `iris` data may have worked just fine, but that's about as clean as data can get
+
+--
+
+
+```r
+testdata &lt;- c(2, 4, 3, 9, NA, 4, 6)
+standardize(testdata)
+```
+
+```
+## [1] NA NA NA NA NA NA NA
+```
+
+
+&lt;img src="https://media.giphy.com/media/kwCJA4NGu2PtMzpxGb/giphy.gif" width="40%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## We Only Need to Change the Code in One Place: `standardize()`
+
+
+```r
+standardize &lt;- function(data) {
+  deviations &lt;- data - mean(data, na.rm = TRUE)
+  newdata &lt;- deviations / sd(data, na.rm = TRUE)
+  return(newdata)
+}
+
+testdata &lt;- c(2, 4, 3, 9, NA, 4, 6)
+standardize(testdata)
+```
+
+```
+## [1] -1.0652473 -0.2663118 -0.6657796  1.7310268         NA -0.2663118
+## [7]  0.5326236
+```
+  
+* Much better!
+
+---
+
+# Some of you may be thinking...
+
+&lt;img src="https://media.giphy.com/media/xT77XTpyEzJ4OJO06c/giphy.gif" width="40%" style="display: block; margin: auto;" /&gt;
+
+* We haven't eliminated copy-and-pasting from our `iris` example, right?
+
+--
+
+
+```r
+myiris$Sepal.Length &lt;- standardize(myiris$Sepal.Length)
+myiris$Sepal.Width &lt;- standardize(myiris$Sepal.Width)
+myiris$Petal.Length &lt;- standardize(myiris$Petal.Length)
+myiris$Petal.Width &lt;- standardize(myiris$Petal.Width)
+```
+
+
+---
+
+## The Second Big Way to Reduce Code Replication: `iteration`
+
+* Essentially, we want to perform a task of the form
+
+.center[**for each `blank` do `blank`**]
+
+--
+
+* If you're familiar with other programming languages, `loops` are probably coming to mind
+
+--
+
+  * R has `for` loops as well
+  
+
+```r
+for (i in sequence) {
+  ## body code
+}
+```
+
+---
+
+# Standardize Each Numeric Column of `myiris`
+
+
+
+
+```r
+myiris %&gt;%
+  head(2)
+```
+
+```
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+```
+
+```r
+for (i in 1:4) {
+  myiris[[i]] &lt;- standardize(myiris[[i]])
+}
+
+myiris %&gt;%
+  head(2)
+```
+
+```
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1   -0.8976739   1.0156020    -1.335752   -1.311052  setosa
+## 2   -1.1392005  -0.1315388    -1.335752   -1.311052  setosa
+```
+
+---
+
+class: inverse
+
+# Function &amp; Loop Activity
+
+* Review the following code to understand what it's doing:
+
+
+```r
+num_high_outliers &lt;- rep(0, times = 4)
+
+num_high_outliers[1] &lt;- sum(myiris$Sepal.Length &gt; quantile(myiris$Sepal.Length, probs = .75) + 1.5*IQR(myiris$Sepal.Length))
+num_high_outliers[2] &lt;- sum(myiris$Sepal.Width &gt; quantile(myiris$Sepal.Width, probs = .75) + 1.5*IQR(myiris$Sepal.Width))
+num_high_outliers[3] &lt;- sum(myiris$Petal.Length &gt; quantile(myiris$Petal.Length, probs = .75) + 1.5*IQR(myiris$Petal.Length))
+num_high_outliers[4] &lt;- sum(myiris$Petal.Width &gt; quantile(myiris$Petal.Width, probs = .75) + 1.5*IQR(myiris$Petal.Width))
+```
+
+* Write a `function` and a `for` loop to perform the same task using less replicated code
+
+---
+
+&lt;img src="https://i.imgflip.com/384y9m.jpg" width="80%" style="display: block; margin: auto;" /&gt;
+
+--
+
+* Probably don't want one function, `do_all_the_stuff()`....but you could
+
+* Consider also `source("TypicalAnalysis.R")`
+
+---
+
+# An Aside on Scope
+
+* What color will the points on the plot be?
+
+
+```r
+mycolor &lt;- "red"
+
+myplot &lt;- function(mycolor = "purple") {
+  mycolor &lt;- "green"
+  myiris %&gt;%
+    ggplot(aes(x = Sepal.Length, y = Sepal.Width)) +
+    geom_point(color = mycolor)
+}
+
+myplot(mycolor = "goldenrod")
+```
+
+---
+
+# Code Alternatives to Loops
+
+* Loops can be part of the code you want to replicate
+
+* You could want/need multiple, nested loops
+
+
+```r
+for (i in sequencei) {
+  #body1
+  for (j in sequencej) {
+    #body2
+  }
+}
+```
+
+--
+
+* The need to iterate still exists, but simplified/cleaner code would be preferable: `purrr` package
+
+---
+
+# The `purrr` package
+
+* Tons of functions for *mapping* functions to the elements/pieces of another object, i.e. iterate over that object
+
+* Our previous example using `purrr`:
+
+
+```r
+library(purrr)
+myiris &lt;- myiris %&gt;%
+  select(-Species) %&gt;%
+  map(standardize) %&gt;%
+```
+
+* `map(.x, .f, ...)`
+
+  * First argument is a vector, list, or data frame
+  
+  * Second argument is (often) a function
+  
+  * For each element of `.x` do `.f`
+  
+---
+
+# Functions and Iteration Recap
+
+* It's good practice to use following recipe for reducing code replication:
+
+  1. Make sure your code works on a single instance (i.e. single column in `iris` dataset)
+  
+  2. Write your function (or a function) to implement your code with as few **magic** variables/values as possible. Test your function to make sure it works properly.
+  
+  3. Write your loop or `purrr` code to implement your iteration.
+  
+---
+
+# Lots of `map`-type Function in `purrr` package
+
+.center[![](map2cats.PNG)]
+
+* Image credit to Charlotte Wickham
+
+---
+
+class: inverse
+
+# Day 2 Activity
+
+* Locate the `xmas.csv` file in our workshop materials
+
+* Read this file into R
+
+* Use what you've learned today about strings, functions, and iteration with these data to
+
+  * Create 12 character values each representing a verse in the **12 Days of Christmas** song
+  
+  * The `paste()` function may be useful...
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+---
+title: "R Workshop - Practice Exercises - 1.2"
+output:
+  html_document: default
+  pdf_document: default
+---
+## Setup
+
+```{r}
+library(tidyverse)
+```
+
+
+## The Data
+
+```{r, solution = TRUE, echo = FALSE}
+cereals <- read_csv("/Users/kbodwin/Dropbox/rworkshop-dev/data/cereals.csv")
+```
+
+```{r, solution = TRUE, eval = FALSE}
+cereals <- read_csv("/data/cereals.csv")
+```
+
+Documentation for dataset: https://www.kaggle.com/crawford/80-cereals/version/2
+
+```{r, solution = TRUE}
+#### Edit this code to examine your dataset
+str(cereals)
+summary(cereals)
+```
+
+[Briefly summarize the dataset here.]
+
+[CHECKPOINT:  Knit your Markdown file!]
+
+## Data Cleaning and Transformation
+
+```{r, solution = TRUE}
+
+cereals %>%
+  summarize_at(vars(calories, sugars),
+            funs(mean, median))
+
+```
+
+
+```{r, solution = TRUE}
+cereals_2 <- cereals %>%
+  mutate(
+    cal_per_cup = calories/cups
+  ) %>%
+  select(name, mfr, cal_per_cup) %>%
+  filter(mfr == "Kellogg") %>%
+  arrange(desc(cal_per_cup))
+
+
+
+```
+
+[CHECKPOINT: Knit your document!]
+
+## Visualizing the data
+
+### Histogram
+
+```{r, solution = TRUE}
+ggplot(cereals, aes(x = sugars)) + 
+  geom_histogram(bins = 10, fill = "cornflowerblue") +
+  ggtitle("Sugar content of cereals")
+```
+
+
+### Bar Plot
+
+```{r, solution = TRUE}
+ggplot(cereals, aes(x = mfr, fill = mfr)) + 
+  geom_bar() +
+  ggtitle("Manufacturers")
+```
+
+### Box Plot
+
+```{r, solution = TRUE}
+ggplot(cereals, aes(x = mfr, y = sugars, fill = mfr)) + 
+  geom_boxplot() +
+  ggtitle("Sugar content of cereals by manufacturer")
+```
+
+
+### Scatter Plot
+
+```{r, solution = TRUE}
+ggplot(cereals, aes(x = sugars, y = calories)) + 
+  geom_point() +
+  ggtitle("Sugar and calorie content of cereals")
+```
+
+
+## Conclusion
+
+What did you learn about cereals?  Write a few sentences summarizing your findings, knit your document, and admire your handiwork!
+
+
+```{r}
+cereals %>%
+  group_by(mfr, type) %>%
+  summarize_at(vars(calories, sugars), funs(mean, median))
+```
+
+```{r}
+cereals %>%
+  select(name, protein, fat, fiber) %>%
+  gather(key = "Nutrients", value = "Amount", -name) %>%
+  ggplot(aes(x = Nutrients, y = Amount)) + geom_boxplot()
+```
+
+

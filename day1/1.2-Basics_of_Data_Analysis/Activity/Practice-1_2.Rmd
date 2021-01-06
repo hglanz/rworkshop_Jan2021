@@ -1,0 +1,72 @@
+---
+title: "R Workshop - Practice Exercises - 1.2"
+output:
+  html_document: default
+  pdf_document: default
+---
+## Setup
+
+```{r}
+library(tidyverse)
+```
+
+
+## The Data
+
+```{r read_data}
+#### Write code to read in the dataset here
+```
+
+Documentation for dataset: https://www.kaggle.com/crawford/80-cereals/version/2
+
+```{r check_data, eval = FALSE}
+#### Edit this code to examine your dataset
+str()
+summary()
+```
+
+
+[Briefly summarize the dataset here.]
+
+[CHECKPOINT:  Knit your Markdown file!]
+
+## Data Cleaning and Transformation
+
+
+```{r summarize}
+#### Write code to show the mean and median calories and sugar content per serving of all cereals
+```
+
+
+```{r mutate}
+#### Write code to create the variable "cal_per_cup" here
+```
+
+```{r filter_select}
+#### Write code to include only Kellogg brand cereals, and only relevant columns
+```
+
+
+```{r arrange}
+#### Write code to sort the dataset by calories per cup
+```
+
+
+[CHECKPOINT: Knit your document!]
+
+## Visualizing the data
+
+### Histogram
+
+
+### Bar Plot
+
+### Box Plot
+
+
+### Scatter Plot
+
+
+## Conclusion
+
+What did you learn about cereals?  Write a few sentences summarizing your findings, knit your document, and admire your handiwork!

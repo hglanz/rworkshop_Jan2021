@@ -1,0 +1,70 @@
+---
+title: "Toy Work With Iris"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# The `iris` Dataset
+
+Fisher's iris dataset is a multivariate dataset introduced bby the British statistician and biologist Ronald Fisher in 1936. It consists of 50 samples from each of three species of iris (setosa, virginica, and versicolor). Four features were measured: sepal length, sepal width, petal length, and petal width.
+
+The vas majority of our workshop will involve what's known as the Tidyverse which represents, among other things, a collection of R packages that work very nicely together on data.
+
+If you have not installed these packages, then type `install.packages("tidyverse")` in to the Console pane and hit Enter. Much, if not all, of the code below may be foreign to you. That's ok! By the end of the workshop you'll be familiar with all of these things! 
+
+So, try not to focus too much on the code itself and instead try to get a sense of how R Markdown files can work and what this dataset is like.
+
+## Summarizing
+
+Let's start by summarizing the `iris` dataset. The following two pieces of code (in the same chunk) do the same thing. So, you will see the summary appear twice when the chunk is run. Take a moment to look at the code, run the chunk and interpret the output of the `summary()` function.
+
+```{r summary}
+# This is a comment.
+
+# This library() function loads an R package (or collection of packages in this case). Packages need only be installed once, but
+# need to be loaded every time you want to use them.
+library(tidyverse)
+
+# Here are two ways to generate summaries of the variables in the iris dataset
+summary(iris)
+
+iris %>%
+  summary()
+```
+
+## Let's Create a Couple New Variables
+
+Let's start by creating a copy of the `iris` dataset to make changes to.
+
+```{r}
+myiris <- iris
+```
+
+Now let's create some new variables. As with most programming languages there are many ways to do any given thing. The code below is just one way to create variables using the Tidyverse. There are other ways to create variables as well, some that don't involve using any outside packages like the Tidyverse.
+
+```{r}
+myiris <- myiris %>%
+  mutate(
+    sepal_ratio = Sepal.Length/Sepal.Width,
+    petal_ratio = Petal.Length/Petal.Width
+  )
+```
+
+## Let's Graph Our New Variables
+
+Let's see how our new variables look and whether they separate the three species.
+
+```{r}
+myiris %>%
+  ggplot(aes(x = sepal_ratio, y = petal_ratio, color = Species)) +
+  geom_point()
+```
+
+What do you think? Try plotting some other pairs of variables in the dataset. What pair of variables seems to separate the species best?
+
+```{r}
+write_csv(myiris, "myiris.csv")
+```

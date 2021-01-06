@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Introduction to Shiny</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Hunter Glanz &amp; Kelly Bodwin" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introduction to Shiny
+## Day 3
+### Hunter Glanz &amp; Kelly Bodwin
+
+---
+
+
+
+
+
+
+# What is Shiny?
+
+* Shiny is a (package) framework for creating web applications using R code
+
+--
+
+* Perhaps more importantly, it's a relatively easy way to make your data work interactive and vastly more accessible!
+
+--
+
+* A nice preview on the [shiny gallery](https://shiny.rstudio.com/gallery/)
+
+---
+
+# A Bit Similar to R Projects
+
+* Create a new folder on your desktop called `myfirstshinyapp`
+
+* File -&gt; New File -&gt; Shiny Web App
+
+  * Select the `app.R` option and specify your newly created folder `myfirstshinyapp`
+  
+  * This process creates a file called `app.R` (the names of these Shiny files are important; i.e. leave them as `app.R`, `ui.R`, and `server.R`)
+  
+  * Clear the entire contents of this new `app.R` file
+  
+  * Type the following into your new `app.R` file
+  
+
+```r
+library(shiny)
+
+ui &lt;- "Hello, world!"
+
+server &lt;- function(input, output, session) {
+}
+
+shinyApp(ui, server)
+```
+
+---
+
+# What Does This Do?
+
+* Loads the `shiny` package
+
+* Defines the user interface (UI) -- in this case just the words "Hello, world!"
+
+* Specifies the behavior of our app by defining a `server` function. It's currently empty.
+
+* Runs `shinyApp(ui, server)` to construct a Shiny application object from the UI object and server function
+
+--
+
+* Run this Shiny app by clicking the `Run App` button in the top right of the Script pane
+
+---
+
+# A Few Things of Note
+
+* You can choose to view your running app in an RStudio Viewer pane/window or your system's default web browser (I prefer the browser)
+
+* Notice what the R Console says right now...
+
+--
+
+  * R is busy! The R prompt isn't visible; you cannot run new code while the app is running
+  
+--
+
+* Stop your Shiny app in one of the following ways:
+
+1. Click the stop icon at the top of the R Console pane
+
+2. Press the `Esc` key while the RStudio Console pane is selected
+
+3. Close the Shiny app window
+
+4. However you normally interrupt running R code, e.g. `Ctrl + C`
+
+---
+
+# Not Impressed?
+
+* I'd be a little surprised if you were impressed!
+
+--
+
+* Our "Hello, world!" Shiny app isn't interactive and doesn't work with data or anything
+
+* Y'all know what dataset I like?!
+
+--
+
+  * It's even got a sample [Shiny app](https://shiny.rstudio.com/gallery/kmeans-example.html)
+  
+* Let's talk through the basics of this `iris` example
+
+---
+
+# Why Reactivity
+
+* Imagine we want to convert some temperatures:
+
+
+```r
+temp_c &lt;- 10
+temp_f &lt;- (temp_c + 32) * 9 / 5 
+temp_f
+```
+
+```
+## [1] 75.6
+```
+
+--
+
+* But then, if we change `temp_c`
+
+
+```r
+temp_c &lt;- 30
+temp_f
+```
+
+```
+## [1] 75.6
+```
+
+---
+
+# Functions Were a Previous Answer To This
+
+
+```r
+temp_c &lt;- 10
+temp_f &lt;- function() {
+  message("Converting") 
+  (temp_c + 32) * 9 / 5 
+}
+temp_f()
+```
+
+```
+## Converting
+```
+
+```
+## [1] 75.6
+```
+
+* The value gets updated now, but we still have to call the `temp_f()` function EVERY time:
+
+
+```r
+temp_celsius &lt;- -3
+temp_f() 
+```
+
+```
+## Converting
+```
+
+```
+## [1] 75.6
+```
+
+---
+
+# Reactive Programming Elegantly Solves This
+
+1. We want up-to-date computations
+
+2. We want to do as little computations as possible
+
+* In other words...
+
+--
+
+* Expressions and outputs should update whenever one of their input values changes
+
+* Expressions and outputs should *only* update when one of their input changes
+
+--
+
+* Shall we go back to the `iris` app to review?
+
+
+---
+
+# Overview of Inputs and Outputs
+
+* Inputs
+
+  * The [widget gallery](https://shiny.rstudio.com/gallery/widget-gallery.html)
+  
+--
+
+* Outputs
+
+  * All the plots you can think of (e.g. `ggplot` and more)
+  
+  * Interactive maps
+  
+  * Rich JavaScript output
+  
+  * Simple tables and text
+  
+  * Static pictures and gifs
+  
+  * And I'm sure much more!
+
+---
+
+# A Few More Examples
+
+* [Classification Method Demonstration](https://mschroth.shinyapps.io/classificationapp/)
+
+* [Astronaut Data Exploration](https://mschroth.shinyapps.io/lisinkershinyapp/)
+
+* [General Data Exploration](https://ikamrath.shinyapps.io/DataExploration/)
+
+---
+
+class: inverse
+
+# Shiny App Activity
+
+* Create a new version of the `iris` example app that...
+
+  * Takes the same two variable inputs (but not the number of clusters)
+  
+  * Outputs three things:
+  
+    * The same graph as before, but using ggplot (*Hint: use `aes_string` instead of `aes`*), colored by `Species`
+    
+    * A summary of the `x` variable
+    
+    * A summary of the `y` variable
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

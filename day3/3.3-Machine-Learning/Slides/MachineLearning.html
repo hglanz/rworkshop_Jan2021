@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Introduction to Machine Learning in R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Hunter Glanz &amp; Kelly Bodwin" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introduction to Machine Learning in R
+## Day 3
+### Hunter Glanz &amp; Kelly Bodwin
+
+---
+
+
+
+
+
+
+# Machine Learning Methods (with Associated R Packages)
+
+* Traditional Regression &amp; Logistic Regression (`stats` -- comes with Base R)
+
+  * Simple, Multiple, and Polynomial Regression
+  
+* Best Subsets and Stepwise Methods (`leaps`)
+
+* LASSO &amp; Ridge Regression (`glmnet`)
+
+* Splines (`splines`)
+
+* General Additive Models (GAMs; `gam`)
+
+* k-Nearest Neighbors (`class`)
+
+* Discriminant Analysis (LDA, QDA; `MASS`)
+
+---
+
+# Machine Learning Methods (with Associated R Packages) Cont'd
+
+* Decision Trees (`tree`)
+
+* Random Forests (`randomForest`)
+
+* Boosting (`gbm`)
+
+* Neural Networks (`neuralnet`, `keras`)
+
+* Support Vector Machines (`e1071`)
+
+* k-Means Clustering (`stats`)
+
+* Hierarchical Clustering (`stats`)
+
+* General Purpose (`caret`, `parsnip`)
+
+---
+
+# Motivation
+
+* One of the most common forms of statistical inference:
+
+--
+
+.center[**Classification**]
+
+--
+
+* The problem of identifying to which of a set of categories a new observation belongs, on the basis of training data.
+
+---
+
+# Think Way Back
+
+&lt;img src="wooden-shape-blocks.jpg" width="40%" style="display: block; margin: auto;" /&gt;
+
+--
+
+* Learning shapes!
+
+&lt;img src="triangle.png" width="30%" style="display: block; margin: auto;" /&gt;
+---
+
+# Is It a Triangle?
+
+&lt;img src="isoceles-triangle.jpg" width="30%" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="scalene-triangle.jpg" width="30%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Wait Just a Minute...again
+
+&lt;img src="man-waving.jpg" width="30%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Could he be...
+
+* waving hello.
+
+--
+
+* waving goodbye.
+
+--
+
+* trying to get our attention (Hey! Look over here)
+
+--
+
+* impersonating someone riding on a parade float.
+
+--
+
+* waiting for a high-five.
+
+--
+
+* trying to hail a cab.
+
+--
+
+* doing something else entirely.
+
+---
+
+# More Examples
+
+* Email spam filters
+
+* Antivirus/Computer Security software
+
+* Speech/text recognition
+
+* Whale species identification from sound
+
+* Image segmentation
+
+---
+
+# The Overall Goal
+
+* In data, characterize the relationship between input and output variables by estimating *f*
+
+$$
+Y = f(x) + \epsilon
+$$
+
+&lt;img src="SmoothFunctionOnData.PNG" width="75%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# In General
+
+* Suppose we observe a response `\(Y\)` and `\(p\)` different predictor variables, `\(X_1, X_2, \dots, X_p\)`
+
+  * i.e. we have data on a response/target/output variables and many predictor/explanatory/feature variables
+  
+* We assume there is some relationship which can be written
+
+$$
+Y = f(x) + \epsilon
+$$
+
+* where `\(f\)` is unknown and `\(\epsilon\)` is a random error term independent of `\(X\)` with mean 0.
+
+* We want to estimate `\(f\)`
+
+---
+
+# Prediction versus Inference
+
+* Prediction is primarily concerned with estimating the output value, `\(\hat{Y}\)`, for a given set of inputs
+
+--
+
+* Inference is more concerned with the way(s) that `\(Y\)` is affected as `\(X_1, \dots, X_p\)` change
+
+---
+
+# Why Do We Care About Prediction vs. Inference?
+
+* Why aren't the same models fit no matter which perspective or questions we're coming from?
+
+--
+
+  * Think about regression...
+  
+  * What's the difference between a model with 1 predictor and a model with 100 predictors?
+  
+--
+
+&lt;img src="FlexibilityGraph.PNG" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Assessing Model Accuracy
+
+* Once we've decided on research questions and context...
+
+--
+
+  * ...*there is still no free lunch*
+  
+  * No on method dominates over all others, so we must explore and assess
+  
+  * Mean Squared Error (MSE):
+  
+$$
+MSE = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{f}(x_i))^2
+$$
+
+---
+
+# Where Do We Compute the MSE?
+
+* Do teachers give students the homework questions that you've already done, on exams?!?
+
+--
+
+* Training data vs. Test data
+  
+  * Training data are the data used to fit the model
+  
+  * Test data are the separate data used to evaluate the model's performance
+  
+* We want the method that gives the lowest *test MSE*
+
+---
+
+# Training MSE vs. Test MSE
+
+&lt;img src="BiasVarianceTradeoff.PNG" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Regression-type Problems
+
+* Distinguishable by the *quantitative response variable*
+
+* Possible methods to apply:
+
+--
+
+  * Multiple Regression (including polynomial regression)
+  
+  * LASSO &amp; Ridge Regression
+  
+  * Splines
+  
+  * General Additive Models
+  
+  * k-Nearest Neighbors
+  
+  * Decision Trees &amp; Random Forests
+  
+  * Neural Networks
+
+---
+
+# Classification-type Problems
+
+* Distinguishable by the *categorical response variable*
+
+* Possible methods to apply:
+
+--
+
+  * Logistic Regression
+  
+  * k-Nearest Neighbors
+  
+  * Discriminant Analysis
+  
+  * Decision Trees &amp; Random Forests
+  
+  * Neural Networks
+  
+  * Support Vector Machines
+
+---
+
+# Unsupervised Learning
+
+* There is *no response variable*
+
+* Find patterns or groups in the data: **clustering**
+
+* Possible methods to apply:
+
+--
+
+  * k-Means Clustering
+  
+  * Hierarchical Clustering
+  
+---
+
+# Regression Example: LadyBugs Data
+
+* In 1983 an article was published about ladybird beetles and their behavior changes under different temperature conditions, in particular how many beetles stayed in light as temperature changed.
+
+&lt;img src="MachineLearning_files/figure-html/unnamed-chunk-9-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Predicting Lighted From Temp (Polynomial Regression)
+
+* Polynomial Regression:
+
+
+```r
+train_indices &lt;- sample(1:nrow(bugs), size = floor(.7*nrow(bugs)))
+trainbugs &lt;- bugs[train_indices,]
+testbugs &lt;- bugs[-train_indices,]
+m &lt;- lm(Lighted ~ poly(Temp, 3), data = trainbugs)
+m
+```
+
+```
+## 
+## Call:
+## lm(formula = Lighted ~ poly(Temp, 3), data = trainbugs)
+## 
+## Coefficients:
+##    (Intercept)  poly(Temp, 3)1  poly(Temp, 3)2  poly(Temp, 3)3  
+##          49.07           33.74          -50.12           22.33
+```
+
+---
+
+# Visualizing The Model
+
+
+```r
+fakebugs &lt;- data.frame(Temp = seq(from = -2, to = 35, by = .01))
+fakebugs$Pred &lt;- predict(m, newdata = fakebugs)
+bugs %&gt;%
+  ggplot(aes(x = Temp, y = Lighted)) +
+  geom_point() +
+  geom_line(data = fakebugs, aes(x = Temp, y = Pred), color = "blue")
+```
+
+&lt;img src="MachineLearning_files/figure-html/unnamed-chunk-11-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+ 
+# Computing the Test MSE
+
+
+```r
+test_preds &lt;- predict(m, newdata = testbugs)
+test_mse &lt;- sum((test_preds - testbugs$Lighted)^2)
+test_mse
+```
+
+```
+## [1] 896.4364
+```
+
+---
+
+# Predicting Lighted From Temp (Random Forest)
+
+
+```r
+library(randomForest)
+rf &lt;- randomForest(Lighted ~ Temp, data = trainbugs)
+rf
+```
+
+```
+## 
+## Call:
+##  randomForest(formula = Lighted ~ Temp, data = trainbugs) 
+##                Type of random forest: regression
+##                      Number of trees: 500
+## No. of variables tried at each split: 1
+## 
+##           Mean of squared residuals: 42.44806
+##                     % Var explained: 75.34
+```
+
+---
+
+# Visualizing the Models
+
+
+```r
+fakebugs$Pred_rf &lt;- predict(rf, newdata = fakebugs)
+bugs %&gt;%
+  ggplot(aes(x = Temp, y = Lighted)) +
+  geom_point() +
+  geom_line(data = fakebugs, aes(x = Temp, y = Pred), color = "blue") +
+  geom_line(data = fakebugs, aes(x = Temp, y = Pred_rf), color = "red")
+```
+
+&lt;img src="MachineLearning_files/figure-html/unnamed-chunk-14-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Test MSE for Random Forest
+
+
+```r
+test_preds_rf &lt;- predict(rf, newdata = testbugs)
+test_mse_rf &lt;- sum((test_preds_rf - testbugs$Lighted)^2)
+test_mse_rf
+```
+
+```
+## [1] 668.4316
+```
+
+```r
+test_mse
+```
+
+```
+## [1] 896.4364
+```
+
+---
+
+# Classification Example: Iris Data
+
+* Let's predict `Species` based on the four measurements present in the data
+
+
+```r
+train_indices &lt;- sample(1:nrow(iris), size = floor(.7*nrow(iris)))
+trainiris &lt;- iris[train_indices,]
+testiris &lt;- iris[-train_indices,]
+```
+
+---
+
+# Linear Discriminant Analysis (LDA)
+
+
+```r
+library(MASS)
+lda_model &lt;- lda(Species ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width, data = trainiris)
+lda_model
+```
+
+```
+## Call:
+## lda(Species ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width, 
+##     data = trainiris)
+## 
+## Prior probabilities of groups:
+##     setosa versicolor  virginica 
+##  0.3333333  0.3523810  0.3142857 
+## 
+## Group means:
+##            Sepal.Length Sepal.Width Petal.Length Petal.Width
+## setosa         5.071429    3.468571     1.460000   0.2428571
+## versicolor     5.940541    2.764865     4.275676   1.3216216
+## virginica      6.569697    2.945455     5.542424   2.0181818
+## 
+## Coefficients of linear discriminants:
+##                     LD1       LD2
+## Sepal.Length  0.9667745 -0.305507
+## Sepal.Width   1.4453718 -1.875476
+## Petal.Length -2.0794177  1.455088
+## Petal.Width  -3.3538504 -3.843744
+## 
+## Proportion of trace:
+##    LD1    LD2 
+## 0.9897 0.0103
+```
+
+---
+
+# Visualize Results &amp; Test Error
+
+
+```r
+iris_preds &lt;- predict(lda_model, testiris)
+table(iris_preds$class, testiris$Species)
+```
+
+```
+##             
+##              setosa versicolor virginica
+##   setosa         15          0         0
+##   versicolor      0         13         0
+##   virginica       0          0        17
+```
+
+```r
+mean(iris_preds$class != testiris$Species)
+```
+
+```
+## [1] 0
+```
+
+---
+
+# Remember What the Iris Data Looked Like
+
+
+```r
+iris %&gt;%
+  ggplot(aes(x = Petal.Length, y = Petal.Width, color = Species)) +
+  geom_point()
+```
+
+&lt;img src="MachineLearning_files/figure-html/unnamed-chunk-19-1.png" style="display: block; margin: auto;" /&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

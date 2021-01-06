@@ -1,0 +1,64 @@
+---
+title: "Solutions"
+author: "Kelly Bodwin"
+date: "8/21/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Practice Regexp
+
+```{r}
+my_str <- "The Dursleys of Number 4 Privet Drive were happy to say that they were perfectly normal, thank you very much."
+
+str_extract_all(my_str, ".*")
+
+str_extract_all(my_str, "[:alpha:]*")
+
+str_extract_all(my_str, "[:alpha:]*\\.")
+
+str_extract_all(my_str, "[wv]er[ey]")
+
+str_extract_all(my_str, "[:digit:] ([A-Z][a-z]*)+")
+```
+
+## V Speech
+
+```{r}
+vspeech <- readLines("./data/v_orig.txt")
+```
+
+Answer the following:
+
+* How many words are in this speech?  (Hint: `str_count`)
+
+```{r}
+str_count(vspeech, "[:alpha:]+")
+```
+
+* How many words start with the letter "v"?
+
+```{r}
+str_count(vspeech, "[Vv][:alpha:]+")
+```
+
+* How many sentences are in the speech?
+
+```{r}
+str_count(vspeech, "[\\.\\!\\?]")
+```
+
+* What is the longest word in the speech?
+
+```{r}
+str_extract(vspeech, "[:alpha:]{7,}")
+```
+
+* (challenge) What is the only capitalized word that is not at the beginning of a sentence?
+
+```{r}
+str_extract(vspeech, "[^\\.\\!\\?] [A-Z][A-z]*")
+```

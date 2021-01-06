@@ -1,0 +1,236 @@
+---
+title: "Introduction to Shiny"
+subtitle: "Day 3"  
+author: "Hunter Glanz & Kelly Bodwin"
+
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(tidyverse)
+```
+
+```{r xaringan-themer, include=FALSE}
+library(xaringanthemer)
+solarized_light()
+```
+
+# What is Shiny?
+
+* Shiny is a (package) framework for creating web applications using R code
+
+--
+
+* Perhaps more importantly, it's a relatively easy way to make your data work interactive and vastly more accessible!
+
+--
+
+* A nice preview on the [shiny gallery](https://shiny.rstudio.com/gallery/)
+
+---
+
+# A Bit Similar to R Projects
+
+* Create a new folder on your desktop called `myfirstshinyapp`
+
+* File -> New File -> Shiny Web App
+
+  * Select the `app.R` option and specify your newly created folder `myfirstshinyapp`
+  
+  * This process creates a file called `app.R` (the names of these Shiny files are important; i.e. leave them as `app.R`, `ui.R`, and `server.R`)
+  
+  * Clear the entire contents of this new `app.R` file
+  
+  * Type the following into your new `app.R` file
+  
+```{r, eval = FALSE}
+library(shiny)
+
+ui <- "Hello, world!"
+
+server <- function(input, output, session) {
+}
+
+shinyApp(ui, server)
+```
+
+---
+
+# What Does This Do?
+
+* Loads the `shiny` package
+
+* Defines the user interface (UI) -- in this case just the words "Hello, world!"
+
+* Specifies the behavior of our app by defining a `server` function. It's currently empty.
+
+* Runs `shinyApp(ui, server)` to construct a Shiny application object from the UI object and server function
+
+--
+
+* Run this Shiny app by clicking the `Run App` button in the top right of the Script pane
+
+---
+
+# A Few Things of Note
+
+* You can choose to view your running app in an RStudio Viewer pane/window or your system's default web browser (I prefer the browser)
+
+* Notice what the R Console says right now...
+
+--
+
+  * R is busy! The R prompt isn't visible; you cannot run new code while the app is running
+  
+--
+
+* Stop your Shiny app in one of the following ways:
+
+1. Click the stop icon at the top of the R Console pane
+
+2. Press the `Esc` key while the RStudio Console pane is selected
+
+3. Close the Shiny app window
+
+4. However you normally interrupt running R code, e.g. `Ctrl + C`
+
+---
+
+# Not Impressed?
+
+* I'd be a little surprised if you were impressed!
+
+--
+
+* Our "Hello, world!" Shiny app isn't interactive and doesn't work with data or anything
+
+* Y'all know what dataset I like?!
+
+--
+
+  * It's even got a sample [Shiny app](https://shiny.rstudio.com/gallery/kmeans-example.html)
+  
+* Let's talk through the basics of this `iris` example
+
+---
+
+# Why Reactivity
+
+* Imagine we want to convert some temperatures:
+
+```{r}
+temp_c <- 10
+temp_f <- (temp_c + 32) * 9 / 5 
+temp_f
+```
+
+--
+
+* But then, if we change `temp_c`
+
+```{r}
+temp_c <- 30
+temp_f
+```
+
+---
+
+# Functions Were a Previous Answer To This
+
+```{r}
+temp_c <- 10
+temp_f <- function() {
+  message("Converting") 
+  (temp_c + 32) * 9 / 5 
+}
+temp_f()
+```
+
+* The value gets updated now, but we still have to call the `temp_f()` function EVERY time:
+
+```{r}
+temp_celsius <- -3
+temp_f() 
+```
+
+---
+
+# Reactive Programming Elegantly Solves This
+
+1. We want up-to-date computations
+
+2. We want to do as little computations as possible
+
+* In other words...
+
+--
+
+* Expressions and outputs should update whenever one of their input values changes
+
+* Expressions and outputs should *only* update when one of their input changes
+
+--
+
+* Shall we go back to the `iris` app to review?
+
+
+---
+
+# Overview of Inputs and Outputs
+
+* Inputs
+
+  * The [widget gallery](https://shiny.rstudio.com/gallery/widget-gallery.html)
+  
+--
+
+* Outputs
+
+  * All the plots you can think of (e.g. `ggplot` and more)
+  
+  * Interactive maps
+  
+  * Rich JavaScript output
+  
+  * Simple tables and text
+  
+  * Static pictures and gifs
+  
+  * And I'm sure much more!
+
+---
+
+# A Few More Examples
+
+* [Classification Method Demonstration](https://mschroth.shinyapps.io/classificationapp/)
+
+* [Astronaut Data Exploration](https://mschroth.shinyapps.io/lisinkershinyapp/)
+
+* [General Data Exploration](https://ikamrath.shinyapps.io/DataExploration/)
+
+---
+
+class: inverse
+
+# Shiny App Activity
+
+* Create a new version of the `iris` example app that...
+
+  * Takes the same two variable inputs (but not the number of clusters)
+  
+  * Outputs three things:
+  
+    * The same graph as before, but using ggplot (*Hint: use `aes_string` instead of `aes`*), colored by `Species`
+    
+    * A summary of the `x` variable
+    
+    * A summary of the `y` variable
+

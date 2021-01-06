@@ -1,0 +1,12 @@
+name: basics_of_data_analysis
+title: Basics_of_Data_Analysis
+username: kbodwin
+account: kbodwin
+server: rstudio.csm.calpoly.edu
+hostUrl: https://rstudio.csm.calpoly.edu/__api__
+appId: 4
+bundleId: 4
+url: https://rstudio.csm.calpoly.edu/content/4/
+when: 1566190517.5733
+asMultiple: FALSE
+asStatic: TRUE
