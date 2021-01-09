@@ -1,0 +1,72 @@
+---
+title: "Basics Activity Solution"
+author: "Hunter Glanz & Kelly Bodwin"
+date: "1/9/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Setup
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed R code chunks throughout the document. Let's set up some of our packages and read in our data
+
+```{r packages}
+library(tidyverse)
+```
+
+## Read in Colleges Data
+
+
+```{r import_data}
+colleges <- read_csv("../data/colleges_clean.csv")
+```
+
+## Histogram of In-state Tuition
+
+```{r}
+colleges %>%
+  ggplot(aes(x = TUITIONFEE_IN)) +
+  geom_histogram()
+```
+
+## Boxplot of In-state Tuition
+
+```{r}
+colleges %>%
+  ggplot(aes(x = TUITIONFEE_IN)) +
+  geom_boxplot()
+```
+
+## Barplot of Public and Private Schools
+
+Hint: public schools have a value of 1 for the variable CONTROL, and private schools have a value of 2.
+
+```{r}
+colleges %>%
+  ggplot(aes(x = CONTROL)) +
+  geom_bar()
+```
+
+## Side-by-Side Boxplots of In-state Tuition for Public and Private Schools
+
+Hint: public schools have a value of 1 for the variable CONTROL, and private schools have a value of 2. You may also need to convert the CONTROL variable to a character variable with `as.character(CONTROL)` within your ggplot code.
+
+```{r}
+colleges %>%
+  ggplot(aes(y = TUITIONFEE_IN, fill = as.character(CONTROL))) +
+  geom_boxplot()
+```
+
+## Multipanel Histogram of In-State Tuition for Public and Private Schools
+
+```{r}
+colleges %>%
+  ggplot(aes(x = TUITIONFEE_IN)) +
+  geom_histogram() +
+  facet_wrap("CONTROL")
+```

@@ -1,6 +1,6 @@
 ---
-title: "Getting Started with R and RStudio"
-subtitle: "Day 1"  
+title: "The Basics of R and RStudio"
+subtitle: "Module 1"  
 author: "Hunter Glanz & Kelly Bodwin"
 
 output:
@@ -16,6 +16,8 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 library(tidyverse)
+library(palmerpenguins)
+library(flair)
 ```
 
 ```{r xaringan-themer, include=FALSE}
@@ -34,7 +36,6 @@ class: center, middle
 # Why should you learn R?
 
 * R is free, R improves, R has existed for a long time
-* Students can show what they have learned to a potential employer easily
 * The support system for R is actually very good!
   * Many free textbooks online
   * Tons of announcements and content on Twitter
@@ -95,7 +96,7 @@ knitr::include_graphics("BadOldCodeTweet.PNG")
 
 .center[![](https://paulvanderlaken.files.wordpress.com/2017/07/tidyverse1.png)]
 
-* Plus a few others: rmarkdown, shiny, and your advanced topics
+* Plus a few others: rmarkdown, gganimate, leaflet
 
 ---
 
@@ -123,7 +124,7 @@ knitr::include_graphics("BadOldCodeTweet.PNG")
 
 * Now, in the same Console pane, type the following and hit Enter
 
-.center[**usethis::use_course("hglanz/rworkshop")**]
+.center[**usethis::use_course("hglanz/rworkshop_Jan2021")**]
 
 * You should see a new RStudio session open and come to the front of your screen except now, in the very top right corner of RStudio, you should see that light blue icon next to **rworkshop**
 
@@ -155,385 +156,383 @@ knitr::include_graphics("BadOldCodeTweet.PNG")
 
 --
 
-# Basic Ways to Use R
+---
 
-1. In the Console Pane
+class: center, middle
 
-  * Try `2 + 2` and hit Enter
+# Reading data
 
---
-
-2. In an R script (.R) file
-
-  * File -> New File -> R Script
-  
---
-
-  * Type `2 + 2` in your script, select/highlight it, and then hit Ctrl + Enter
-  
-* You just ran your first line of code!
-
-* Notice that both showed up in your Console pane
+<img src="https://readr.tidyverse.org/logo.png" width=300>
 
 ---
 
-# Variables and Data Structures
+# Where is your data stored?
 
-* In the previous slide you just used R like a calculator
+* On your computer?
 
-* We're going to want to do much more complicated things involving, among other things, datasets
+* On a website?
 
---
+* On "the cloud"? (Dropbox, Google Drive, ...)
 
-* To create our own **stored** data or values, we can do the following:
+# How is your data stored?
 
-```{r, output = FALSE}
-x <- 5
-height <- c(64, 72, 63, 70, 69)
-weight <- c(160, 190, 140, 180, 170)
-norm_values <- rnorm(10)
+* An Excel spreadsheet?
+
+* A Googlesheets spreadsheet?
+
+* A text file?
+
+* A JSON/SQL/WTF file?
+
+---
+
+# Easy mode: Reading csvs
+
+A file of **comma-separated values (csv)** looks like this:
+
+```
+Name, Age, Favorite Color,
+Susie, 5, Blue
+Kelly, 30, Teal
+Hunter, 32, Goldenrod
 ```
 
-* Assignment is done via `<-`
 
-* The main data structures in R:
-
-  * Vectors, Matrices, Data Frames, Lists
-  
-  * Tibbles (Tidyverse)
-
-
-* We just created 4 vectors of different lengths (notice them in your Environment tab)
+> Excel spreadsheets can easily be saved as *csv*'s!
 
 ---
 
-# Data Structures Continued
+# Reading csvs
 
-* Your use of the aforementioned data structures depends on what your main uses of R will be
-
-* In this workshop we will primarily work with vectors, data frames, and lists (and possibly tibbles)
-
---
-
-* Notice that when we stored values in variables, they were not printed to the Console 
-
-  * This is usually the case. One way to see the value of a variable is to just type its name into the Console
-  
---
-
-* The `norm_values` variable was created using a function: `rnorm()`
-
-```{r}
-norm_values
-```
-
----
-
-# Working with Vectors I
-
-* We can reference parts (elements) of a vector using `[]`
-
-```{r}
-height[2]
-
-# Multiple elements
-weight[c(1, 3, 5)]
-1:3
-weight[1:3]
-```
-
----
-
-# Working with Vectors II
-
-* Referencing all but certain elements:
-
-```{r}
-height
-height[-2]
-```
-
-* What if we wanted to convert all of our heights to centimeters?
-
---
-
-```{r}
-height*2.54
-```
-
-* Vectorization!!!
-
----
-
-# Vectorization
-
-* MANY functions and operations in R work on vectors in an element-wise fashion:
-
-```{r}
-height^2
-sqrt(weight)
-
-bmi <- height / (weight^2)
-bmi
-```
-
----
-
-# Functions in R
-
-* Most R packages are made up of functions; this is mostly how R functionality has expanded
-
-```{r}
-mean(height)
-sd(height)
-```
-
-* Here we're using the `mean()` and `sd()` functions to comput the mean and standard deviation of the `height` vector
-
-* These functions take multiple inputs, but the main one is a **vector of data**
-
-* To find out more about a particular function use:
-
-```{r, eval = FALSE}
-?mean
-```
-
----
-
-# Data Frames
-
-* Let's combine our `height` and `weight` vectors into a **data frame**
-
-```{r}
-people <- data.frame(
-  heights_in = height,
-  weights_lb = weight
-)
-
-people
-```
-
----
-
-# Working with Data Frames
-
-* We can reference columns in a data frame using `$`
-
-```{r}
-people$heights_in
-```
-
---
-
-* We can also use the `[]` syntax from before (`[row, column]`)
-
-```{r}
-people[,1]
-```
-
---
-
-* We can also use the following syntax which mimics lists
-
-```{r}
-people[["heights_in"]]
-```
-
----
-
-# Data Frames vs. Lists
-
-* Data frames are very similar to the datasets you know and love
-
-  * Columns of different data types (e.g. numeric, character, etc.)
-  
---
-
-* Lists are very robust
-
-  * Elements can be any object type (e.g. vector, matrix, data frame, etc.)
-  
-  * Can still reference using `$` or `[[]]`
-  
-  * Output from many complex functions are often in the form of a list
-
----
-
-# Creating Our Own List
-
-```{r}
-mylist <- list(
-  x = x,
-  myheights = height,
-  mypeople = people
-)
-mylist
-```
-
----
-
-# R Markdown
-
-* File -> New File -> R Markdown
-
-  * "Document" and "HTML" are fine for now, but you can see we have many options for output types
-  
---
-
-* This file looks very different!
-
-  * The symbol (at the top of the pane) and file extension are different than an R script
-
-  * There appears to be header information
-  
-  * There appear to be gray and white chunks throughout the file
-
----
-
-class: inverse
-
-# Fresh R Markdown Activity
-
-* In your new R Markdown file, do and answer the following with your neighbors:
-
-  * Create a new folder on your desktop called `rworkshop_lastname`
-
-  * Save this R Markdown file to this new folder as `rmarkdownactivity_lastname`. You can use either the File menu or the little save icon at the top of the R Markdown file.
-  
-  * What do you think the differences are between the white chunks and the gray chunks?
-  
-  * What happens when you click the green play button on the right side of the second gray chunk from the top? What about for the last gray chunk?
-  
-  * What happens when you click the "Knit" icon at the top of the R Markdown file? Can you trace all of the things you're seeing produced back to the R Markdown file?
-  
-  * In the last gray chunk, change `echo = FALSE` to `echo = TRUE` and then click the green play button for that chunk again. What changed? Click the "Knit" icon again and observe the result. What changed?
-
----
-
-class: inverse
-
-# Fresh R Markdown Activity "Answers"
-
-* Gray chunks contain code that can be run. White chunks contain (markdown) text. The interweaving of these two means that we can create dynamic reports seamlessly in a single location/file!
-
---
-
-* Each gray chunk can be thought of as a mini R script file. You can highlight only portions of code in a chunk to run via *Ctrl + Enter* or you can run the whole chunk via that green play button. Results appear in-line, i.e. beneath each code chunk.
-
---
-
-* Knitting an R Markdown file means "running" the code/markdown within and producing the corresponding output file (HTML, PDF, Word). Yours should have produced an HTML file. While the result popped up for you in a separate RStudio window, the resulting HTML file is produced in the same location as your R Markdown file (check your Desktop!).
-
---
-
-* There are vast number of features and customizability options to take advantage for both the R Markdown and the resulting files (e.g. `echo`)!
-
-
-
----
-
-# RStudio Bells and Whistles
-
-.center[![](https://media.giphy.com/media/4cUCFvwICarHq/giphy.gif)]
-
---
-
-* Just ask!
-
----
-
-class: inverse
-
-# Some Toy Work with `iris`
-
-* Canonical `iris` dataset 
+Option 1:  Base R
 
 ```{r, echo = FALSE}
-as_tibble(iris) %>%
-  head()
+decorate('
+  read.csv(...)
+',
+eval = FALSE) %>% 
+    flair_rx('\\.(?=c)') %>%
+  flair_funs(color = "teal")
 ```
 
---
+Option 2: The `readr` package.  (Recommended!)
 
-* Make sure you are in the RStudio session associated with the `rworkshop` project (check the upper right)
 
-* Open up the *rworkshop* folder on your desktop
+```{r, echo = FALSE}
+decorate('
+  library(readr)
+  read_csv(...)
+',
+eval = FALSE) %>% 
+    flair_fixed('_') %>%
+  flair_funs(color = "teal")
+```
 
-* Navigate to the *day1/1.1-Getting_Started_With_R/Activity* subfolder
 
-* Open up the *toyworkiris.Rmd* file
+---
+class: center, middle, invert
 
-* Read and work your way through this file (be sure to run all of the code chunks by the end of your work)
+# Step one: Install the `readr` package
+
+```{r, echo = FALSE}
+decorate('
+  install.packages("readr")
+',
+eval = FALSE) %>% 
+    flair_fixed('"') %>%
+    flair_fixed("readr", color = "cornflowerblue") %>%
+  flair_funs(color = "teal")
+```
+
+> DO NOT PUT THIS IN YOUR R MARKDOWN FILE!!!
+
+> Use the **console**. :)
 
 ---
 
-# `iris` Work Follow-Up
 
-* Amongst other things, you just made some changes to the `iris` dataset and saved them in `myiris`
+## If the file is in your **R Project** folder:
+(In a subfolder called "data")
 
-* The very last code chunk (containing the following) saved your `myiris` dataset to a new file on your computer:
+```{r, echo = FALSE}
+decorate('
+  dat <- read_csv("/data/my_data.csv")
+  ', 
+  eval = FALSE) %>%
+  flair_fixed("read_csv", color = "teal") %>%
+  flair_fixed("my_data.csv")
+```
 
-.center[`write_csv(myiris, "myiris.csv")`]
+The `here` package contains some very handy functions for obtaining paths and locations of files relative to a project's root folder!
 
---
+## If the file is elsewhere on your computer:
 
-* Where did this file get created on your machine? How could we change where the file gets created?
 
---
+```{r, echo = FALSE}
+decorate('
+  dat <- read_csv("/Users/kbodwin/Dropbox/Data/my_data.csv")
+  ',
+  eval = FALSE)  %>%
+  flair_fixed("read_csv", color = "teal") %>%
+  flair_fixed("my_data.csv")
+```
 
-* Let's keep things as reproducible as possible!
+## If the file is on the web:
 
-.center[**R projects**]
+
+```{r, echo = FALSE}
+decorate('
+  dat <- read_csv("www.kelly-bodwin.com/my_data.csv")
+  ',
+  eval = FALSE)  %>%
+  flair_fixed("read_csv", color = "teal") %>%
+  flair_fixed("my_data.csv")
+```
+
+---
+class: center, middle, invert
+
+# Prerequisite:  The Pipe  `%>%`
 
 ---
 
-# R Projects
+# The Pipe
 
-* Projects for your R work!
+```{r, echo = FALSE}
+decorate('penguins %>% summary()', eval = FALSE) %>% 
+  flair_fixed("%>%") %>% 
+  flair_funs(color = "teal")
+```
 
-* Fantastic organizational tool
+is the same as
 
---
+```{r, echo = FALSE}
+decorate('summary(penguins)', eval = FALSE) %>% 
+  flair_funs(color = "teal")
+```
 
-* Close out of all of your current RStudio sessions
 
-* Open up the `rworkshop` folder on your desktop
+* Originally part of the `magrittr` package
 
-* Open the `rworkshop` R project file (light blue square icon with `R` in the middle)
+* Central to the philosophy and design of the *tidyverse*
+---
+# Idea 1: Analysis steps should flow sequentially.
+# Idea 2: Code should read a bit like an English sentence.
 
-* Locate your working directory path at the top of the Console pane
+What do you think the following will do?
 
---
+```{r, eval = FALSE}
+penguins %>%
+  filter(bill_length_mm > 40) %>%
+  arrange(body_mass_g)
+```
 
-```{r, out.width = "40%", echo = FALSE, fig.align='center'}
-knitr::include_graphics("OprahMeme-getwd.jpg")
+---
+class: center, middle, invert
+
+# Visualizing data
+
+---
+
+class: center, middle
+
+# The big idea: "Grammar of graphics"
+## A visualization is formed by mapping *variables* to *plot aesthetics*
+## The **geometry** of the plot determines the display style
+
+---
+
+```{r, echo = FALSE}
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  geom_point()
+
+```
+
+The **bill length** is mapped to the **x-axis**, the **bill depth** is mapped to the **y-axis**, and the **species** is mapped to the **color**.
+
+---
+
+# Using ggplot2
+
+**Step One:** Specify the dataset
+
+```{r, echo = FALSE}
+decorate('ggplot(data = penguins)', eval = FALSE) %>% flair_fixed("data = penguins")
+```
+
+
+**Step One:** Specify the aesthetic
+
+```{r, echo = FALSE}
+decorate('ggplot(penguins, aes(y = bill_depth_mm, x = species))', eval = FALSE) %>% flair_rx("aes(.*)")
+```
+
+**Step One:** Choose the type of plot
+
+```{r, echo = FALSE}
+decorate('
+ggplot(penguins, aes(y = bill_depth_mm, x = species))
+    + geom_boxplot()', eval = FALSE) %>% flair_rx("boxplot")
+```
+
+
+*(near-infinite customization!)*
+
+---
+# Quick Quiz
+
+Without running the code, what seems wrong in each of these three code chunks?
+
+```{r, eval = FALSE}
+ggplot(y = bill_depth_mm, x = bill_length_mm)
+    + geom_point()
+```
+
+```{r, eval = FALSE}
+ggplot(penguins, aes(y = bill_depth_mm, x = bill_length_mm))
+    + geom_bar()
+```
+
+
+```{r, eval = FALSE}
+ggplot(penguins, aes(y = bill_depth_mm, x = bill_length_mm)
+    + geom_point()
+```
+
+---
+# The Main Geometries
+
+`geom_histogram`: requires `x`
+
+`geom_bar`: requires `x`
+
+(`geom_col`: requires `x` and `y`)
+
+`geom_boxplot`: requires `y` and `x` or `group`
+
+`geom_point`: requires `x` and `y`
+
+(`geom_line`: requires `x` and `y` and special data)
+
+---
+
+# Common "extra stuff"
+
+* `fill` is the **filler color**
+
+Q: What is the difference between the following?
+
+```{r, echo = FALSE}
+decorate('
+ggplot(penguins, aes(x = bill_length_mm, fill = species)) + 
+  geom_histogram()',
+eval = FALSE) %>% flair_rx("fill = [:alpha:]*")
+```
+
+```{r, echo = FALSE}
+decorate('
+ggplot(penguins, aes(x = bill_length_mm)) + 
+  geom_histogram(fill = "cornflowerblue")',
+eval = FALSE) %>% flair_rx('fill = "[:alpha:]*"')
 ```
 
 ---
 
-class: inverse
+A:  Options in the **aesthetic** related to **variables**.  Other options are "global".
 
-# Fresh R Project Activity
 
-* In RStudio, File -> New Project
+```{r, echo = FALSE, message = FALSE}
+decorate('
+ggplot(penguins, aes(x = bill_length_mm, fill = species)) + 
+  geom_histogram()') %>% flair_rx("fill = [:alpha:]*")
+```
 
-  * Select `Existing Directory`
-  
-  * Browse to your Desktop and select your newly created `rworkshop_lastname` folder
-  
-  * Click `Create Project`
-  
-* Start a new R Markdown file and do the following within:
-    
-  * Create a vector called `myvals` of the values 1-25
-  
-  * Create a vector called `mylogs` that is the `log` of `myvals`
-  
-  * Create a variable called `mycv` that is the ratio of the `mean` of `myvals` to the `standard deviation` of `myvals`
-  
-  * Knit the file
-  
-* Navigate to your `rworkshop_lastname` folder and confirm that your new R Markdown and resulting HTML file are within along with the project file itself
+---
+A:  Options in the **aesthetic** related to **variables**.  Other options are "global".
+
+```{r, echo = FALSE, message = FALSE}
+decorate('
+ggplot(penguins, aes(x = bill_length_mm)) + 
+  geom_histogram(fill = "cornflowerblue")') %>% flair_rx("fill = [:alpha:]*")
+```
+
+---
+
+# Common "extra stuff"
+
+* `fill` is the **filler color**
+
+* `+ ggtitle("My title")` to add a title
+
+* `+ xlab("axis label")` or `+ ylab("axis label")` to label axes
+
+* `+ theme_*` for various visual options
+
+* ... and SO many more `geom_*` plot types!
+
+[https://www.r-graph-gallery.com/](https://www.r-graph-gallery.com/)
+
+---
+
+# Multipanel Plots with `facet_wrap()`
+
+We can create multipanel figures with the `facet_wrap()` function
+
+```{r, echo = FALSE, message = FALSE}
+decorate('
+penguins %>%
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point() +
+  facet_wrap("species")') %>% flair_rx("facet_wrap(.*)")
+```
+
+
+
+---
+
+# ggplots are objects 
+
+You can name them and change them later
+
+```{r, message = FALSE, fig.height=4}
+p <- ggplot(penguins, aes(x = bill_length_mm))
+
+p + geom_histogram() + ggtitle("Histogram")
+```
+
+---
+
+# Saving your plot
+
+```{r, eval = FALSE}
+ggsave("my_filename.png")
+```
+
+This will save whatever you most recently plotted!
+
+---
+
+class: center, middle, invert
+
+# YOUR TURN
+
+---
+class: center, middle
+
+## In the provided R Markdown file (basics_activity.Rmd), do the following to practice what we've seen so far
+
+With the colleges_clean dataset, create a
+
+* histogram of in-state tuition
+
+* boxplot of in-state tuition
+
+* barplot of public and private schools
+
+* side-by-side boxplot of in-state tuition for public and private schools
+
+* multipanel histogram of in-state tuition for public and private schools
+
 
 ---
 
