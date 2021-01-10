@@ -15,13 +15,15 @@ When you click the **Knit** button a document will be generated that includes bo
 
 ```{r packages}
 library(tidyverse)
+library(here)
 ```
 
 ## Read in Colleges Data
 
+More information about this colleges dataset can be found at ![https://collegescorecard.ed.gov/data/documentation](https://collegescorecard.ed.gov/data/documentation/)
 
 ```{r import_data}
-colleges <- read_csv("data/colleges_clean.csv")
+colleges <- read_csv(here("data", "colleges_clean.csv"))
 ```
 
 ## Histogram of In-state Tuition

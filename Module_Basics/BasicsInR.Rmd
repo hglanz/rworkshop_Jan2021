@@ -14,7 +14,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
+options(htmltools.dir.version = FALSE, message = FALSE)
 library(tidyverse)
 library(palmerpenguins)
 library(flair)
@@ -25,94 +25,6 @@ library(xaringanthemer)
 solarized_light()
 ```
 
-class: center, middle
-
-### Lots of different backgrounds here!
-
-# Why are you here? Why R? Why now?
-
----
-
-# Why should you learn R?
-
-* R is free, R improves, R has existed for a long time
-* The support system for R is actually very good!
-  * Many free textbooks online
-  * Tons of announcements and content on Twitter
-  * [StackOverflow](https://stackoverflow.com/) for coding questions
-  
-.center[![](https://www.thezenteacher.com/wp-content/uploads/2018/11/drinking-from-the-firehose.jpeg)]
-
----
-
-# But why should YOU learn R?
-
-* R and R Markdown will save you TONS of time. Long term thinking is key.
-
---
-
-  * You can easily tweak your code if you need to do another analysis
-  
---
-
-  * Remembering what drop-down menu something is in two years from now in a different program will be hard
-  
---
-
-  * Remembering to copy-and-paste your updated plots/analysis into your word processor is a pain and error prone
-  
---
-
-.center[*Your closest collaborator is you from six months ago, but you no longer answer emails* - Mark Holder]
-
-
-```{r, out.width = "35%", echo = FALSE, fig.align='center'}
-knitr::include_graphics("BadOldCodeTweet.PNG")
-```
----
-
-# Good Coding Habits
-
-
-* [Good coding style](https://style.tidyverse.org/) -- Use a consistent style!
-
---
-
-* Use some form of Git
-
---
-
-* Take advantage of R Markdown, R Shiny, and R projects where appropriate
-
---
-
-.center[*Reproducibility is key!*]
-
----
-
-# What this workshop is
-
-* Some of...
-
-.center[![](https://paulvanderlaken.files.wordpress.com/2017/07/tidyverse1.png)]
-
-* Plus a few others: rmarkdown, gganimate, leaflet
-
----
-
-# Let's Get Started
-
-* [Installing R](https://www.r-project.org/)
-
-  * Follow the "Getting Started" directions to download and install R
-  
---
-
-* [Installing RStudio](https://www.rstudio.com/products/rstudio/)
-
-  * Click on "RStudio Desktop" and follow the directions to download and install the **open source edition** of RStudio Desktop
-  
----
 
 # Collecting the workshop materials
 
@@ -131,10 +43,6 @@ knitr::include_graphics("BadOldCodeTweet.PNG")
 ---
 
 # What did we just do?!
-
-* You installed Base R
-
-* You installed RStudio
 
 * You installed your first package: `usethis`
 
@@ -224,7 +132,7 @@ decorate('
   read_csv(...)
 ',
 eval = FALSE) %>% 
-    flair_fixed('_') %>%
+    flair('_') %>%
   flair_funs(color = "teal")
 ```
 
@@ -232,15 +140,15 @@ eval = FALSE) %>%
 ---
 class: center, middle, invert
 
-# Step one: Install the `readr` package
+# Step one: Install the `here` package
 
 ```{r, echo = FALSE}
 decorate('
-  install.packages("readr")
+  install.packages("here")
 ',
 eval = FALSE) %>% 
-    flair_fixed('"') %>%
-    flair_fixed("readr", color = "cornflowerblue") %>%
+    flair('"') %>%
+    flair("here", color = "cornflowerblue") %>%
   flair_funs(color = "teal")
 ```
 
@@ -259,8 +167,8 @@ decorate('
   dat <- read_csv("/data/my_data.csv")
   ', 
   eval = FALSE) %>%
-  flair_fixed("read_csv", color = "teal") %>%
-  flair_fixed("my_data.csv")
+  flair("read_csv", color = "teal") %>%
+  flair("my_data.csv")
 ```
 
 The `here` package contains some very handy functions for obtaining paths and locations of files relative to a project's root folder!
@@ -273,8 +181,8 @@ decorate('
   dat <- read_csv("/Users/kbodwin/Dropbox/Data/my_data.csv")
   ',
   eval = FALSE)  %>%
-  flair_fixed("read_csv", color = "teal") %>%
-  flair_fixed("my_data.csv")
+  flair("read_csv", color = "teal") %>%
+  flair("my_data.csv")
 ```
 
 ## If the file is on the web:
@@ -285,8 +193,8 @@ decorate('
   dat <- read_csv("www.kelly-bodwin.com/my_data.csv")
   ',
   eval = FALSE)  %>%
-  flair_fixed("read_csv", color = "teal") %>%
-  flair_fixed("my_data.csv")
+  flair("read_csv", color = "teal") %>%
+  flair("my_data.csv")
 ```
 
 ---
@@ -300,7 +208,7 @@ class: center, middle, invert
 
 ```{r, echo = FALSE}
 decorate('penguins %>% summary()', eval = FALSE) %>% 
-  flair_fixed("%>%") %>% 
+  flair("%>%") %>% 
   flair_funs(color = "teal")
 ```
 
@@ -357,7 +265,7 @@ The **bill length** is mapped to the **x-axis**, the **bill depth** is mapped to
 **Step One:** Specify the dataset
 
 ```{r, echo = FALSE}
-decorate('ggplot(data = penguins)', eval = FALSE) %>% flair_fixed("data = penguins")
+decorate('ggplot(data = penguins)', eval = FALSE) %>% flair("data = penguins")
 ```
 
 
@@ -505,7 +413,7 @@ p + geom_histogram() + ggtitle("Histogram")
 # Saving your plot
 
 ```{r, eval = FALSE}
-ggsave("my_filename.png")
+ggsave(here("Module_Basics", "my_filename.png"))
 ```
 
 This will save whatever you most recently plotted!
@@ -535,21 +443,3 @@ With the colleges_clean dataset, create a
 
 
 ---
-
-# Short History of R
-
-* An open source implementation of the S programming language combined with a few other things
-
-* Functionality has expanded in an almost explosive way over the last 10-15 years via **packages**
-
-  * This has been both awesome and challenging: new functionality vs. no formal coordination of consistent syntax etc.
-
-* The `ggplot2` package for visualization, created by Hadley Wickham in 2005, is one of the most popular R packages
-
-  * This is now considered part of what's known as **The Tidyverse**
-  
-* **The Tidyverse** is a colletion of open source R packages introduced by Hadley Wickham and his team that "share an underlying design philosophy, grammar, and data structures" of **tidy data**
-
-  * `ggplot2`, `dplyr`, `tidyr`, `readr`, `purrr`, `tibble`, `stringr`, and `forcats`
-  
-  * **tidy data**: rows correspond to observations/cases and columns to variables
