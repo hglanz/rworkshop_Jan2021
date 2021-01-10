@@ -1,0 +1,1311 @@
+INSTNM,CITY,STABBR,ZIP,CONTROL,ADM_RATE,SAT_AVG,TUITIONFEE_IN,TUITIONFEE_OUT,UGDS,REGION,TUITION_DIFF
+Alabama A & M University,Normal,AL,35762,1,0.9027,929,9857,18236,4824,5,8379
+University of Alabama at Birmingham,Birmingham,AL,35294-0110,1,0.9181,1195,8328,19032,12866,5,10704
+University of Alabama in Huntsville,Huntsville,AL,35899,1,0.8123,1322,10280,21480,6917,5,11200
+Alabama State University,Montgomery,AL,36104-0271,1,0.9787,935,11068,19396,4189,5,8328
+The University of Alabama,Tuscaloosa,AL,35487-0166,1,0.533,1278,10780,28100,32387,5,17320
+Auburn University at Montgomery,Montgomery,AL,36117-3596,1,0.8254,1083,8020,17140,4211,5,9120
+Auburn University,Auburn,AL,36849,1,0.8393,1282,10968,29640,23391,5,18672
+Birmingham Southern College,Birmingham,AL,35254,2,0.6186,1231,35804,35804,1283,5,0
+Faulkner University,Montgomery,AL,36109-3390,2,0.5101,1031,20970,20970,2272,5,0
+Huntingdon College,Montgomery,AL,36106-2148,2,0.5598,1085,26400,26400,1099,5,0
+Heritage Christian University,Florence,AL,35630-9977,2,1,1030,11232,11232,59,5,0
+Jacksonville State University,Jacksonville,AL,36265,1,0.5402,1121,8166,15582,6622,5,7416
+Judson College,Marion,AL,36756,2,0.507,1085,17896,17896,315,5,0
+University of West Alabama,Livingston,AL,35470,1,0.2821,1041,9204,16818,2106,5,7614
+Marion Military Institute,Marion,AL,36756-3207,1,0.5587,1138,9418,15418,444,5,6000
+University of Mobile,Mobile,AL,36613-2842,2,0.4702,1113,22210,22210,1276,5,0
+University of Montevallo,Montevallo,AL,35115-6000,1,0.6445,1143,12400,25030,2329,5,12630
+University of North Alabama,Florence,AL,35632-0001,1,0.7022,1104,8480,15128,5771,5,6648
+Oakwood University,Huntsville,AL,35896,2,0.4707,1005,16720,16720,1623,5,0
+Samford University,Birmingham,AL,35229-2240,2,0.8319,1230,30490,30490,3364,5,0
+University of South Alabama,Mobile,AL,36688-0002,1,0.8208,1142,7812,15324,10712,5,7512
+Spring Hill College,Mobile,AL,36608-1791,2,0.4568,1156,37584,37584,1375,5,0
+Troy University,Troy,AL,36082-0001,1,0.8812,1085,8692,16276,13634,5,7584
+Tuskegee University,Tuskegee,AL,36088-1920,2,0.5032,1036,22170,22170,2833,5,0
+University of Alaska Fairbanks,Fairbanks,AK,99775,1,0.767,1094,6262,19183,4910,8,12921
+Arizona State University-Tempe,Tempe,AZ,85287,1,0.8415,1235,10792,27372,42181,6,16580
+Embry-Riddle Aeronautical University-Prescott,Prescott,AZ,86301-3720,2,0.7652,1245,34662,34662,2598,6,0
+Prescott College,Prescott,AZ,86301,2,0.9526,1132,30501,30501,350,6,0
+Arizona Christian University,Phoenix,AZ,85032-7097,2,0.6444,956,24958,24958,696,6,0
+University of Arkansas at Little Rock,Little Rock,AR,72204,1,0.7463,1105,8998,21208,6677,5,12210
+Lyon College,Batesville,AR,72501,2,0.6418,1202,27340,27340,664,5,0
+University of Arkansas,Fayetteville,AR,72701,1,0.6596,1239,9062,24308,22763,5,15246
+University of Arkansas at Pine Bluff,Pine Bluff,AR,71601,1,0.4669,951,7408,13738,2510,5,6330
+Arkansas State University-Main Campus,Jonesboro,AR,72401,1,0.6602,1165,8478,14778,8856,5,6300
+Baptist Health College Little Rock,Little Rock,AR,72210-2827,2,0.6875,1125,9867,9867,676,5,0
+University of Central Arkansas,Conway,AR,72035-0001,1,0.8995,1175,8524,15047,9034,5,6523
+Central Baptist College,Conway,AR,72034,2,0.6755,1027,15750,15750,676,5,0
+Harding University,Searcy,AR,72149-5615,2,0.7212,1203,19385,19385,4147,5,0
+Henderson State University,Arkadelphia,AR,71999-0001,1,0.7968,1102,8530,10180,2829,5,1650
+Hendrix College,Conway,AR,72032-3080,2,0.798,1295,44070,44070,1233,5,0
+John Brown University,Siloam Springs,AR,72761,2,0.7579,1256,26144,26144,1606,5,0
+Ouachita Baptist University,Arkadelphia,AR,71998-0001,2,0.7094,1186,25870,25870,1513,5,0
+University of the Ozarks,Clarksville,AR,72830,2,0.8915,1047,23750,23750,745,5,0
+Williams Baptist University,Walnut Ridge,AR,72476,2,0.6241,1030,17320,17320,452,5,0
+Southern Arkansas University Main Campus,Magnolia,AR,71753,1,0.6945,1102,8346,12156,3153,5,3810
+Azusa Pacific University,Azusa,CA,91702-7000,2,0.6012,1131,37506,37506,5560,8,0
+Biola University,La Mirada,CA,90639-0001,2,0.7198,1186,38448,38448,4039,8,0
+California Baptist University,Riverside,CA,92504-3297,2,0.7708,1092,32256,32256,7397,8,0
+California Institute of Technology,Pasadena,CA,91125,2,0.0774,1558,49908,49908,961,8,0
+California Lutheran University,Thousand Oaks,CA,91360-2787,2,0.7275,1158,41363,41363,2959,8,0
+California Polytechnic State University-San Luis Obispo,San Luis Obispo,CA,93407,1,0.3461,1317,9432,21312,21303,8,11880
+California State University-San Bernardino,San Bernardino,CA,92407-2397,1,0.5713,991,6885,18765,18088,8,11880
+California State Polytechnic University-Pomona,Pomona,CA,91768,1,0.5507,1129,7339,19219,24205,8,11880
+California State University-Chico,Chico,CA,95929-0150,1,0.6778,1088,7348,19228,16546,8,11880
+California State University-Fresno,Fresno,CA,93740,1,0.5941,1004,6585,18465,21877,8,11880
+California State University-Fullerton,Fullerton,CA,92831-3599,1,0.4572,1096,6850,18730,35045,8,11880
+California State University-Long Beach,Long Beach,CA,90840-0115,1,0.2799,1130,6730,18610,31402,8,11880
+California State University-Los Angeles,Los Angeles,CA,90032-8506,1,0.4645,968,6639,18519,24780,8,11880
+California State University-Northridge,Northridge,CA,91330,1,0.5765,1014,6875,18755,35620,8,11880
+California State University-Sacramento,Sacramento,CA,95819-2694,1,0.6776,1036,7204,19084,28410,8,11880
+University of California-Berkeley,Berkeley,CA,94720,1,0.1711,1414,14170,42184,30574,8,28014
+University of California-Davis,Davis,CA,95616-8678,1,0.4336,1286,14419,42433,30046,8,28014
+University of California-Irvine,Irvine,CA,92697,1,0.3651,1291,13738,41752,29295,8,28014
+University of California-Los Angeles,Los Angeles,CA,90095-1405,1,0.161,1387,13261,41275,30994,8,28014
+University of California-Riverside,Riverside,CA,92521,1,0.5723,1215,13917,41931,20044,8,28014
+University of California-San Diego,La Jolla,CA,92093,1,0.3399,1343,14018,42032,28577,8,28014
+University of California-Santa Barbara,Santa Barbara,CA,93106,1,0.3281,1346,14451,42465,22181,8,28014
+University of California-Santa Cruz,Santa Cruz,CA,95064-1011,1,0.5094,1287,14020,42034,17577,8,28014
+Chapman University,Orange,CA,92866,2,0.5724,1293,50594,50594,6740,8,0
+Charles R Drew University of Medicine and Science,Los Angeles,CA,90059,2,0.9016,1142,13972,13972,138,8,0
+Concordia University-Irvine,Irvine,CA,92612-3203,2,0.5845,1121,34100,34100,1821,8,0
+San Diego Christian College,Santee,CA,92071,2,0.6235,945,30438,30438,657,8,0
+Claremont McKenna College,Claremont,CA,91711-6400,2,0.1036,1452,52825,52825,1334,8,0
+Dominican University of California,San Rafael,CA,94901-2298,2,0.8843,1127,44690,44690,1284,8,0
+Fresno Pacific University,Fresno,CA,93702-4709,2,0.7239,1050,30458,30458,2791,8,0
+Harvey Mudd College,Claremont,CA,91711,2,0.1542,1527,54636,54636,844,8,0
+Holy Names University,Oakland,CA,94619-1699,2,0.5256,857,38188,38188,589,8,0
+Humboldt State University,Arcata,CA,95521-8299,1,0.8183,1062,7493,19373,7846,8,11880
+Life Pacific College,San Dimas,CA,91773-3298,2,0.9669,1002,14884,14884,489,8,0
+University of La Verne,La Verne,CA,91750-4401,2,0.4754,1106,41450,41450,5120,8,0
+La Sierra University,Riverside,CA,92505-8247,2,0.4821,994,32130,32130,1929,8,0
+The Master's University and Seminary,Santa Clarita,CA,91321-1200,2,0.658,1116,33020,33020,1171,8,0
+Loyola Marymount University,Los Angeles,CA,90045-2659,2,0.5248,1307,46386,46386,6257,8,0
+Menlo College,Atherton,CA,94027-4301,2,0.4299,1086,41350,41350,726,8,0
+Mount Saint Mary's University,Los Angeles,CA,90049-1599,2,0.8121,1013,39608,39608,2575,8,0
+Notre Dame de Namur University,Belmont,CA,94002-1908,2,0.9362,995,34196,34196,924,8,0
+Occidental College,Los Angeles,CA,90041-3392,2,0.4179,1370,52838,52838,1958,8,0
+Hope International University,Fullerton,CA,92831-3199,2,0.2837,1019,31800,31800,727,8,0
+Pacific Union College,Angwin,CA,94508-9707,2,0.5021,1055,29469,29469,1181,8,0
+University of the Pacific,Stockton,CA,95211-0197,2,0.6487,1220,46346,46346,3542,8,0
+Pepperdine University,Malibu,CA,90263,2,0.3985,1319,51992,51992,3594,8,0
+Point Loma Nazarene University,San Diego,CA,92106-2899,2,0.7629,1211,34600,34600,3092,8,0
+Pomona College,Claremont,CA,91711-6319,2,0.0836,1461,51075,51075,1567,8,0
+University of Redlands,Redlands,CA,92373-0999,2,0.7496,1182,48072,48072,3042,8,0
+San Diego State University,San Diego,CA,92182-0001,1,0.3542,1206,7460,19340,29781,8,11880
+University of San Diego,San Diego,CA,92110-2492,2,0.4979,1302,47708,47708,5677,8,0
+San Francisco State University,San Francisco,CA,94132,1,0.7046,1054,7254,19134,25966,8,11880
+University of San Francisco,San Francisco,CA,94117-1080,2,0.6563,1203,46250,46250,6796,8,0
+William Jessup University,Rocklin,CA,95765-3707,2,0.6605,1129,30550,30550,1188,8,0
+San Jose State University,San Jose,CA,95192-0001,1,0.6688,1110,7721,19601,27591,8,11880
+Santa Clara University,Santa Clara,CA,95053,2,0.5356,1378,49858,49858,5481,8,0
+Scripps College,Claremont,CA,91711-3905,2,0.3337,1405,52966,52966,1059,8,0
+Simpson University,Redding,CA,96003-8606,2,0.5561,1077,27700,27700,708,8,0
+Saint Mary's College of California,Moraga,CA,94575,2,0.8162,1170,45686,45686,2762,8,0
+Sonoma State University,Rohnert Park,CA,94928-3609,1,0.8203,1078,7724,19604,8633,8,11880
+Vanguard University of Southern California,Costa Mesa,CA,92626,2,0.4668,1037,32430,32430,1824,8,0
+University of Southern California,Los Angeles,CA,90089,2,0.1595,1437,54259,54259,18942,8,0
+Thomas Aquinas College,Santa Paula,CA,93060,2,0.7188,1297,24500,24500,369,8,0
+Westmont College,Santa Barbara,CA,93108-1089,2,0.8471,1262,44044,44044,1285,8,0
+Whittier College,Whittier,CA,90601,2,0.7409,1138,46310,46310,1665,8,0
+Woodbury University,Burbank,CA,91504-1052,2,0.6164,1076,38460,38460,1023,8,0
+Adams State University,Alamosa,CO,81101,1,0.9888,1005,9440,20456,1876,7,11016
+University of Colorado Denver/Anschutz Medical Campus,Denver,CO,80217-3364,1,0.6522,1179,9107,25259,11531,7,16152
+University of Colorado Colorado Springs,Colorado Springs,CO,80918,1,0.9281,1162,8314,19498,10344,7,11184
+University of Colorado Boulder,Boulder,CO,80309-0017,1,0.7984,1293,12086,36220,28565,7,24134
+Colorado School of Mines,Golden,CO,80401,1,0.5572,1391,18386,37436,4751,7,19050
+Colorado State University-Fort Collins,Fort Collins,CO,80523-0100,1,0.8262,1212,11395,28903,23804,7,17508
+University of Denver,Denver,CO,80208,2,0.5805,1294,48669,48669,5753,7,0
+Fort Lewis College,Durango,CO,81301-3999,1,0.8321,1123,8609,18761,3150,7,10152
+Colorado Mesa University,Grand Junction,CO,81501-3122,1,0.8167,1066,8374,20330,8494,7,11956
+Metropolitan State University of Denver,Denver,CO,80217-3362,1,0.6427,1010,7352,20149,18968,7,12797
+University of Northern Colorado,Greeley,CO,80639,1,0.8908,1107,9546,21132,9104,7,11586
+Regis University,Denver,CO,80221-1099,2,0.5992,1150,35610,35610,4016,7,0
+Colorado State University-Pueblo,Pueblo,CO,81001-4901,1,0.9534,1043,10090,25547,3744,7,15457
+United States Air Force Academy,USAF Academy,CO,80840-5002,1,0.1192,1334,0,0,4276,0,0
+Western State Colorado University,Gunnison,CO,81231,1,0.8598,1120,9802,21274,1899,7,11472
+Albertus Magnus College,New Haven,CT,06511-1189,2,0.6388,930,31140,31140,1122,1,0
+University of Bridgeport,Bridgeport,CT,06604-5620,2,0.5389,969,32250,32250,3129,1,0
+Central Connecticut State University,New Britain,CT,6050,1,0.6676,1071,10225,22914,9317,1,12689
+University of Connecticut,Storrs,CT,6269,1,0.4784,1313,14880,36948,18930,1,22068
+University of Hartford,West Hartford,CT,06117-1599,2,0.8089,1140,38910,38910,4835,1,0
+University of New Haven,West Haven,CT,06516-1916,2,0.8776,1124,38170,38170,5147,1,0
+Quinnipiac University,Hamden,CT,6518,2,0.7388,1184,46780,46780,7249,1,0
+University of Saint Joseph,West Hartford,CT,6117,2,0.9029,1064,38033,38033,759,1,0
+St Vincent's College,Bridgeport,CT,06606-4201,2,0.973,960,15563,15563,472,1,0
+Southern Connecticut State University,New Haven,CT,06515-1355,1,0.6492,1028,10538,23226,7703,1,12688
+Trinity College,Hartford,CT,06106-3100,2,0.3387,1370,54770,54770,2174,1,0
+Yale University,New Haven,CT,6520,2,0.0693,1520,51400,51400,5742,1,0
+Delaware State University,Dover,DE,19901,1,0.4518,918,7868,16904,3678,2,9036
+University of Delaware,Newark,DE,19716,1,0.6289,1250,13160,33150,18948,2,19990
+Wesley College,Dover,DE,19901-3875,2,0.6151,903,26406,26406,1342,2,0
+American University,Washington,DC,20016-8001,2,0.294,1294,46615,46615,7433,2,0
+Gallaudet University,Washington,DC,20002-3695,2,0.5901,916,16558,16558,1111,2,0
+George Washington University,Washington,DC,20052,2,0.4098,1386,53518,53518,11718,2,0
+Georgetown University,Washington,DC,20057-0001,2,0.1568,1451,52300,52300,7128,2,0
+Howard University,Washington,DC,20059-0001,2,0.4142,1201,25697,25697,6276,2,0
+The Baptist College of Florida,Graceville,FL,32440,2,0.6195,968,11100,11100,397,5,0
+Barry University,Miami,FL,33161-6695,2,0.8507,970,29850,29850,3459,5,0
+Johnson University Florida,Kissimmee,FL,34744,2,0.9278,978,14920,14920,180,5,0
+University of Central Florida,Orlando,FL,32816,1,0.499,1249,6368,22467,56366,5,16099
+Eckerd College,Saint Petersburg,FL,33711-4700,2,0.7273,1207,43044,43044,2018,5,0
+Edward Waters College,Jacksonville,FL,32209,2,0.6045,885,13525,13525,946,5,0
+Embry-Riddle Aeronautical University-Daytona Beach,Daytona Beach,FL,32114-3900,2,0.7491,1204,34822,34822,5689,5,0
+Florida Agricultural and Mechanical University,Tallahassee,FL,32307,1,0.4563,1044,5785,17725,7552,5,11940
+Florida Atlantic University,Boca Raton,FL,33431-0991,1,0.6001,1149,4831,17276,23748,5,12445
+Flagler College-St Augustine,Saint Augustine,FL,32084,2,0.5659,1093,18200,18200,2674,5,0
+Florida College,Temple Terrace,FL,33617,2,0.7376,1000,17142,17142,505,5,0
+AdventHealth University,Orlando,FL,32803,2,0.9685,1019,14400,14400,1316,5,0
+Florida Institute of Technology,Melbourne,FL,32901-6975,2,0.6346,1243,41240,41240,3395,5,0
+Florida International University,Miami,FL,33199,1,0.5407,1172,6556,18954,41834,5,12398
+Florida Southern College,Lakeland,FL,33801-5698,2,0.5146,1218,34774,34774,2561,5,0
+Florida State University,Tallahassee,FL,32306-1037,1,0.4919,1304,5656,18786,32614,5,13130
+University of Florida,Gainesville,FL,32611,1,0.4201,1356,6381,28659,33655,5,22278
+Jacksonville University,Jacksonville,FL,32211-3394,2,0.867,1147,35260,35260,2829,5,0
+University of Miami,Coral Gables,FL,33146,2,0.357,1366,48484,48484,10613,5,0
+University of North Florida,Jacksonville,FL,32224-7699,1,0.5871,1176,6394,20798,13962,5,14404
+Nova Southeastern University,Fort Lauderdale,FL,33314-7796,2,0.5817,1201,29880,29930,4417,5,50
+Palm Beach Atlantic University,West Palm Beach,FL,33401,2,0.9739,1115,29950,29950,2475,5,0
+Saint Leo University,Saint Leo,FL,33574-6665,2,0.5849,1056,22220,22220,9404,5,0
+University of South Florida-Main Campus,Tampa,FL,33620-9951,1,0.4536,1246,6410,17324,30918,5,10914
+St. Thomas University,Miami Gardens,FL,33054-6459,2,0.4871,993,29730,29730,958,5,0
+Southeastern University,Lakeland,FL,33801-6034,2,0.535,1063,25360,25360,4786,5,0
+The University of Tampa,Tampa,FL,33606-1490,2,0.5326,1171,28426,28426,7956,5,0
+Trinity Baptist College,Jacksonville,FL,32221,2,0.3447,933,11640,11640,335,5,0
+Trinity College of Florida,Trinity,FL,34655-4401,2,0.918,922,16340,16340,188,5,0
+Warner University,Lake Wales,FL,33859-8797,2,0.4148,946,21216,21216,981,5,0
+Webber International University,Babson Park,FL,33827-0096,2,0.4923,986,25358,25358,625,5,0
+The University of West Florida,Pensacola,FL,32514-5750,1,0.4958,1185,6360,19241,9602,5,12881
+Abraham Baldwin Agricultural College,Tifton,GA,31793-2601,1,0.7021,1013,3503,10241,3185,5,6738
+Andrew College,Cuthbert,GA,39840-5550,2,0.4051,930,16560,16560,265,5,0
+Armstrong State University,Savannah,GA,31419-1997,1,0.7962,1054,5439,15900,5965,5,10461
+Point University,West Point,GA,31833,2,0.3506,968,20600,20600,1126,5,0
+Clark Atlanta University,Atlanta,GA,30314-4391,2,0.5793,1000,21892,21892,3302,5,0
+Berry College,Mount Berry,GA,30149,2,0.616,1247,35176,35176,1963,5,0
+Brenau University,Gainesville,GA,30501-3668,2,0.6613,1004,28510,28510,1722,5,0
+Brewton-Parker College,Mount Vernon,GA,30445,2,0.9898,922,17740,17740,465,5,0
+College of Coastal Georgia,Brunswick,GA,31520-3644,1,0.9469,937,4496,12918,3190,5,8422
+Columbus State University,Columbus,GA,31907-5645,1,0.534,1011,6134,16920,6474,5,10786
+Covenant College,Lookout Mountain,GA,30750-4164,2,0.9523,1269,33170,33170,986,5,0
+Emmanuel College,Franklin Springs,GA,30639,2,0.4307,1022,19710,19710,800,5,0
+Emory University,Atlanta,GA,30322,2,0.2204,1443,49392,49392,6776,5,0
+Fort Valley State University,Fort Valley,GA,31030-4313,1,0.4366,564,6658,19738,2329,5,13080
+Georgia Institute of Technology-Main Campus,Atlanta,GA,30332-0530,1,0.234,1389,12418,33014,14810,5,20596
+Georgia Southwestern State University,Americus,GA,31709-4693,1,0.6747,1045,5341,15802,2348,5,10461
+Georgia College & State University,Milledgeville,GA,31061,1,0.7899,1199,9346,28060,5857,5,18714
+Georgia Southern University,Statesboro,GA,30460-8126,1,0.6829,1174,6356,17142,17062,5,10786
+Georgia State University,Atlanta,GA,30303-3083,1,0.6985,1128,9112,23971,25031,5,14859
+University of Georgia,Athens,GA,30602,1,0.5401,1316,11818,30392,28740,5,18574
+Gordon State College,Barnesville,GA,30204,1,0.8364,924,3828,10010,3527,5,6182
+LaGrange College,Lagrange,GA,30240-2999,2,0.5689,1100,29480,29480,930,5,0
+Life University,Marietta,GA,30060,2,0.689,957,11715,11715,751,5,0
+Mercer University,Macon,GA,31207,2,0.7326,1285,36000,36000,4708,5,0
+Morehouse College,Atlanta,GA,30314,2,0.7441,1050,27278,27278,2199,5,0
+Oglethorpe University,Atlanta,GA,30319-2797,2,0.5804,1212,36680,36680,1232,5,0
+Paine College,Augusta,GA,30901-3182,2,0.318,850,14226,14226,357,5,0
+Piedmont College,Demorest,GA,30535-0010,2,0.5952,1059,24464,24464,1281,5,0
+Reinhardt University,Waleska,GA,30183-2981,2,0.8863,1038,22422,22422,1381,5,0
+Savannah College of Art and Design,Savannah,GA,31402-3146,2,0.9287,1152,36410,36410,10568,5,0
+Savannah State University,Savannah,GA,31404-5310,1,0.5575,933,5743,16204,4079,5,10461
+Shorter University,Rome,GA,30165,2,0.5337,1017,21730,21730,1264,5,0
+Spelman College,Atlanta,GA,30314-4399,2,0.4005,1163,28181,28181,2134,5,0
+Toccoa Falls College,Toccoa Falls,GA,30598,2,0.5872,1039,22104,22104,851,5,0
+Truett McConnell University,Cleveland,GA,30528,2,0.9462,1032,19480,19480,760,5,0
+Valdosta State University,Valdosta,GA,31698,1,0.7417,1059,6410,17196,8557,5,10786
+Wesleyan College,Macon,GA,31210-4462,2,0.466,1114,22370,22370,501,5,0
+University of West Georgia,Carrollton,GA,30118-0001,1,0.5862,1016,6226,17010,10468,5,10784
+Young Harris College,Young Harris,GA,30582,2,0.5251,1100,29062,29062,1021,5,0
+Chaminade University of Honolulu,Honolulu,HI,96816-1578,2,0.9223,1068,24514,24514,1785,8,0
+University of Hawaii at Hilo,Hilo,HI,96720-4091,1,0.7788,1047,7648,20608,2855,8,12960
+University of Hawaii at Manoa,Honolulu,HI,96822-2217,1,0.8315,1154,11754,33786,12583,8,22032
+Hawaii Pacific University,Honolulu,HI,96813,2,0.7468,1110,24550,24550,3228,8,0
+University of Hawaii-West Oahu,Kapolei,HI,96707-4507,1,0.7875,966,7440,20400,2747,8,12960
+Boise Bible College,Boise,ID,83714-1220,2,1,1091,12080,12080,128,7,0
+Boise State University,Boise,ID,83725,1,0.8399,1093,7326,22642,16265,7,15316
+University of Idaho,Moscow,ID,83844-2282,1,0.7309,1127,7488,23812,7685,7,16324
+Lewis-Clark State College,Lewiston,ID,83501-2698,1,0.996,1013,6334,18410,2941,7,12076
+Northwest Nazarene University,Nampa,ID,83686-5897,2,0.7342,1142,29000,29000,1268,7,0
+Brigham Young University-Idaho,Rexburg,ID,83460-1690,2,0.9479,1115,4018,4018,35038,7,0
+School of the Art Institute of Chicago,Chicago,IL,60603,2,0.6982,1242,49610,49610,2889,3,0
+Aurora University,Aurora,IL,60506-4892,2,0.8732,1062,23520,23520,3912,3,0
+Blackburn College,Carlinville,IL,62626,2,0.5953,1041,21992,21992,554,3,0
+Bradley University,Peoria,IL,61625-0001,2,0.7137,1212,32930,32930,4643,3,0
+Chicago State University,Chicago,IL,60628-1598,1,0.7787,952,10252,17212,2025,3,6960
+University of Chicago,Chicago,IL,60637,2,0.0873,1524,56034,56034,6298,3,0
+Concordia University-Chicago,River Forest,IL,60305-1499,2,0.7472,1100,31588,31588,1405,3,0
+East-West University,Chicago,IL,60605,2,0.4069,910,21450,21450,430,3,0
+Eastern Illinois University,Charleston,IL,61920,1,0.5151,1045,11678,13868,4877,3,2190
+Elmhurst College,Elmhurst,IL,60126-3096,2,0.7053,1141,36370,36370,2782,3,0
+Eureka College,Eureka,IL,61530,2,0.62,1084,25390,25390,605,3,0
+Governors State University,University Park,IL,60484,1,0.6556,968,11746,21136,3288,3,9390
+Greenville University,Greenville,IL,62246,2,0.662,1067,26356,26356,944,3,0
+Hebrew Theological College,Skokie,IL,60077,2,0.95,1064,17630,17630,100,3,0
+University of Illinois at Chicago,Chicago,IL,60607,1,0.7708,1150,13704,26560,19106,3,12856
+Benedictine University,Lisle,IL,60532-0900,2,0.6217,1093,33900,33900,2864,3,0
+University of Illinois at Urbana-Champaign,Champaign,IL,61820-5711,1,0.6153,1376,15074,31194,32884,3,16120
+Illinois Wesleyan University,Bloomington,IL,61702-2900,2,0.6086,1273,45856,45856,1642,3,0
+Illinois Institute of Technology,Chicago,IL,60616,2,0.5403,1323,45864,45864,2763,3,0
+Illinois State University,Normal,IL,61790-1000,1,0.8913,1165,14061,25168,18264,3,11107
+Judson University,Elgin,IL,60123-1498,2,0.712,1084,29434,29434,1037,3,0
+Lewis University,Romeoville,IL,60446-2200,2,0.5383,1161,31250,31250,4372,3,0
+Lincoln Christian University,Lincoln,IL,62656-2111,2,0.6213,1036,13020,13020,440,3,0
+Lincoln College,Lincoln,IL,62656,2,0.5722,886,18100,18100,1043,3,0
+Loyola University Chicago,Chicago,IL,60660,2,0.7059,1258,43078,43078,11193,3,0
+MacMurray College,Jacksonville,IL,62650-2590,2,0.5971,1032,26100,26100,521,3,0
+McKendree University,Lebanon,IL,62254-1291,2,0.617,1100,29640,29640,2065,3,0
+Methodist College,Peoria,IL,61615,2,0.3469,1005,20750,20750,675,3,0
+Millikin University,Decatur,IL,62522-2084,2,0.6459,1127,33066,33066,1883,3,0
+Monmouth College,Monmouth,IL,61462-1998,2,0.6705,1115,36400,36400,1010,3,0
+North Central College,Naperville,IL,60540,2,0.544,1200,37749,37749,2688,3,0
+North Park University,Chicago,IL,60625-4895,2,0.5373,1086,28620,28620,2018,3,0
+Northern Illinois University,Dekalb,IL,60115-2828,1,0.5332,1085,14350,23816,13430,3,9466
+Northwestern University,Evanston,IL,60208,2,0.0924,1500,52678,52678,8489,3,0
+Northeastern Illinois University,Chicago,IL,60625-4699,1,0.6939,910,10736,19792,7014,3,9056
+Olivet Nazarene University,Bourbonnais,IL,60914-2271,2,0.6617,1140,34940,34940,3356,3,0
+Principia College,Elsah,IL,62028-9799,2,0.9104,1162,28920,28920,447,3,0
+Quincy University,Quincy,IL,62301-2699,2,0.6732,1082,27770,27770,898,3,0
+Rockford University,Rockford,IL,61108-2311,2,0.4656,1059,30050,30050,1018,3,0
+Roosevelt University,Chicago,IL,60605-1394,2,0.6951,1119,28963,28963,2485,3,0
+Dominican University,River Forest,IL,60305,2,0.6498,1124,32530,32530,2155,3,0
+University of St Francis,Joliet,IL,60435-6188,2,0.5167,1126,31470,31470,1563,3,0
+Saint Xavier University,Chicago,IL,60655,2,0.746,1066,33380,33380,2927,3,0
+University of Illinois at Springfield,Springfield,IL,62703-5407,1,0.5241,1159,11413,20938,2833,3,9525
+Southern Illinois University-Carbondale,Carbondale,IL,62901-4512,1,0.7601,1143,13932,28107,10896,3,14175
+Southern Illinois University-Edwardsville,Edwardsville,IL,62026-1259,1,0.8951,1144,11493,24651,11339,3,13158
+Trinity Christian College,Palos Heights,IL,60463-0929,2,0.829,1125,28675,28675,1028,3,0
+Trinity International University-Illinois,Deerfield,IL,60015-1283,2,0.75,1129,30750,30750,750,3,0
+VanderCook College of Music,Chicago,IL,60616-3731,2,1,1215,28434,28434,90,3,0
+Western Illinois University,Macomb,IL,61455,1,0.5997,1045,12897,12897,7599,3,0
+Wheaton College,Wheaton,IL,60187-5593,2,0.85,1356,35190,35190,2356,3,0
+Anderson University,Anderson,IN,46012-3495,2,0.6525,1045,29710,29710,1506,3,0
+Ball State University,Muncie,IN,47306,1,0.6208,1138,9774,25942,16277,3,16168
+Bethel College-Indiana,Mishawaka,IN,46545-5591,2,0.8977,1077,28030,28030,1254,3,0
+Butler University,Indianapolis,IN,46208,2,0.6513,1279,39860,39860,4197,3,0
+DePauw University,Greencastle,IN,46135-1772,2,0.6725,1248,47838,47838,2137,3,0
+Earlham College,Richmond,IN,47374-4095,2,0.5184,1303,45750,45750,1027,3,0
+University of Evansville,Evansville,IN,47722,2,0.6996,1187,35394,35394,2049,3,0
+Franklin College,Franklin,IN,46131-2623,2,0.7787,1105,30920,30920,978,3,0
+Goshen College,Goshen,IN,46526-4794,2,0.6388,1121,33200,33200,855,3,0
+Grace College and Theological Seminary,Winona Lake,IN,46590-1274,2,0.8209,1130,23170,23170,1447,3,0
+Hanover College,Hanover,IN,47243,2,0.8379,1184,36520,36520,1082,3,0
+Holy Cross College,Notre Dame,IN,46556-0308,2,0.7405,1214,29734,29734,554,3,0
+Huntington University,Huntington,IN,46750,2,0.8053,1080,25540,25540,949,3,0
+Purdue University Fort Wayne,Fort Wayne,IN,46805-1499,1,0.9441,1074,8330,20005,7708,3,11675
+Indiana University-Purdue University-Indianapolis,Indianapolis,IN,46202-5143,1,0.7965,1104,9334,29806,20870,3,20472
+University of Indianapolis,Indianapolis,IN,46227-3697,2,0.8218,1093,28390,28390,4384,3,0
+Indiana Institute of Technology,Fort Wayne,IN,46803-1228,2,0.7613,1034,26370,26370,6899,3,0
+University of Southern Indiana,Evansville,IN,47712,1,0.936,1084,7970,18626,7554,3,10656
+Indiana State University,Terre Haute,IN,47809,1,0.8451,1013,8916,19452,10817,3,10536
+Indiana University-Kokomo,Kokomo,IN,46902-9003,1,0.7028,1030,7207,19038,2746,3,11831
+Indiana University-South Bend,South Bend,IN,46615-7111,1,0.7771,1035,7207,19038,4790,3,11831
+Indiana University-Bloomington,Bloomington,IN,47405-7000,1,0.7601,1285,10533,34845,33104,3,24312
+Indiana University-Northwest,Gary,IN,46408-1197,1,0.7444,998,7207,19038,3549,3,11831
+Indiana University-Southeast,New Albany,IN,47150,1,0.8275,1021,7207,19038,4722,3,11831
+Indiana University-East,Richmond,IN,47374-1289,1,0.6966,1035,7207,19038,2969,3,11831
+Marian University,Indianapolis,IN,46222-1997,2,0.5872,1102,33000,33000,2173,3,0
+Indiana Wesleyan University-Marion,Marion,IN,46953-4974,2,0.7202,1138,25980,25980,2685,3,0
+University of Notre Dame,Notre Dame,IN,46556,2,0.1892,1486,51505,51505,8527,3,0
+Oakland City University,Oakland City,IN,47660-1099,2,0.7133,1058,23700,23700,484,3,0
+Rose-Hulman Institute of Technology,Terre Haute,IN,47803-3920,2,0.6094,1369,48012,48012,2146,3,0
+University of Saint Francis-Fort Wayne,Fort Wayne,IN,46808-3994,2,0.9872,1062,29430,29430,1840,3,0
+Saint Mary-of-the-Woods College,Saint Mary of the Woods,IN,47876-1099,2,0.7576,999,29510,29510,631,3,0
+Saint Mary's College,Notre Dame,IN,46556,2,0.7825,1201,40800,40800,1489,3,0
+Taylor University,Upland,IN,46989-1001,2,0.8679,1204,32885,32885,1858,3,0
+Trine University,Angola,IN,46703-1764,2,0.701,1128,31540,31540,1939,3,0
+Valparaiso University,Valparaiso,IN,46383,2,0.8428,1216,38760,38760,3186,3,0
+Wabash College,Crawfordsville,IN,47933-0352,2,0.6296,1199,42250,42250,862,3,0
+Buena Vista University,Storm Lake,IA,50588,2,0.6385,1083,32854,32854,1692,4,0
+Central College,Pella,IA,50219,2,0.7009,1161,35930,35930,1198,4,0
+Clarke University,Dubuque,IA,52001-3198,2,0.6319,1118,31950,31950,757,4,0
+Coe College,Cedar Rapids,IA,52402-5092,2,0.5624,1213,42430,42430,1350,4,0
+Cornell College,Mount Vernon,IA,52314-1098,2,0.6503,1245,40880,40880,1004,4,0
+Dordt College,Sioux Center,IA,51250-1697,2,0.7207,1210,30000,30000,1353,4,0
+Drake University,Des Moines,IA,50311-4505,2,0.688,1285,39062,39062,3038,4,0
+University of Dubuque,Dubuque,IA,52001,2,0.7416,992,29710,29710,1955,4,0
+Emmaus Bible College,Dubuque,IA,52001-3096,2,0.5751,1133,17520,17520,254,4,0
+Faith Baptist Bible College and Theological Seminary,Ankeny,IA,50023-2152,2,0.6,1118,16766,16766,256,4,0
+Graceland University-Lamoni,Lamoni,IA,50140,2,0.5614,1029,28110,28110,1208,4,0
+Grand View University,Des Moines,IA,50316,2,0.9268,1043,26516,26516,1753,4,0
+Grinnell College,Grinnell,IA,50112-1690,2,0.2887,1449,50714,50714,1660,4,0
+Iowa State University,Ames,IA,50011-2103,1,0.8934,1221,8636,22472,30116,4,13836
+Iowa Wesleyan University,Mount Pleasant,IA,52641,2,0.5001,995,24600,30500,602,4,5900
+University of Iowa,Iowa City,IA,52242-1316,1,0.8604,1232,8965,30609,23349,4,21644
+Loras College,Dubuque,IA,52004-0178,2,0.9509,1144,32886,32886,1362,4,0
+Luther College,Decorah,IA,52101-1045,2,0.6509,1222,41020,41020,2008,4,0
+Mercy College of Health Sciences,Des Moines,IA,50309-1239,2,0.959,1030,17600,17600,755,4,0
+Morningside College,Sioux City,IA,51106-1751,2,0.5518,1125,30490,30490,1270,4,0
+Mount Mercy University,Cedar Rapids,IA,52402-4797,2,0.5724,1085,30582,30582,1502,4,0
+University of Northern Iowa,Cedar Falls,IA,50614-0005,1,0.8083,1166,8699,19241,9686,4,10542
+Northwestern College,Orange City,IA,51041,2,0.681,1172,30200,30200,1014,4,0
+Saint Ambrose University,Davenport,IA,52803-2898,2,0.6081,1165,30016,30016,2354,4,0
+Simpson College,Indianola,IA,50125,2,0.8386,1178,37663,37663,1406,4,0
+Upper Iowa University,Fayette,IA,52142-1857,2,0.5558,1041,29600,29600,4058,4,0
+Wartburg College,Waverly,IA,50677-0903,2,0.769,1170,39730,39730,1493,4,0
+William Penn University,Oskaloosa,IA,52577,2,0.5379,963,25000,25000,1184,4,0
+Baker University,Baldwin City,KS,66006-0065,2,0.8571,1137,28960,28960,1465,4,0
+Benedictine College,Atchison,KS,66002-1499,2,0.9747,1215,28480,28480,1826,4,0
+Bethany College,Lindsborg,KS,67456-1897,2,0.6664,1027,26922,26922,710,4,0
+Central Christian College of Kansas,McPherson,KS,67460-5740,2,0.3933,1008,17240,17240,768,4,0
+Emporia State University,Emporia,KS,66801-5415,1,0.8275,1105,6345,19918,3499,4,13573
+Friends University,Wichita,KS,67213,2,0.4801,1100,27565,27565,1110,4,0
+Haskell Indian Nations University,Lawrence,KS,66046-4800,1,0.8157,950,480,480,806,4,0
+University of Kansas,Lawrence,KS,66045,1,0.9338,1230,10824,26592,18903,4,15768
+Newman University,Wichita,KS,67213-2097,2,0.6384,1107,29200,29200,1103,4,0
+Kansas Wesleyan University,Salina,KS,67401-6196,2,0.5365,1065,28980,28980,671,4,0
+Manhattan Christian College,Manhattan,KS,66502-4801,2,0.6432,1079,15418,15418,282,4,0
+McPherson College,McPherson,KS,67460-1402,2,0.4847,1105,27823,27823,688,4,0
+MidAmerica Nazarene University,Olathe,KS,66062-1899,2,0.6562,1064,29670,29670,1215,4,0
+Ottawa University-Ottawa,Ottawa,KS,66067-3399,2,0.8045,1027,28550,28550,670,4,0
+Pittsburg State University,Pittsburg,KS,66762,1,0.8721,1105,7100,18152,5340,4,11052
+University of Saint Mary,Leavenworth,KS,66048-5082,2,0.4915,1078,27720,27720,744,4,0
+Southwestern College,Winfield,KS,67156-6224,2,0.9688,1019,28750,28750,1096,4,0
+Sterling College,Sterling,KS,67579,2,0.5247,1018,24985,24985,612,4,0
+Tabor College,Hillsboro,KS,67063-1799,2,0.5318,1048,27220,27220,632,4,0
+Wichita State University,Wichita,KS,67260-0124,1,0.938,1159,8432,17390,10970,4,8958
+Alice Lloyd College,Pippa Passes,KY,41844,2,0.2567,1043,11550,11550,598,5,0
+Asbury University,Wilmore,KY,40390-1198,2,0.7032,1178,29500,29500,1610,5,0
+Bellarmine University,Louisville,KY,40205-0671,2,0.8925,1189,40750,40750,2474,5,0
+Berea College,Berea,KY,40404-2182,2,0.3509,1188,25760,25760,1610,5,0
+Brescia University,Owensboro,KY,42301-3023,2,0.424,1065,21550,21550,911,5,0
+Campbellsville University,Campbellsville,KY,42718-2799,2,0.6859,1061,25400,25400,2365,5,0
+Centre College,Danville,KY,40422-1394,2,0.7632,1334,40500,40500,1441,5,0
+University of the Cumberlands,Williamsburg,KY,40769,2,0.7436,1092,23000,23000,2085,5,0
+Eastern Kentucky University,Richmond,KY,40475-3102,1,0.8737,1123,9366,18250,12750,5,8884
+Georgetown College,Georgetown,KY,40324-1696,2,0.6733,1145,37160,37160,1029,5,0
+Kentucky Mountain Bible College,Jackson,KY,41339,2,0.5,1045,7760,7760,75,5,0
+Kentucky State University,Frankfort,KY,40601-2355,1,0.4528,982,8184,19638,1349,5,11454
+Kentucky Wesleyan College,Owensboro,KY,42301,2,0.5846,1114,25070,25070,688,5,0
+University of Kentucky,Lexington,KY,40506-0032,1,0.9577,1213,11942,28046,22078,5,16104
+Kentucky Christian University,Grayson,KY,41143-1199,2,0.4021,1029,19256,19256,477,5,0
+University of Louisville,Louisville,KY,40292-0001,1,0.753,1211,11264,26286,14550,5,15022
+Midway University,Midway,KY,40347-1120,2,0.567,1050,23950,23950,989,5,0
+Morehead State University,Morehead,KY,40351,1,0.7962,1144,8950,13426,6410,5,4476
+Murray State University,Murray,KY,42071-3318,1,0.8667,1173,8820,23820,7218,5,15000
+Northern Kentucky University,Highland Heights,KY,41099,1,0.9038,1142,9744,19104,10728,5,9360
+University of Pikeville,Pikeville,KY,41501,2,1,1038,20338,20338,1088,5,0
+The Southern Baptist Theological Seminary,Louisville,KY,40280-0001,2,0.7811,1105,18860,18860,873,5,0
+Spalding University,Louisville,KY,40203-2188,2,0.5899,1046,24000,24000,1080,5,0
+Thomas More College,Crestview Hills,KY,41017-3495,2,0.9123,1081,30270,30270,1399,5,0
+Union College,Barbourville,KY,40906-1499,2,0.6347,1025,26080,26080,984,5,0
+Western Kentucky University,Bowling Green,KY,42101-1000,1,0.9545,1136,10202,25512,14529,5,15310
+Centenary College of Louisiana,Shreveport,LA,71134-1188,2,0.6179,1193,35900,35900,525,5,0
+Dillard University,New Orleans,LA,70122,2,0.4081,1009,17917,17917,1290,5,0
+Louisiana State University-Alexandria,Alexandria,LA,71302-9121,1,0.3107,1026,6668,14024,2662,5,7356
+Louisiana State University and Agricultural & Mechanical College,Baton Rouge,LA,70803-2750,1,0.7392,1226,11374,28051,23331,5,16677
+Louisiana State University-Shreveport,Shreveport,LA,71115-2399,1,0.8384,1080,7166,20320,2237,5,13154
+Louisiana College,Pineville,LA,71359,2,0.7192,1087,16000,16000,935,5,0
+Louisiana Tech University,Ruston,LA,71272,1,0.6484,1195,9645,18558,8277,5,8913
+Loyola University New Orleans,New Orleans,LA,70118-6143,2,0.6911,1203,39492,39492,2534,5,0
+McNeese State University,Lake Charles,LA,70605,1,0.6224,1124,7920,15958,5956,5,8038
+University of New Orleans,New Orleans,LA,70148,1,0.5661,1126,8484,13320,5917,5,4836
+Nicholls State University,Thibodaux,LA,70310,1,0.9374,1104,7886,8979,5401,5,1093
+University of Louisiana at Monroe,Monroe,LA,71209-0000,1,0.7546,1124,8470,20570,6121,5,12100
+Northwestern State University of Louisiana,Natchitoches,LA,71497-0002,1,0.8029,1083,7921,18710,7994,5,10789
+University of Holy Cross,New Orleans,LA,70131-7399,2,0.4615,1030,13220,13220,743,5,0
+Franciscan Missionaries of Our Lady University,Baton Rouge,LA,70808,2,0.4844,1085,12764,12764,1168,5,0
+Southeastern Louisiana University,Hammond,LA,70402,1,0.8834,1085,8153,20631,10929,5,12478
+Southern University and A & M College,Baton Rouge,LA,70813,1,0.4547,988,8666,18080,5137,5,9414
+Southern University at New Orleans,New Orleans,LA,70126,1,0.2467,890,6421,15322,1899,5,8901
+University of Louisiana at Lafayette,Lafayette,LA,70503,1,0.5087,1162,9888,23616,14753,5,13728
+Tulane University of Louisiana,New Orleans,LA,70118-5698,2,0.215,1442,52960,52960,7871,5,0
+Xavier University of Louisiana,New Orleans,LA,70125-1098,2,0.6408,1126,23606,23606,2266,5,0
+Maine College of Health Professions,Lewiston,ME,4240,2,0.8182,920,11506,11506,188,1,0
+Colby College,Waterville,ME,04901-8840,2,0.1579,1444,53120,53120,1917,1,0
+University of Maine at Fort Kent,Fort Kent,ME,04743-1292,1,0.972,996,7965,12075,1036,1,4110
+University of Maine,Orono,ME,4469,1,0.9226,1157,10902,30282,8836,1,19380
+Maine Maritime Academy,Castine,ME,04420-0001,1,0.7961,1083,13278,26628,1018,1,13350
+University of New England,Biddeford,ME,04005-9599,2,0.8074,1128,36530,36530,2360,1,0
+University of Southern Maine,Portland,ME,4103,1,0.8348,1059,8638,20594,5248,1,11956
+University of Baltimore,Baltimore,MD,21201-5720,1,0.8099,999,8824,20704,2856,2,11880
+Bowie State University,Bowie,MD,20715-9465,1,0.36,950,8064,18653,5107,2,10589
+Capitol Technology University,Laurel,MD,20708,2,0.7473,1062,24788,24788,421,2,0
+Washington Adventist University,Takoma Park,MD,20912,2,0.6139,957,23400,23400,750,2,0
+Coppin State University,Baltimore,MD,21216-3698,1,0.3651,930,7474,13622,2459,2,6148
+Frostburg State University,Frostburg,MD,21532-1099,1,0.7229,1017,8914,22262,4486,2,13348
+Johns Hopkins University,Baltimore,MD,21218-2688,2,0.1254,1524,52170,52170,5663,2,0
+University of Maryland-Baltimore County,Baltimore,MD,21250,1,0.6021,1255,11518,25654,11130,2,14136
+University of Maryland-College Park,College Park,MD,20742,1,0.445,1396,10399,33606,29273,2,23207
+Maryland Institute College of Art,Baltimore,MD,21217-4134,2,0.6161,1203,46990,46990,1743,2,0
+University of Maryland Eastern Shore,Princess Anne,MD,21853-1299,1,0.3901,950,8042,18048,2799,2,10006
+Morgan State University,Baltimore,MD,21251-0001,1,0.6372,977,7766,17832,6426,2,10066
+Mount St. Mary's University,Emmitsburg,MD,21727-7799,2,0.6423,1085,40550,40550,1785,2,0
+Notre Dame of Maryland University,Baltimore,MD,21210-2476,2,0.714,993,36070,36070,808,2,0
+St. Mary's College of Maryland,St. Mary's City,MD,20686,1,0.8242,1190,14496,29948,1544,2,15452
+St. John's College,Annapolis,MD,21401,2,0.5445,1365,51795,51795,458,2,0
+Towson University,Towson,MD,21252-0001,1,0.773,1136,9694,22140,19367,2,12446
+United States Naval Academy,Annapolis,MD,21402-5000,1,0.0844,1260,0,0,4495,0,0
+Stevenson University,Stevenson,MD,21153-0641,2,0.6087,1097,35490,35490,3375,2,0
+McDaniel College,Westminster,MD,21157,2,0.85,1161,41800,41800,1562,2,0
+American International College,Springfield,MA,1109,2,0.7183,997,34470,34470,1336,1,0
+Amherst College,Amherst,MA,01002-5000,2,0.129,1497,54310,54310,1835,1,0
+Babson College,Babson Park,MA,02457-0310,2,0.2418,1347,49664,49664,2342,1,0
+Boston Baptist College,Boston,MA,02136-4030,2,0.7308,970,12600,12600,63,1,0
+Bay Path University,Longmeadow,MA,1106,2,0.6286,1086,33557,33557,1944,1,0
+Becker College,Worcester,MA,01609-2165,2,0.6941,1078,38250,38250,1800,1,0
+Bentley University,Waltham,MA,02452-4705,2,0.4415,1319,48000,48000,4203,1,0
+Boston College,Chestnut Hill,MA,2467,2,0.3241,1434,53346,53346,9636,1,0
+Boston University,Boston,MA,2215,2,0.2511,1401,52082,52082,16716,1,0
+Brandeis University,Waltham,MA,02454-9110,2,0.3422,1403,53537,53537,3624,1,0
+Bridgewater State University,Bridgewater,MA,2325,1,0.8036,1070,10012,16152,9390,1,6140
+Curry College,Milton,MA,02186-2395,2,0.9005,1018,38936,38936,2535,1,0
+Dean College,Franklin,MA,02038-1941,2,0.8607,1002,38090,38090,1260,1,0
+Eastern Nazarene College,Quincy,MA,02170-2999,2,0.6776,1049,31780,31780,693,1,0
+Emerson College,Boston,MA,02116-4624,2,0.4606,1299,44832,44832,3799,1,0
+Emmanuel College,Boston,MA,2115,2,0.7299,1183,38844,38844,1848,1,0
+Fitchburg State University,Fitchburg,MA,01420-2697,1,0.8004,1056,10155,16235,4040,1,6080
+Framingham State University,Framingham,MA,01701-9101,1,0.6811,1043,9920,16000,3963,1,6080
+Gordon College,Wenham,MA,1984,2,0.8889,1189,36740,36740,1573,1,0
+Harvard University,Cambridge,MA,2138,2,0.0516,1523,48949,48949,7532,1,0
+Hellenic College-Holy Cross Greek Orthodox School of Theology,Brookline,MA,02445-7415,2,1,1142,22490,22490,77,1,0
+Lasell College,Newton,MA,2466,2,0.8072,1069,34600,34600,1696,1,0
+Lesley University,Cambridge,MA,02138-2790,2,0.7261,1123,26675,26675,2074,1,0
+University of Massachusetts-Lowell,Lowell,MA,01854-5104,1,0.6883,1227,14800,31865,13284,1,17065
+University of Massachusetts-Amherst,Amherst,MA,1003,1,0.5758,1288,15411,33477,23010,1,18066
+University of Massachusetts-Boston,Boston,MA,02125-3393,1,0.7515,1134,13828,32985,12159,1,19157
+MCPHS University,Boston,MA,02115-5896,2,0.8386,1169,32590,32590,3837,1,0
+Massachusetts Institute of Technology,Cambridge,MA,02139-4307,2,0.0717,1532,49892,49892,4489,1,0
+Massachusetts Maritime Academy,Buzzards Bay,MA,02532-1803,1,0.8317,1122,8398,25824,1627,1,17426
+Mount Holyoke College,South Hadley,MA,01075-1489,2,0.5084,1393,47940,47940,2186,1,0
+Massachusetts College of Liberal Arts,North Adams,MA,01247-4100,1,0.7663,1085,10135,19080,1364,1,8945
+Northeastern University,Boston,MA,02115-5005,2,0.2744,1482,49497,49497,13666,1,0
+College of Our Lady of the Elms,Chicopee,MA,1013,2,0.7949,1033,34578,34578,1142,1,0
+Salem State University,Salem,MA,1970,1,0.8191,1066,10278,16706,6776,1,6428
+Simmons University,Boston,MA,02115-5898,2,0.6044,1227,39600,39600,1708,1,0
+Springfield College,Springfield,MA,01109-3797,2,0.6989,1148,36535,36535,2204,1,0
+University of Massachusetts-Dartmouth,North Dartmouth,MA,02747-2300,1,0.8427,1097,13571,28285,6559,1,14714
+Suffolk University,Boston,MA,02108-3901,2,0.8355,1102,37270,37270,4952,1,0
+Tufts University,Medford,MA,02155-5555,2,0.1491,1482,54318,54318,5492,1,0
+Wellesley College,Wellesley,MA,02481-8203,2,0.2208,1448,51148,51148,2375,1,0
+Wentworth Institute of Technology,Boston,MA,2115,2,0.9187,1181,34977,34977,4204,1,0
+Western New England University,Springfield,MA,01119-2684,2,0.8071,1096,35740,35740,2723,1,0
+Westfield State University,Westfield,MA,01086-1630,1,0.8525,1064,9715,15795,5375,1,6080
+Wheaton College,Norton,MA,02766-2322,2,0.4789,1270,50850,50850,1678,1,0
+Wheelock College,Boston,MA,2215,2,0.7726,879,36350,36350,603,1,0
+Williams College,Williamstown,MA,1267,2,0.1458,1493,53550,53550,2033,1,0
+Adrian College,Adrian,MI,49221-2575,2,0.5973,1070,36010,36010,1609,3,0
+Albion College,Albion,MI,49224,2,0.706,1123,43050,43050,1558,3,0
+Alma College,Alma,MI,48801-1599,2,0.64,1140,38768,38768,1392,3,0
+Andrews University,Berrien Springs,MI,49104,2,0.5766,1203,28436,28436,1439,3,0
+Aquinas College,Grand Rapids,MI,49506-1801,2,0.7451,1143,31244,31244,1434,3,0
+Calvin College,Grand Rapids,MI,49546,2,0.8348,1243,33100,33100,3656,3,0
+Central Michigan University,Mount Pleasant,MI,48859,1,0.6775,1125,12510,23670,17489,3,11160
+Cleary University,Howell,MI,48843,2,0.4774,1017,19700,19700,519,3,0
+Concordia University-Ann Arbor,Ann Arbor,MI,48105,2,0.4569,1085,28420,28420,815,3,0
+College for Creative Studies,Detroit,MI,48202,2,0.4899,1149,42460,42460,1347,3,0
+University of Detroit Mercy,Detroit,MI,48221-3038,2,0.6471,1163,41158,41158,2674,3,0
+Eastern Michigan University,Ypsilanti,MI,48197,1,0.4474,1046,12019,29200,16536,3,17181
+Ferris State University,Big Rapids,MI,49307-2251,1,0.7416,1069,11628,18588,11549,3,6960
+Kettering University,Flint,MI,48504-6214,2,0.7033,1270,42490,42490,1850,3,0
+Cornerstone University,Grand Rapids,MI,49525-5897,2,0.6737,1069,27520,27520,1681,3,0
+Grand Valley State University,Allendale,MI,49401-9403,1,0.809,1150,11994,17064,21837,3,5070
+Hope College,Holland,MI,49422-9000,2,0.7363,1240,32780,32780,3029,3,0
+Kalamazoo College,Kalamazoo,MI,49006-3295,2,0.7338,1306,46840,46840,1415,3,0
+Lake Superior State University,Sault Ste Marie,MI,49783,1,0.5816,1148,11427,11427,1912,3,0
+Lawrence Technological University,Southfield,MI,48075-1058,2,0.5964,1163,32190,32190,2191,3,0
+Madonna University,Livonia,MI,48150-1176,2,0.7433,1053,20700,20700,2291,3,0
+Marygrove College,Detroit,MI,48221-2599,2,0.4098,1021,22750,22750,283,3,0
+Rochester College,Rochester Hills,MI,48307,2,1,997,22312,22312,987,3,0
+University of Michigan-Ann Arbor,Ann Arbor,MI,48109,1,0.265,1436,14826,47476,29550,3,32650
+Michigan State University,East Lansing,MI,48824-1046,1,0.7155,1220,14460,39406,38770,3,24946
+Michigan Technological University,Houghton,MI,49931-1295,1,0.7449,1277,15074,32318,5829,3,17244
+University of Michigan-Dearborn,Dearborn,MI,48128-1491,1,0.6428,1187,12472,24706,6961,3,12234
+University of Michigan-Flint,Flint,MI,48502-1950,1,0.6512,1092,10842,21165,5669,3,10323
+Northern Michigan University,Marquette,MI,49855-5301,1,0.7437,1082,10240,15736,6635,3,5496
+Northwood University,Midland,MI,48640-2398,2,0.6927,1095,26080,26080,2880,3,0
+Oakland University,Rochester Hills,MI,48309-4401,1,0.8441,1141,11970,23873,15562,3,11903
+Kuyper College,Grand Rapids,MI,49525-9781,2,0.6614,1092,21090,21090,180,3,0
+Saginaw Valley State University,University Center,MI,48710,1,0.7384,1101,9819,23063,7498,3,13244
+Spring Arbor University,Spring Arbor,MI,49283-9799,2,0.6702,1118,27750,27750,1835,3,0
+Finlandia University,Hancock,MI,49930-1832,2,0.3564,966,22758,22758,365,3,0
+Wayne State University,Detroit,MI,48202,1,0.6741,1134,12729,27203,16768,3,14474
+Western Michigan University,Kalamazoo,MI,49008-5200,1,0.8232,1103,11943,14699,17704,3,2756
+Augsburg University,Minneapolis,MN,55454,2,0.6458,1085,37615,37615,2405,4,0
+Bemidji State University,Bemidji,MN,56601,1,0.662,1105,8677,8677,4399,4,0
+Bethany Lutheran College,Mankato,MN,56001,2,0.7912,1126,26830,26830,523,4,0
+Bethel University,Saint Paul,MN,55112,2,0.835,1181,36210,36210,2777,4,0
+Carleton College,Northfield,MN,55057-4001,2,0.212,1469,52782,52782,2023,4,0
+Concordia College at Moorhead,Moorhead,MN,56562,2,0.616,1213,38378,38378,1980,4,0
+Martin Luther College,New Ulm,MN,56073-3965,2,0.7061,1194,14680,14680,797,4,0
+Hamline University,Saint Paul,MN,55104-1284,2,0.6911,1145,40332,40332,2132,4,0
+Macalester College,Saint Paul,MN,55105-1899,2,0.4058,1405,52464,52464,2116,4,0
+Minnesota State University-Mankato,Mankato,MN,56001,1,0.6096,1105,8164,16216,11966,4,8052
+University of Minnesota-Twin Cities,Minneapolis,MN,55455-0213,1,0.4959,1349,14417,26603,31535,4,12186
+University of Minnesota-Crookston,Crookston,MN,56716-5001,1,0.687,1082,11814,11814,1797,4,0
+Minneapolis College of Art and Design,Minneapolis,MN,55404,2,0.5853,1141,37812,37812,675,4,0
+University of Minnesota-Duluth,Duluth,MN,55812,1,0.7661,1185,13344,18462,9199,4,5118
+University of Minnesota-Morris,Morris,MN,56267,1,0.6378,1219,13072,15092,1554,4,2020
+Minnesota State University Moorhead,Moorhead,MN,56563,1,0.6039,1123,8468,15878,4834,4,7410
+North Central University,Minneapolis,MN,55404-1391,2,0.9074,1118,23480,23480,893,4,0
+University of Northwestern-St Paul,Saint Paul,MN,55113-1598,2,0.934,1174,30794,30794,1827,4,0
+College of Saint Benedict,Saint Joseph,MN,56374,2,0.8058,1208,43738,43738,1937,4,0
+Saint Cloud State University,Saint Cloud,MN,56301-4498,1,0.8578,1065,8228,16462,9676,4,8234
+Saint Johns University,Collegeville,MN,56321,2,0.8023,1187,43356,43356,1720,4,0
+Saint Mary's University of Minnesota,Winona,MN,55987-1399,2,0.6438,1122,33560,33560,1471,4,0
+St Olaf College,Northfield,MN,55057-1098,2,0.4322,1312,46000,46000,3004,4,0
+Crown College,Saint Bonifacius,MN,55375-9001,2,0.512,1066,25430,25430,853,4,0
+The College of Saint Scholastica,Duluth,MN,55811-4199,2,0.6825,1141,36212,36212,2626,4,0
+University of St Thomas,Saint Paul,MN,55105-1078,2,0.8416,1267,41133,41133,6085,4,0
+St Catherine University,Saint Paul,MN,55105,2,0.7013,1146,38170,38170,3100,4,0
+Southwest Minnesota State University,Marshall,MN,56258-5468,1,0.6163,1065,8610,8610,2133,4,0
+Winona State University,Winona,MN,55987-5838,1,0.665,1125,9379,15302,7308,4,5923
+Alcorn State University,Alcorn State,MS,39096-7500,1,0.7861,1005,6888,6888,3172,5,0
+Blue Mountain College,Blue Mountain,MS,38610-9509,2,0.9952,1047,11760,11760,587,5,0
+Delta State University,Cleveland,MS,38733,1,0.8692,1047,6859,6859,2360,5,0
+Jackson State University,Jackson,MS,39217,1,0.7173,990,7621,18314,6467,5,10693
+Millsaps College,Jackson,MS,39210-0001,2,0.4895,1215,38930,38930,801,5,0
+University of Mississippi,University,MS,38677-1848,1,0.8391,1225,8300,23564,18537,5,15264
+Mississippi University for Women,Columbus,MS,39701,1,0.9802,1046,6614,18155,2302,5,11541
+Mississippi Valley State University,Itta Bena,MS,38941-1400,1,0.8628,930,6422,6422,1713,5,0
+Mississippi College,Clinton,MS,39058,2,0.3903,1229,17392,17392,3041,5,0
+Mississippi State University,Mississippi State,MS,39762,1,0.624,1195,8318,22358,17723,5,14040
+University of Southern Mississippi,Hattiesburg,MS,39406-0001,1,0.9843,1125,8218,10218,11747,5,2000
+Tougaloo College,Tougaloo,MS,39174,2,0.7472,1025,10600,10600,789,5,0
+William Carey University,Hattiesburg,MS,39401-5499,2,0.4882,1179,12300,12300,2086,5,0
+Avila University,Kansas City,MO,64145-1698,2,0.3886,1060,28020,28020,1229,4,0
+Calvary University,Kansas City,MO,64147-1341,2,0.7436,1041,11152,11152,222,4,0
+Central Christian College of the Bible,Moberly,MO,65270-1997,2,0.2135,960,13900,13900,226,4,0
+Central Methodist University-College of Liberal Arts and Sciences,Fayette,MO,65248-1198,2,0.9561,1121,23770,23770,1059,4,0
+University of Central Missouri,Warrensburg,MO,64093,1,0.836,1105,7520,14150,8589,4,6630
+Conception Seminary College,Conception,MO,64433-0502,2,1,1061,21526,21526,67,4,0
+Cottey College,Nevada,MO,64772,2,0.6409,1053,20200,20200,265,4,0
+Culver-Stockton College,Canton,MO,63435-1299,2,0.5466,1040,26040,26040,1029,4,0
+Drury University,Springfield,MO,65802-3791,2,0.6608,1226,27015,27015,2971,4,0
+Evangel University,Springfield,MO,65802-2125,2,0.9935,1102,22745,22745,1627,4,0
+Fontbonne University,Saint Louis,MO,63105-3098,2,0.9236,1145,25460,25460,874,4,0
+Kansas City Art Institute,Kansas City,MO,64111-1874,2,0.6719,1158,37800,37800,659,4,0
+Lindenwood University,Saint Charles,MO,63301-1695,2,0.7375,1097,16960,16960,6807,4,0
+Logan University,Chesterfield,MO,63017,2,1,977,6860,6860,98,4,0
+Maryville University of Saint Louis,Saint Louis,MO,63141-7299,2,0.9188,1176,28470,28470,3112,4,0
+Midwestern Baptist Theological Seminary,Kansas City,MO,64118-4697,2,0.9455,1125,7810,7810,417,4,0
+Missouri Baptist University,Saint Louis,MO,63141-8698,2,0.545,1041,26020,26020,1819,4,0
+Missouri Southern State University,Joplin,MO,64801-1595,1,0.9508,1085,6067,11568,5426,4,5501
+University of Missouri-Columbia,Columbia,MO,65211-1050,1,0.7809,1249,9787,26506,23455,4,16719
+University of Missouri-Kansas City,Kansas City,MO,64110,1,0.6415,1197,8011,19793,7854,4,11782
+Missouri University of Science and Technology,Rolla,MO,65409,1,0.8351,1323,9246,25918,6872,4,16672
+University of Missouri-St Louis,Saint Louis,MO,63121-4400,1,0.7594,1197,9590,25505,7362,4,15915
+Truman State University,Kirksville,MO,63501-4221,1,0.67490000000000006,1291,7656,14440,5241,4,6784
+Northwest Missouri State University,Maryville,MO,64468-6001,1,0.7411,1124,7657,12908,5065,4,5251
+Ozark Christian College,Joplin,MO,64801,2,0.4922,1107,12720,12720,577,4,0
+College of the Ozarks,Point Lookout,MO,65726-0017,2,0.1348,1165,19130,19130,1491,4,0
+Rockhurst University,Kansas City,MO,64110-2561,2,0.7246,1198,36590,36590,1623,4,0
+Saint Louis University,Saint Louis,MO,63103-2097,2,0.6443,1319,42166,42166,7209,4,0
+Saint Louis Christian College,Florissant,MO,63033,2,0.24,950,11610,11610,78,4,0
+St. Louis College of Pharmacy,Saint Louis,MO,63110-1088,2,0.7202,1246,29451,29451,448,4,0
+Southwest Baptist University,Bolivar,MO,65613-2596,2,0.732,1136,23358,23358,2252,4,0
+Stephens College,Columbia,MO,65215,2,0.5311,1099,30344,30344,647,4,0
+Southeast Missouri State University,Cape Girardeau,MO,63701,1,0.8455,1145,7185,12720,8910,4,5535
+Missouri State University-Springfield,Springfield,MO,65897,1,0.8404,1164,7306,14746,17371,4,7440
+Washington University in St Louis,Saint Louis,MO,63130-4899,2,0.1596,1508,51533,51533,7253,4,0
+Webster University,Saint Louis,MO,63119-3194,2,0.5356,1164,27100,27100,2954,4,0
+Westminster College,Fulton,MO,65251-1299,2,0.9014,1162,25940,25940,764,4,0
+William Jewell College,Liberty,MO,64068-1896,2,0.4763,1226,33620,33620,928,4,0
+William Woods University,Fulton,MO,65251-1098,2,0.7486,1141,23260,23260,919,4,0
+Carroll College,Helena,MT,59625-0002,2,0.7781,1199,34480,34480,1309,7,0
+Montana Technological University,Butte,MT,59701-8997,1,0.9238,1201,7125,21956,1640,7,14831
+Montana State University,Bozeman,MT,59717,1,0.8311,1195,7079,24071,14383,7,16992
+The University of Montana,Missoula,MT,59812,1,0.9264,1165,7063,24943,8958,7,17880
+Rocky Mountain College,Billings,MT,59102-1796,2,0.6438,1099,27566,27566,884,7,0
+The University of Montana-Western,Dillon,MT,59725-3598,1,0.6074,999,5502,16716,1397,7,11214
+Clarkson College,Omaha,NE,68131-2739,2,0.6207,1125,16290,16290,678,4,0
+Bryan College of Health Sciences,Lincoln,NE,68506,2,0.5234,1125,15190,15190,552,4,0
+Concordia University-Nebraska,Seward,NE,68434-1556,2,0.7495,1134,31000,31000,1233,4,0
+Creighton University,Omaha,NE,68178,2,0.7201,1283,38750,38750,4212,4,0
+Doane University-Arts & Sciences,Crete,NE,68333,2,0.6518,1125,32250,32250,1068,4,0
+Grace University,Omaha,NE,68108-3629,2,0.4591,1010,23030,23030,220,4,0
+Hastings College,Hastings,NE,68901,2,0.6833,1118,29200,29200,1082,4,0
+University of Nebraska at Kearney,Kearney,NE,68849-1212,1,0.8175,1105,7294,13194,4440,4,5900
+Nebraska Methodist College of Nursing & Allied Health,Omaha,NE,68114-2852,2,0.6818,1145,15980,15980,861,4,0
+Midland University,Fremont,NE,68025,2,0.643,1039,31630,31630,1211,4,0
+Nebraska Christian College of Hope International University,Papillion,NE,68046,2,0.4416,989,16830,16830,146,4,0
+University of Nebraska at Omaha,Omaha,NE,68182-0225,1,0.8653,1125,7630,20320,12424,4,12690
+Nebraska Wesleyan University,Lincoln,NE,68504-2794,2,0.7126,1213,32894,32894,1748,4,0
+University of Nebraska-Lincoln,Lincoln,NE,68588,1,0.6438,1235,8978,24098,20954,4,15120
+Summit Christian College,Gering,NE,69341,2,0.4,1010,6560,6560,25,4,0
+Union College,Lincoln,NE,68506,2,0.5995,1112,23070,23070,747,4,0
+York College,York,NE,68467-2699,2,0.4849,1041,18760,18760,428,4,0
+University of Nevada-Las Vegas,Las Vegas,NV,89154,1,0.8107,1100,7665,21853,24783,8,14188
+University of Nevada-Reno,Reno,NV,89557,1,0.8803,1165,7599,21788,17930,8,14189
+Sierra Nevada College,Incline Village,NV,89451,2,0.6898,1048,32639,32639,433,8,0
+Dartmouth College,Hanover,NH,03755-3529,2,0.1045,1483,53368,53368,4315,1,0
+University of New Hampshire-Main Campus,Durham,NH,03824-3547,1,0.7651,1177,18067,32637,12847,1,14570
+Keene State College,Keene,NH,03435-1506,1,0.8267,1038,13868,22614,3688,1,8746
+University of New Hampshire at Manchester,Manchester,NH,03101-1113,1,0.6056,1135,14850,29420,711,1,14570
+Saint Anselm College,Manchester,NH,03102-1310,2,0.7605,1227,40200,40200,1956,1,0
+Thomas More College of Liberal Arts,Merrimack,NH,3054,2,1,1220,21000,21000,90,1,0
+Bloomfield College,Bloomfield,NJ,7003,2,0.6398,934,29300,29300,1833,2,0
+Caldwell University,Caldwell,NJ,07006-6195,2,0.6374,1035,33950,33950,1596,2,0
+Centenary University,Hackettstown,NJ,7840,2,0.87,1014,32580,32580,1351,2,0
+Fairleigh Dickinson University-Metropolitan Campus,Teaneck,NJ,7666,2,0.8753,1104,39446,39446,3391,2,0
+Felician University,Lodi,NJ,7644,2,0.7941,993,33650,33650,1616,2,0
+Fairleigh Dickinson University-Florham Campus,Madison,NJ,7940,2,0.839,1140,41780,41780,2731,2,0
+Georgian Court University,Lakewood,NJ,08701-2697,2,0.6886,1015,32260,32260,1447,2,0
+Rowan University,Glassboro,NJ,8028,1,0.6942,1164,13422,21890,15089,2,8468
+New Jersey City University,Jersey City,NJ,7305,1,0.9185,975,11761,21051,6359,2,9290
+Kean University,Union,NJ,7083,1,0.8222,977,12107,19009,11761,2,6902
+Monmouth University,West Long Branch,NJ,07764-1898,2,0.7394,1088,36732,36732,4683,2,0
+Montclair State University,Montclair,NJ,07043-1624,1,0.7066,1070,12455,20567,16673,2,8112
+New Jersey Institute of Technology,Newark,NJ,7102,1,0.6139,1282,16898,31918,7489,2,15020
+Princeton University,Princeton,NJ,08544-0070,2,0.0641,1500,47140,47140,5246,2,0
+Ramapo College of New Jersey,Mahwah,NJ,07430-1680,1,0.5736,1146,14080,23214,5314,2,9134
+Rider University,Lawrenceville,NJ,08648-3099,2,0.6712,1097,41310,41310,4042,2,0
+Rutgers University-Camden,Camden,NJ,8102,1,0.6933,1090,14501,29924,5360,2,15423
+Rutgers University-New Brunswick,New Brunswick,NJ,08901-1281,1,0.578,1295,14638,30579,35296,2,15941
+Rutgers University-Newark,Newark,NJ,7102,1,0.6424,1090,14085,30026,8122,2,15941
+Saint Peter's University,Jersey City,NJ,07306-5997,2,0.9129,1021,36402,36402,2547,2,0
+Seton Hall University,South Orange,NJ,07079-2697,2,0.7316,1222,40588,40588,5717,2,0
+College of Saint Elizabeth,Morristown,NJ,07960-6989,2,0.6457,885,33131,33131,749,2,0
+Stevens Institute of Technology,Hoboken,NJ,07030-5991,2,0.4388,1410,50554,50554,3114,2,0
+Stockton University,Galloway,NJ,08205-9441,1,0.8153,1105,13404,20357,8242,2,6953
+The College of New Jersey,Ewing,NJ,08628-7718,1,0.4753,1250,16149,27578,6850,2,11429
+William Paterson University of New Jersey,Wayne,NJ,7470,1,0.9239,1030,12652,19654,8710,2,7002
+Eastern New Mexico University-Main Campus,Portales,NM,88130,1,0.6045,984,6013,11788,3431,6,5775
+New Mexico Military Institute,Roswell,NM,88201-5173,1,0.4226,1015,4318,13301,419,6,8983
+New Mexico Institute of Mining and Technology,Socorro,NM,87801,1,0.2168,1259,7183,20991,1358,6,13808
+University of New Mexico-Main Campus,Albuquerque,NM,87106,1,0.6704,1103,7448,22038,18912,6,14590
+New Mexico State University-Main Campus,Las Cruces,NM,88003-8001,1,0.6384,1043,6461,21022,11173,6,14561
+Adelphi University,Garden City,NY,11530-0701,2,0.7312,1164,37170,37170,5162,2,0
+Albany College of Pharmacy and Health Sciences,Albany,NY,12208-3492,2,0.7855,1200,33621,33621,886,2,0
+Alfred University,Alfred,NY,14802-1205,2,0.6273,1116,28114,28114,1621,2,0
+Barnard College,New York,NY,10027-6598,2,0.1542,1430,52662,52662,2540,2,0
+Canisius College,Buffalo,NY,14208-1098,2,0.7819,1172,36454,36454,2324,2,0
+Clarkson University,Potsdam,NY,13699,2,0.6571,1247,47950,47950,2991,2,0
+Colgate University,Hamilton,NY,13346-1398,2,0.2814,1443,53980,53980,2854,2,0
+Columbia University in the City of New York,New York,NY,10027,2,0.0661,1488,57208,57208,8170,2,0
+Concordia College-New York,Bronxville,NY,10708-1998,2,0.7553,1041,31600,31600,1086,2,0
+Cooper Union for the Advancement of Science and Art,New York,NY,10003-7120,2,0.1305,1424,45100,45100,854,2,0
+Cornell University,Ithaca,NY,14853,2,0.1267,1477,52853,52853,14815,2,0
+CUNY Bernard M Baruch College,New York,NY,10010,1,0.2925,1270,7062,14452,14903,2,7390
+CUNY Brooklyn College,Brooklyn,NY,11210,1,0.4043,1130,7040,14430,13712,2,7390
+CUNY City College,New York,NY,10031,1,0.4637,1140,6940,14330,12480,2,7390
+CUNY Hunter College,New York,NY,10065,1,0.4018,1205,6982,14372,15820,2,7390
+CUNY John Jay College of Criminal Justice,New York,NY,10019,1,0.3875,1055,7070,14460,12426,2,7390
+CUNY Lehman College,Bronx,NY,10468,1,0.35,1035,7010,14400,10949,2,7390
+CUNY Queens College,Queens,NY,11367,1,0.4273,1140,7138,14528,15762,2,7390
+CUNY York College,Jamaica,NY,11451,1,0.4447,960,6958,14348,7058,2,7390
+D'Youville College,Buffalo,NY,14201-1084,2,0.9667,938,25870,25870,1664,2,0
+Dominican College of Blauvelt,Orangeburg,NY,10962-1210,2,0.6895,986,28448,28448,1413,2,0
+Fordham University,Bronx,NY,10458,2,0.4644,1337,50986,50986,9403,2,0
+Hamilton College,Clinton,NY,13323,2,0.2422,1452,52770,52770,1885,2,0
+Hartwick College,Oneonta,NY,13820-4020,2,0.8857,1047,44134,44134,1194,2,0
+Hobart William Smith Colleges,Geneva,NY,14456,2,0.6392,1270,53525,53525,2220,2,0
+Hofstra University,Hempstead,NY,11549,2,0.6395,1237,43960,43960,6783,2,0
+Houghton College,Houghton,NY,14744,2,0.9135,1205,31540,31540,1026,2,0
+Iona College,New Rochelle,NY,10801-1890,2,0.922,1090,37682,37682,2989,2,0
+Jewish Theological Seminary of America,New York,NY,10027-4649,2,0.5268,1396,54684,54684,158,2,0
+Keuka College,Keuka Park,NY,14478,2,0.7003,1066,30946,30946,1640,2,0
+Le Moyne College,Syracuse,NY,13214-1301,2,0.6395,1171,33905,33905,2676,2,0
+LIU Brooklyn,Brooklyn,NY,11201-8423,2,0.8426,1124,36978,36978,3748,2,0
+Long Island University,Brookville,NY,11548-1327,2,0.8269,1154,36978,36978,3133,2,0
+Manhattan College,Riverdale,NY,10471-4098,2,0.7539,1169,41412,41412,3664,2,0
+Marymount Manhattan College,New York,NY,10021-4597,2,0.7953,1149,31950,31950,2109,2,0
+Medaille College,Buffalo,NY,14214-2695,2,0.7453,978,28360,28360,1476,2,0
+Molloy College,Rockville Centre,NY,11571-5002,2,0.7603,1148,30310,30310,3505,2,0
+Mount Saint Mary College,Newburgh,NY,12550,2,0.9338,1081,29920,29920,2030,2,0
+College of Mount Saint Vincent,Bronx,NY,10471-1093,2,0.9109,981,37100,37100,1676,2,0
+The College of New Rochelle,New Rochelle,NY,10805-2339,2,0.6757,982,36618,36618,2521,2,0
+The New School,New York,NY,10011-8871,2,0.6151,1223,47276,47276,6982,2,0
+New York University,New York,NY,10012-1091,2,0.2766,1408,50464,50464,26055,2,0
+Niagara University,Niagara University,NY,14109,2,0.842,1121,31950,31950,2902,2,0
+New York Institute of Technology,Old Westbury,NY,11568-8000,2,0.7693,1139,35870,35870,3619,2,0
+New York School of Interior Design,New York,NY,10021,2,0.3333,1058,23590,23590,307,2,0
+Nyack College,Nyack,NY,10960-3698,2,0.984,995,25350,25350,1387,2,0
+Pace University,New York,NY,10038-1598,2,0.7956,1144,43986,43986,8456,2,0
+Pratt Institute-Main,Brooklyn,NY,11205,2,0.568,1201,50038,50038,3602,2,0
+Rensselaer Polytechnic Institute,Troy,NY,12180-3590,2,0.4317,1405,52305,52305,6314,2,0
+Roberts Wesleyan College,Rochester,NY,14624,2,0.6887,1144,30686,30686,1297,2,0
+Rochester Institute of Technology,Rochester,NY,14623-5603,2,0.5672,1315,40068,40068,12858,2,0
+University of Rochester,Rochester,NY,14627-0011,2,0.3421,1410,52020,52020,6320,2,0
+St Bonaventure University,Saint Bonaventure,NY,14778-9800,2,0.7053,1140,33331,33331,1592,2,0
+St Francis College,Brooklyn Heights,NY,11201-4305,2,0.6321,1043,26188,26188,2267,2,0
+St Lawrence University,Canton,NY,13617,2,0.4833,1301,52990,52990,2373,2,0
+St. Thomas Aquinas College,Sparkill,NY,10976-1050,2,0.7799,1002,30750,30750,1114,2,0
+Sarah Lawrence College,Bronxville,NY,10708,2,0.5319,1342,54010,54010,1355,2,0
+Skidmore College,Saratoga Springs,NY,12866,2,0.2452,1330,52596,52596,2659,2,0
+St. Joseph's College-New York,Brooklyn,NY,11205-3688,2,0.6768,974,26550,26550,924,2,0
+St. Joseph's College-Long Island,Patchogue,NY,11772,2,0.7077,1121,26560,26560,3037,2,0
+Saint John Fisher College,Rochester,NY,14618-3597,2,0.6453,1158,33120,33120,2724,2,0
+St John's University-New York,Queens,NY,11439,2,0.6773,1171,40520,40520,11756,2,0
+SUNY College of Technology at Alfred,Alfred,NY,14802,1,0.6766,1049,8327,8327,3665,2,0
+SUNY College of Technology at Canton,Canton,NY,13617-1098,1,0.7859,986,8130,12320,3067,2,4190
+SUNY College of Agriculture and Technology at Cobleskill,Cobleskill,NY,12043,1,0.9427,975,8139,17789,2270,2,9650
+Farmingdale State College,Farmingdale,NY,11735-1021,1,0.5903,1061,8076,17726,9005,2,9650
+SUNY Morrisville,Morrisville,NY,13408,1,0.7152,1013,8249,17899,2815,2,9650
+SUNY at Albany,Albany,NY,12222,1,0.5401,1173,9490,24370,13320,2,14880
+Binghamton University,Vestal,NY,13850-6000,1,0.4036,1365,9523,24403,13702,2,14880
+University at Buffalo,Buffalo,NY,14260-1660,1,0.5734,1197,9828,27068,20735,2,17240
+Stony Brook University,Stony Brook,NY,11794,1,0.4219,1322,9257,26767,17215,2,17510
+SUNY College of Environmental Science and Forestry,Syracuse,NY,13210,1,0.5215,1235,8543,18193,1790,2,9650
+SUNY Polytechnic Institute,Utica,NY,13502,1,0.6247,1150,7998,17648,2052,2,9650
+SUNY College at Brockport,Brockport,NY,14420-2919,1,0.5318,1099,8154,17804,7134,2,9650
+SUNY Buffalo State,Buffalo,NY,14222,1,0.5756,975,7976,17626,8395,2,9650
+SUNY Cortland,Cortland,NY,13045-0900,1,0.4793,1137,8300,17950,6333,2,9650
+SUNY at Fredonia,Fredonia,NY,14063-1136,1,0.6491,1103,8286,17936,4366,2,9650
+SUNY College at Geneseo,Geneseo,NY,14454-1465,1,0.7236,1229,8408,18026,5522,2,9618
+State University of New York at New Paltz,New Paltz,NY,12561-2443,1,0.443,1191,7775,17625,6616,2,9850
+SUNY Oneonta,Oneonta,NY,13820-4015,1,0.5952,1124,8166,17816,5923,2,9650
+SUNY College at Oswego,Oswego,NY,13126,1,0.5365,1162,8191,17841,7090,2,9650
+SUNY at Purchase College,Purchase,NY,10577-1400,1,0.7401,1119,8498,18148,3968,2,9650
+SUNY College at Old Westbury,Old Westbury,NY,11568-0210,1,0.7822,1028,7883,17533,4481,2,9650
+SUNY College at Plattsburgh,Plattsburgh,NY,12901-2681,1,0.529,1126,8148,17798,5272,2,9650
+SUNY Maritime College,Throggs Neck,NY,10465-4198,1,0.695,1179,8074,17724,1633,2,9650
+Syracuse University,Syracuse,NY,13244,2,0.4688,1277,46755,46755,14788,2,0
+United States Merchant Marine Academy,Kings Point,NY,11024-1634,1,0.2216,1269,1020,1020,954,0,0
+United States Military Academy,West  Point,NY,10996-1905,1,0.0956,1262,0,0,4491,0,0
+Vassar College,Poughkeepsie,NY,12604,2,0.2378,1429,55210,55210,2323,2,0
+Webb Institute,Glen Cove,NY,11542-1398,2,0.3491,1483,48775,48775,98,2,0
+Yeshiva University,New York,NY,10033-3299,2,0.6282,1272,42000,42000,2703,2,0
+Appalachian State University,Boone,NC,28608,1,0.7,1198,7302,22109,16888,5,14807
+Barton College,Wilson,NC,27893-7000,2,0.3891,1045,29998,29998,877,5,0
+Belmont Abbey College,Belmont,NC,28012-1802,2,0.9919,1065,18500,18500,1501,5,0
+Bennett College,Greensboro,NC,27401-3239,2,0.8893,851,18513,18513,409,5,0
+Cabarrus College of Health Sciences,Concord,NC,28025-3959,2,0.8421,1038,12626,12626,411,5,0
+Campbell University,Buies Creek,NC,27506,2,0.8058,1113,31190,31190,4328,5,0
+Catawba College,Salisbury,NC,28144,2,0.424,1030,29920,29920,1321,5,0
+Chowan University,Murfreesboro,NC,27855,2,0.6004,859,24480,24480,1494,5,0
+Davidson College,Davidson,NC,28035,2,0.2024,1423,49949,49949,1800,5,0
+Duke University,Durham,NC,27708,2,0.0986,1488,53500,53500,6552,5,0
+East Carolina University,Greenville,NC,27858-4353,1,0.7902,1105,7143,23420,22598,5,16277
+Elizabeth City State University,Elizabeth City,NC,27909,1,0.5981,936,4986,18130,1301,5,13144
+Elon University,Elon,NC,27244-2010,2,0.6653,1262,34273,34273,6045,5,0
+Fayetteville State University,Fayetteville,NC,28301-4298,1,0.6756,955,5183,16791,4817,5,11608
+Gardner-Webb University,Boiling Springs,NC,28017-0997,2,0.527,1102,30700,30700,2210,5,0
+Greensboro College,Greensboro,NC,27401-1875,2,0.4069,1023,29120,29120,821,5,0
+High Point University,High Point,NC,27268,2,0.8066,1161,34005,34005,4407,5,0
+John Wesley University,High Point,NC,27265-3115,2,0.4464,1025,11230,11230,134,5,0
+Johnson C Smith University,Charlotte,NC,28216-5398,2,0.381,868,18236,18236,1392,5,0
+Lenoir-Rhyne University,Hickory,NC,28601,2,0.739,1070,35350,35350,1573,5,0
+Livingstone College,Salisbury,NC,28144,2,0.3724,822,17763,17763,1143,5,0
+Louisburg College,Louisburg,NC,27549-2399,2,0.8104,825,18581,18581,620,5,0
+Mars Hill University,Mars Hill,NC,28754,2,0.5822,1010,31804,31804,1255,5,0
+Meredith College,Raleigh,NC,27607-5298,2,0.6891,1111,35916,35916,1638,5,0
+Methodist University,Fayetteville,NC,28311-1420,2,0.572,1050,32860,32860,1908,5,0
+Montreat College,Montreat,NC,28757-1267,2,0.6515,1040,25730,25730,695,5,0
+University of Mount Olive,Mount Olive,NC,28365-0919,2,0.491,988,19700,19700,3061,5,0
+North Carolina A & T State University,Greensboro,NC,27411,1,0.6223,1010,6526,19416,10011,5,12890
+University of North Carolina at Asheville,Asheville,NC,28804-8510,1,0.8039,1191,7145,23868,3496,5,16723
+University of North Carolina at Chapel Hill,Chapel Hill,NC,27599,1,0.244,1393,9005,34588,18658,5,25583
+University of North Carolina at Charlotte,Charlotte,NC,28223-0001,1,0.6584,1187,6832,20266,23622,5,13434
+University of North Carolina at Greensboro,Greensboro,NC,27402-6170,1,0.7804,1114,7250,22409,15988,5,15159
+North Carolina Central University,Durham,NC,27707,1,0.8281,967,6399,19106,5939,5,12707
+University of North Carolina School of the Arts,Winston-Salem,NC,27127-2738,1,0.3264,1198,9338,25081,867,5,15743
+North Carolina State University at Raleigh,Raleigh,NC,27695-7001,1,0.5136,1331,9058,27406,22801,5,18348
+North Carolina Wesleyan College,Rocky Mount,NC,27804,2,0.5297,967,29900,29900,2086,5,0
+University of North Carolina Wilmington,Wilmington,NC,28403-5963,1,0.6652,1225,7000,21065,14183,5,14065
+William Peace University,Raleigh,NC,27604-1194,2,0.5908,1033,28700,28700,927,5,0
+University of North Carolina at Pembroke,Pembroke,NC,28372-1510,1,0.8074,999,6014,17605,5308,5,11591
+Pfeiffer University,Misenheimer,NC,28109-0960,2,0.6602,997,29574,29574,813,5,0
+Queens University of Charlotte,Charlotte,NC,28274-0001,2,0.7916,1132,33532,33532,1602,5,0
+Mid-Atlantic Christian University,Elizabeth City,NC,27909-4054,2,0.5344,980,14080,14080,192,5,0
+Saint Augustine's University,Raleigh,NC,27610-2298,2,0.7611,834,17890,17890,974,5,0
+Salem College,Winston-Salem,NC,27101,2,0.5684,1211,28566,28566,813,5,0
+St. Andrews University,Laurinburg,NC,28352,2,0.4123,1005,25874,25874,612,5,0
+Warren Wilson College,Swannanoa,NC,28778-2099,2,0.7936,1275,35244,35244,582,5,0
+Wingate University,Wingate,NC,28174-0159,2,0.9324,1045,31120,31120,2586,5,0
+Winston-Salem State University,Winston-Salem,NC,27110-0001,1,0.6657,943,5941,16188,4570,5,10247
+Western Carolina University,Cullowhee,NC,28723-9646,1,0.3884,1095,6897,17290,9234,5,10393
+Dickinson State University,Dickinson,ND,58601-4896,1,0.9897,1042,6554,9226,1153,4,2672
+University of Jamestown,Jamestown,ND,58405,2,0.6525,1075,21158,21158,896,4,0
+University of Mary,Bismarck,ND,58504,2,0.7635,1160,18224,18224,2064,4,0
+Mayville State University,Mayville,ND,58257-1299,1,0.481,1045,6456,9084,825,4,2628
+Minot State University,Minot,ND,58707,1,0.6897,1090,6810,6810,2466,4,0
+University of North Dakota,Grand Forks,ND,58202-8193,1,0.8348,1165,8447,20047,10351,4,11600
+North Dakota State University-Main Campus,Fargo,ND,58108-6050,1,0.9159,1166,8666,20692,11687,4,12026
+Trinity Bible College and Graduate School,Ellendale,ND,58436-7105,2,0.4236,1070,16140,16140,183,4,0
+Valley City State University,Valley City,ND,58072,1,0.763,1045,7406,16579,1010,4,9173
+University of Akron Main Campus,Akron,OH,44325-4702,1,0.9255,1125,10270,18801,15047,3,8531
+Art Academy of Cincinnati,Cincinnati,OH,45202-1706,2,0.4544,990,31290,31290,174,3,0
+Ashland University,Ashland,OH,44805,2,0.7351,1121,20700,20700,3660,3,0
+Aultman College of Nursing and Health Sciences,Canton,OH,44710-1797,2,0.8824,1085,18000,18000,375,3,0
+Bluffton University,Bluffton,OH,45817-2104,2,0.4884,1057,31672,31672,703,3,0
+Bowling Green State University-Main Campus,Bowling Green,OH,43403,1,0.732,1088,11057,18593,13790,3,7536
+Capital University,Columbus,OH,43209-2394,2,0.6865,1195,34600,34600,2573,3,0
+Case Western Reserve University,Cleveland,OH,44106,2,0.3312,1441,47500,47500,5020,3,0
+Cedarville University,Cedarville,OH,45314-0601,2,0.7145,1246,29156,29156,3132,3,0
+Central State University,Wilberforce,OH,45384-1004,1,0.4801,868,6246,8096,1772,3,1850
+The Christ College of Nursing and Health Sciences,Cincinnati,OH,45219-2989,2,0.5144,1105,16477,16477,912,3,0
+Cincinnati Christian University,Cincinnati,OH,45204-3200,2,0.8811,960,17028,17028,547,3,0
+University of Cincinnati-Main Campus,Cincinnati,OH,45221-0063,1,0.7649,1230,11000,27334,25523,3,16334
+Cleveland Institute of Art,Cleveland,OH,44106-1710,2,0.5423,1144,40655,40655,630,3,0
+Cleveland State University,Cleveland,OH,44115-2214,1,0.9006,1104,9778,13829,11647,3,4051
+University of Dayton,Dayton,OH,45469,2,0.7168,1254,41750,41750,8422,3,0
+Defiance College,Defiance,OH,43512,2,0.5648,1003,32190,32190,581,3,0
+Denison University,Granville,OH,43023,2,0.3724,1335,50440,50440,2321,3,0
+The University of Findlay,Findlay,OH,45840-3653,2,0.7508,1171,33320,33320,2637,3,0
+Good Samaritan College of Nursing and Health Science,Cincinnati,OH,45220-2489,2,0.4464,1065,15470,15470,413,3,0
+Heidelberg University,Tiffin,OH,44883-2462,2,0.7606,1088,30200,30200,1049,3,0
+Hiram College,Hiram,OH,44234-0067,2,0.6353,1066,34300,34300,967,3,0
+John Carroll University,University Heights,OH,44118-4581,2,0.8503,1161,39990,39990,2972,3,0
+Kent State University at Kent,Kent,OH,44242-0001,1,0.8751,1142,10012,18544,22403,3,8532
+Kenyon College,Gambier,OH,43022,2,0.3384,1403,53560,53560,1661,3,0
+Kettering College,Kettering,OH,45429-1299,2,0.2836,1138,12408,12408,615,3,0
+Lake Erie College,Painesville,OH,44077-3389,2,0.6045,1036,30862,30862,750,3,0
+Lourdes University,Sylvania,OH,43560-2898,2,0.9667,1059,21540,21540,1036,3,0
+Malone University,Canton,OH,44709-3308,2,0.6599,1082,29900,29900,1200,3,0
+Marietta College,Marietta,OH,45750,2,0.6703,1117,36040,36040,964,3,0
+Miami University-Oxford,Oxford,OH,45056,1,0.682,1332,14958,34211,16816,3,19253
+Mount Carmel College of Nursing,Columbus,OH,43222-1504,2,0.9932,1065,13442,13442,878,3,0
+University of Mount Union,Alliance,OH,44601-3993,2,0.8109,1121,29890,29890,2049,3,0
+Mount Vernon Nazarene University,Mount Vernon,OH,43050-9500,2,0.7674,1102,28090,28090,1623,3,0
+Mount Saint Joseph University,Cincinnati,OH,45233-1670,2,0.7325,1097,29100,29100,1177,3,0
+Muskingum University,New Concord,OH,43762,2,0.7439,1077,27646,27646,1525,3,0
+Notre Dame College,Cleveland,OH,44121-4293,2,0.8948,994,29300,29300,1500,3,0
+Oberlin College,Oberlin,OH,44074,2,0.3372,1388,53460,53460,2827,3,0
+Ohio Dominican University,Columbus,OH,43219,2,0.7716,1086,31080,31080,1077,3,0
+Ohio Northern University,Ada,OH,45810-1599,2,0.661,1215,30990,30990,2111,3,0
+Ohio State University-Main Campus,Columbus,OH,43210,1,0.4806,1359,10592,29696,44853,3,19104
+Ohio University-Main Campus,Athens,OH,45701-2979,1,0.7393,1183,11896,21360,22936,3,9464
+Otterbein University,Westerville,OH,43081,2,0.764,1179,31874,31874,2367,3,0
+Shawnee State University,Portsmouth,OH,45662,1,0.6891,1068,7439,13247,3099,3,5808
+Franciscan University of Steubenville,Steubenville,OH,43952-1763,2,0.8318,1209,26430,26430,2071,3,0
+University of Toledo,Toledo,OH,43606-3390,1,0.9435,1142,9547,18885,15109,3,9338
+Urbana University,Urbana,OH,43078-2091,2,0.7105,1025,22452,22452,548,3,0
+Ursuline College,Pepper Pike,OH,44124,2,0.9333,1068,31150,31150,607,3,0
+Walsh University,North Canton,OH,44720-3396,2,0.7923,1140,29150,29150,1929,3,0
+Wilberforce University,Wilberforce,OH,45384-1001,2,0.4829,872,13250,13250,593,3,0
+Wilmington College,Wilmington,OH,45177,2,0.8415,1086,25000,25000,1167,3,0
+The College of Wooster,Wooster,OH,44691,2,0.5644,1280,48600,48600,1970,3,0
+Wright State University-Main Campus,Dayton,OH,45435-0001,1,0.9677,1107,8730,17098,11251,3,8368
+Wright State University-Lake Campus,Celina,OH,45822-2952,1,0.9946,1041,5842,14210,828,3,8368
+Xavier University,Cincinnati,OH,45207-1092,2,0.7391,1195,37230,37230,4571,3,0
+Youngstown State University,Youngstown,OH,44555-0001,1,0.6363,1104,8451,8811,10039,3,360
+Bacone College,Muskogee,OK,74403-1597,2,0.7285,890,17700,17700,934,6,0
+Oklahoma Wesleyan University,Bartlesville,OK,74006-6299,2,0.6231,1048,26090,26090,1006,6,0
+University of Central Oklahoma,Edmond,OK,73034,1,0.7552,1085,7100,17447,14267,6,10347
+East Central University,Ada,OK,74820-6999,1,0.4802,1045,6600,15720,2860,6,9120
+Randall University,Moore,OK,73160,2,0.4057,1010,13640,13640,300,6,0
+Northeastern State University,Tahlequah,OK,74464-2399,1,0.9569,1083,6327,14022,6401,6,7695
+Northwestern Oklahoma State University,Alva,OK,73717-2799,1,0.8304,1025,7066,14183,1735,6,7117
+Oklahoma Christian University,Edmond,OK,73013,2,0.6281,1146,21670,21670,1883,6,0
+Oklahoma State University-Main Campus,Stillwater,OK,74078-1015,1,0.7428,1206,8738,23776,20743,6,15038
+Oklahoma Baptist University,Shawnee,OK,74804,2,0.6472,1126,26840,26840,1852,6,0
+Oklahoma City University,Oklahoma City,OK,73106-1402,2,0.717,1219,30726,30726,1692,6,0
+University of Oklahoma-Norman Campus,Norman,OK,73019-3072,1,0.74,1254,11538,26919,21536,6,15381
+Oral Roberts University,Tulsa,OK,74171,2,0.9334,1133,26792,26792,3068,6,0
+University of Science and Arts of Oklahoma,Chickasha,OK,73018-5322,1,0.5214,1063,7200,17550,852,6,10350
+Southeastern Oklahoma State University,Durant,OK,74701-3347,1,0.724,1045,6750,15390,2937,6,8640
+Southwestern Christian University,Bethany,OK,73008,2,0.7704,957,13880,13880,610,6,0
+Southwestern Oklahoma State University,Weatherford,OK,73096-3001,1,0.9197,1065,7005,13905,4358,6,6900
+University of Tulsa,Tulsa,OK,74104-3189,2,0.3895,1335,41509,41509,3316,6,0
+Concordia University-Portland,Portland,OR,97211-6099,2,0.4864,1048,30270,30270,1353,8,0
+Eastern Oregon University,La Grande,OR,97850,1,0.9773,1043,8362,19682,2526,8,11320
+George Fox University,Newberg,OR,97132,2,0.8189,1167,35016,35016,2678,8,0
+Lewis & Clark College,Portland,OR,97219-7899,2,0.7137,1330,46988,46988,2021,8,0
+Linfield College-McMinnville Campus,McMinnville,OR,97128-6894,2,0.8077,1126,41682,41682,1503,8,0
+Northwest Christian University,Eugene,OR,97401-3745,2,0.688,1028,28680,28680,571,8,0
+Oregon Institute of Technology,Klamath Falls,OR,97601-8801,1,0.6142,1141,9982,28367,3543,8,18385
+Oregon State University,Corvallis,OR,97331,1,0.7884,1197,10797,29457,24921,8,18660
+University of Oregon,Eugene,OR,97403,1,0.8281,1193,11931,34611,19163,8,22680
+Pacific University,Forest Grove,OR,97116,2,0.8449,1180,42594,42594,1809,8,0
+Portland State University,Portland,OR,97201,1,0.9244,1105,8783,26130,18585,8,17347
+University of Portland,Portland,OR,97203-5798,2,0.6954,1239,44026,44026,3851,8,0
+Reed College,Portland,OR,97202-8199,2,0.3563,1427,54200,54200,1415,8,0
+Southern Oregon University,Ashland,OR,97520,1,0.7848,1049,9287,24630,4399,8,15343
+Corban University,Salem,OR,97317-9392,2,0.3299,1145,31640,31640,963,8,0
+Bryn Athyn College of the New Church,Bryn Athyn,PA,19009-0711,2,0.8755,1045,21126,21126,323,2,0
+Allegheny College,Meadville,PA,16335-3902,2,0.6789,1238,45970,45970,1764,2,0
+DeSales University,Center Valley,PA,18034-9568,2,0.7379,1137,35900,35900,2291,2,0
+Alvernia University,Reading,PA,19607-1799,2,0.7081,1052,33640,33640,2231,2,0
+Arcadia University,Glenside,PA,19038-3295,2,0.6229,1160,42330,42330,2233,2,0
+Bloomsburg University of Pennsylvania,Bloomsburg,PA,17815,1,0.7325,1063,10500,21980,8276,2,11480
+Bryn Mawr College,Bryn Mawr,PA,19010,2,0.3801,1415,50500,50500,1328,2,0
+Bucknell University,Lewisburg,PA,17837,2,0.3108,1353,53986,53986,3588,2,0
+Cabrini University,Radnor,PA,19087-3698,2,0.7321,1073,31350,31350,1536,2,0
+California University of Pennsylvania,California,PA,15419-1394,1,0.961,1005,10840,15326,5435,2,4486
+Carlow University,Pittsburgh,PA,15213-3165,2,0.9164,1005,28596,28596,1339,2,0
+Carnegie Mellon University,Pittsburgh,PA,15213-3890,2,0.222,1506,53910,53910,6434,2,0
+Cedar Crest College,Allentown,PA,18104-6196,2,0.6333,1069,38092,38092,1413,2,0
+Chestnut Hill College,Philadelphia,PA,19118-2693,2,0.9572,1060,35180,35180,1317,2,0
+Clarion University of Pennsylvania,Clarion,PA,16214,1,0.9549,1024,10890,15636,4214,2,4746
+Delaware Valley University,Doylestown,PA,18901-2697,2,0.664,1070,38000,38000,1908,2,0
+Drexel University,Philadelphia,PA,19104,2,0.7904,1269,52002,52002,15335,2,0
+Duquesne University,Pittsburgh,PA,15282,2,0.717,1221,36394,36394,5930,2,0
+East Stroudsburg University of Pennsylvania,East Stroudsburg,PA,18301-2999,1,0.8356,1018,10098,21778,5972,2,11680
+Eastern University,Saint Davids,PA,19087-3696,2,0.6561,1106,32145,32145,1837,2,0
+Edinboro University of Pennsylvania,Edinboro,PA,16444-0001,1,0.9253,1029,10282,14668,4229,2,4386
+Elizabethtown College,Elizabethtown,PA,17022-2298,2,0.7402,1181,45350,45350,1647,2,0
+Gannon University,Erie,PA,16541-0001,2,0.799,1119,30932,30932,2616,2,0
+Geneva College,Beaver Falls,PA,15010-3599,2,0.6901,1110,26070,26070,1330,2,0
+Grove City College,Grove City,PA,16127-2104,2,0.7987,1212,17254,17254,2327,2,0
+Gwynedd Mercy University,Gwynedd Valley,PA,19437-0901,2,0.9377,1021,33600,33600,1987,2,0
+Haverford College,Haverford,PA,19041-1392,2,0.2005,1472,52994,52994,1291,2,0
+Holy Family University,Philadelphia,PA,19114-2009,2,0.7075,1005,30346,30346,1904,2,0
+Immaculata University,Immaculata,PA,19345,2,0.8294,1053,27350,27350,1383,2,0
+Indiana University of Pennsylvania-Main Campus,Indiana,PA,15705-1098,1,0.9082,1016,12119,17271,9965,2,5152
+Kutztown University of Pennsylvania,Kutztown,PA,19530-0730,1,0.8314,1056,9987,13975,7443,2,3988
+La Roche University,Pittsburgh,PA,15237-5898,2,0.9657,1045,27720,27720,1312,2,0
+Lafayette College,Easton,PA,18042-1768,2,0.3081,1363,51600,51600,2567,2,0
+Lancaster Bible College,Lancaster,PA,17601-5036,2,0.7181,1070,22580,22580,1647,2,0
+Lebanon Valley College,Annville,PA,17003-1400,2,0.73,1162,42180,42180,1658,2,0
+Lehigh University,Bethlehem,PA,18015,2,0.2515,1382,50740,50740,5057,2,0
+Lincoln University,Lincoln University,PA,19352-0999,1,0.7968,970,11379,17151,1994,2,5772
+Lock Haven University,Lock Haven,PA,17745-2390,1,0.8904,1004,10576,20056,3425,2,9480
+Lycoming College,Williamsport,PA,17701-5192,2,0.6403,1105,38618,38618,1192,2,0
+Manor College,Jenkintown,PA,19046-3399,2,0.9255,885,17029,17029,602,2,0
+Mansfield University of Pennsylvania,Mansfield,PA,16933,1,0.8919,1035,12316,22008,1770,2,9692
+Marywood University,Scranton,PA,18509-1598,2,0.7512,1033,33940,33940,1835,2,0
+Messiah College,Mechanicsburg,PA,17055,2,0.7701,1212,34160,34160,2670,2,0
+Millersville University of Pennsylvania,Millersville,PA,17551-0302,1,0.7949,1065,11858,21560,6613,2,9702
+Misericordia University,Dallas,PA,18612-1098,2,0.7879,1127,31660,31660,2100,2,0
+Moore College of Art and Design,Philadelphia,PA,19103-1179,2,0.5407,1140,39833,39833,373,2,0
+Moravian College,Bethlehem,PA,18018-6650,2,0.7597,1121,42024,42024,2007,2,0
+Mount Aloysius College,Cresson,PA,16630-1999,2,0.6087,1030,22430,22430,1185,2,0
+Muhlenberg College,Allentown,PA,18104,2,0.4836,1270,50830,50830,2329,2,0
+Neumann University,Aston,PA,19014-1298,2,0.9628,978,30050,30050,1997,2,0
+Pennsylvania State University-Penn State Erie-Behrend College,Erie,PA,16563-0001,1,0.8891,1158,15190,23692,4283,2,8502
+Pennsylvania State University-Penn State New Kensington,New Kensington,PA,15068-1765,1,0.7676,1086,13694,21328,573,2,7634
+Pennsylvania State University-Penn State Shenango,Sharon,PA,16146-1537,1,0.7428,1029,13324,20810,345,2,7486
+Pennsylvania State University-Penn State Wilkes-Barre,Lehman,PA,18627-0217,1,0.8245,1078,13568,21202,404,2,7634
+Pennsylvania State University-Penn State Scranton,Dunmore,PA,18512-1602,1,0.7792,1037,14460,22378,1003,2,7918
+Pennsylvania State University-Penn State Lehigh Valley,Center Valley,PA,18034-8447,1,0.8534,1105,14460,22378,823,2,7918
+Pennsylvania State University-Penn State Altoona,Altoona,PA,16601-3777,1,0.9225,1099,15190,23692,3451,2,8502
+Pennsylvania State University-Penn State Beaver,Monaca,PA,15061-2764,1,0.8131,1101,13694,21328,598,2,7634
+Pennsylvania State University-Penn State Berks,Reading,PA,19610-1016,1,0.857,1094,15190,23692,2635,2,8502
+Pennsylvania State University-Penn State Harrisburg,Middletown,PA,17057-4846,1,0.8375,1154,15190,23692,4223,2,8502
+Pennsylvania State University-Penn State Brandywine,Media,PA,19063-5522,1,0.8703,1083,14460,22378,1366,2,7918
+Pennsylvania State University-Penn State DuBois,DuBois,PA,15801-2549,1,0.8387,1095,13632,21266,497,2,7634
+Pennsylvania State University-Penn State Fayette- Eberly,Lemont Furnace,PA,15456-1025,1,0.8214,1037,13632,21266,649,2,7634
+Pennsylvania State University-Penn State Hazleton,Hazleton,PA,18202-8025,1,0.9352,1040,14460,22378,699,2,7918
+Pennsylvania State University-Main Campus,University Park,PA,16802-1503,1,0.5031,1269,18436,33664,40553,2,15228
+Pennsylvania State University-Penn State Greater Allegheny,McKeesport,PA,15132-7644,1,0.8187,1074,13694,21328,488,2,7634
+Pennsylvania State University-Penn State Mont Alto,Mont Alto,PA,17237-9700,1,0.7476,1072,13694,21328,759,2,7634
+Pennsylvania State University-Penn State Abington,Abington,PA,19001-3918,1,0.8523,1097,14516,22558,3674,2,8042
+Pennsylvania State University-Penn State Schuylkill,Schuylkill Haven,PA,17972-2202,1,0.7555,1007,14398,22316,695,2,7918
+Pennsylvania State University-Penn State York,York,PA,17403-3326,1,0.825,1161,14460,22378,899,2,7918
+University of Pennsylvania,Philadelphia,PA,19104-6303,2,0.093,1506,53534,53534,10660,2,0
+Jefferson (Philadelphia University + Thomas Jefferson University),Philadelphia,PA,19144-5497,2,0.5966,1136,39280,39280,2669,2,0
+Cairn University-Langhorne,Langhorne,PA,19047-2990,2,0.9855,1046,26493,26493,757,2,0
+University of the Sciences,Philadelphia,PA,19104-4495,2,0.6076,1227,39994,39994,1268,2,0
+University of Pittsburgh-Bradford,Bradford,PA,16701,1,0.5436,1077,13900,25144,1296,2,11244
+University of Pittsburgh-Greensburg,Greensburg,PA,15601-5860,1,0.7327,1101,13870,25114,1521,2,11244
+University of Pittsburgh-Johnstown,Johnstown,PA,15904,1,0.7598,1105,13876,25120,2776,2,11244
+University of Pittsburgh-Pittsburgh Campus,Pittsburgh,PA,15260,1,0.5971,1349,19080,30642,19134,2,11562
+University of Pittsburgh-Titusville,Titusville,PA,16354,1,0.6311,955,11788,21532,292,2,9744
+Point Park University,Pittsburgh,PA,15222-1984,2,0.6486,1091,30130,30130,3230,2,0
+Reading Hospital School of Health Sciences,Reading,PA,19611,2,0.2679,989,10095,10095,288,2,0
+Robert Morris University,Moon Township,PA,15108-1189,2,0.8332,1127,29420,29420,4213,2,0
+Rosemont College,Rosemont,PA,19010-1699,2,0.6961,993,19486,19486,609,2,0
+Saint Francis University,Loretto,PA,15940,2,0.7574,1147,35066,35066,1676,2,0
+Saint Joseph's University,Philadelphia,PA,19131-1395,2,0.7718,1209,43880,43880,5040,2,0
+Saint Vincent College,Latrobe,PA,15650-2690,2,0.6193,1122,34430,34430,1616,2,0
+University of Scranton,Scranton,PA,18510-4699,2,0.7479,1198,43310,43310,3695,2,0
+Shippensburg University of Pennsylvania,Shippensburg,PA,17257-2299,1,0.8355,1049,12086,20186,5464,2,8100
+Slippery Rock University of Pennsylvania,Slippery Rock,PA,16057-1383,1,0.7149,1081,10205,14193,7539,2,3988
+Swarthmore College,Swarthmore,PA,19081,2,0.107,1473,50822,50822,1565,2,0
+Thiel College,Greenville,PA,16125-2181,2,0.6287,1012,30830,30830,736,2,0
+Ursinus College,Collegeville,PA,19426-1000,2,0.7821,1234,50360,50360,1485,2,0
+Villanova University,Villanova,PA,19085-1699,2,0.36,1409,51284,51284,6886,2,0
+Waynesburg University,Waynesburg,PA,15370-1257,2,0.9534,1065,24010,24010,1371,2,0
+West Chester University of Pennsylvania,West Chester,PA,19383,1,0.685,1131,10111,21591,14223,2,11480
+Westminster College,New Wilmington,PA,16172,2,0.7248,1124,36276,36276,1174,2,0
+Widener University,Chester,PA,19013-5792,2,0.6543,1104,44166,44166,3224,2,0
+Wilkes University,Wilkes-Barre,PA,18766,2,0.7531,1137,34896,34896,2379,2,0
+Wilson College,Chambersburg,PA,17201-1285,2,0.5877,1032,24452,24452,697,2,0
+York College of Pennsylvania,York,PA,17403-3651,2,0.699,1101,19430,19430,4079,2,0
+Brown University,Providence,RI,2912,2,0.0849,1494,53419,53419,6670,1,0
+Providence College,Providence,RI,02918-0001,2,0.5152,1274,48764,48764,4011,1,0
+Rhode Island College,Providence,RI,2908,1,0.7359,984,8776,21289,6900,1,12513
+University of Rhode Island,Kingston,RI,2881,1,0.7006,1152,13792,30042,14008,1,16250
+Rhode Island School of Design,Providence,RI,02903-2784,2,0.3193,1276,48370,48370,1976,1,0
+Anderson University,Anderson,SC,29621-4035,2,0.7907,1149,26970,26970,2776,5,0
+Charleston Southern University,Charleston,SC,29406-9121,2,0.5632,1061,24840,24840,3034,5,0
+College of Charleston,Charleston,SC,29424-0001,1,0.8045,1176,12422,30810,9599,5,18388
+Citadel Military College of South Carolina,Charleston,SC,29409,1,0.8107,1123,12056,33819,2814,5,21763
+Claflin University,Orangeburg,SC,29115-4498,2,0.4117,958,16480,16480,1990,5,0
+Clemson University,Clemson,SC,29634,1,0.4718,1338,15116,36058,19172,5,20942
+Coker College,Hartsville,SC,29550,2,0.617,999,28684,28684,1012,5,0
+Columbia International University,Columbia,SC,29203-1513,2,0.2825,1008,22390,22390,491,5,0
+Columbia College,Columbia,SC,29203,2,0.8682,1009,19500,19500,1378,5,0
+Converse College,Spartanburg,SC,29302-0006,2,0.7126,1112,17680,17680,916,5,0
+Erskine College,Due West,SC,29639,2,0.5452,1061,34560,34560,575,5,0
+Francis Marion University,Florence,SC,29506,1,0.6005,1003,10742,20918,3079,5,10176
+Furman,Greenville,SC,29613-6162,2,0.6118,1319,48348,48348,2728,5,0
+Lander University,Greenwood,SC,29649-2099,1,0.4757,1022,11700,21300,2722,5,9600
+Limestone College,Gaffney,SC,29340-3799,2,0.5045,1019,25025,25025,2491,5,0
+Newberry College,Newberry,SC,29108,2,0.5833,1017,25900,25900,1173,5,0
+North Greenville University,Tigerville,SC,29688-1892,2,0.6085,1136,19150,19150,2167,5,0
+Presbyterian College,Clinton,SC,29325,2,0.6517,1159,37842,37842,947,5,0
+University of South Carolina-Aiken,Aiken,SC,29801,1,0.5294,1033,10502,20702,3029,5,10200
+University of South Carolina-Beaufort,Bluffton,SC,29909,1,0.6445,1010,10647,21423,2011,5,10776
+University of South Carolina-Columbia,Columbia,SC,29208,1,0.7231,1282,11862,31962,25550,5,20100
+University of South Carolina-Lancaster,Lancaster,SC,29720-0889,1,0.6476,991,6948,17328,813,5,10380
+University of South Carolina-Salkehatchie,Allendale,SC,29810-0617,1,0.5882,875,6948,17328,549,5,10380
+University of South Carolina-Sumter,Sumter,SC,29150-2498,1,0.6933,984,6948,17328,633,5,10380
+University of South Carolina-Union,Union,SC,29379-0729,1,0.7453,887,6948,17328,284,5,10380
+Coastal Carolina University,Conway,SC,29526,1,0.6119,1089,11200,25872,9546,5,14672
+South Carolina State University,Orangeburg,SC,29117-0001,1,0.7826,898,10740,21120,2489,5,10380
+University of South Carolina-Upstate,Spartanburg,SC,29303-4999,1,0.5784,1010,11520,22848,5149,5,11328
+Spartanburg Methodist College,Spartanburg,SC,29301-5899,2,0.611,919,16860,16860,790,5,0
+Winthrop University,Rock Hill,SC,29733,1,0.7339,1101,15220,29136,4710,5,13916
+Wofford College,Spartanburg,SC,29303-3663,2,0.6907,1312,41955,41955,1675,5,0
+Augustana University,Sioux Falls,SD,57197-0001,2,0.678,1245,31960,31960,1704,4,0
+Black Hills State University,Spearfish,SD,57799-9500,1,0.8695,1065,8602,11602,2736,4,3000
+Dakota State University,Madison,SD,57042-1799,1,0.8436,1123,9147,12077,2024,4,2930
+Dakota Wesleyan University,Mitchell,SD,57301-4398,2,0.7604,1096,27030,27030,774,4,0
+Mount Marty College,Yankton,SD,57078-3724,2,0.6652,1085,26310,26310,566,4,0
+Northern State University,Aberdeen,SD,57401-7198,1,0.8783,1083,8280,11210,1488,4,2930
+Presentation College,Aberdeen,SD,57401-1280,2,0.9628,1019,19830,19830,749,4,0
+South Dakota School of Mines and Technology,Rapid City,SD,57701-3995,1,0.8339,1267,10400,14580,2295,4,4180
+South Dakota State University,Brookings,SD,57007-1898,1,0.9137,1144,8441,11689,9704,4,3248
+University of Sioux Falls,Sioux Falls,SD,57105-1699,2,0.9201,1124,27980,27980,1174,4,0
+University of South Dakota,Vermillion,SD,57069-2390,1,0.8691,1125,8772,12019,6171,4,3247
+Austin Peay State University,Clarksville,TN,37044,1,0.9013,1085,7913,23153,9090,5,15240
+Baptist Memorial College of Health Sciences,Memphis,TN,38104,2,0.5372,1155,11542,11542,1050,5,0
+Belmont University,Nashville,TN,37212-3757,2,0.8119,1256,32820,32820,6443,5,0
+Bethel University,McKenzie,TN,38201,2,0.9359,970,16552,16552,3975,5,0
+Bryan College-Dayton,Dayton,TN,37321,2,0.5434,1137,25600,25600,892,5,0
+Carson-Newman University,Jefferson City,TN,37760,2,0.6736,1130,27400,27400,1633,5,0
+Christian Brothers University,Memphis,TN,38104,2,0.5263,1180,31870,31870,1521,5,0
+Cumberland University,Lebanon,TN,37087,2,0.5408,1066,21810,21810,1658,5,0
+Lipscomb University,Nashville,TN,37204-3951,2,0.6043,1239,30932,30932,2973,5,0
+East Tennessee State University,Johnson City,TN,37614,1,0.8547,1122,8679,26463,10881,5,17784
+Fisk University,Nashville,TN,37208-4501,2,0.4541,1014,21480,21480,664,5,0
+Freed-Hardeman University,Henderson,TN,38340-2399,2,0.9532,1208,21950,21950,1319,5,0
+Hiwassee College,Madisonville,TN,37354-4001,2,0.6364,970,16469,16469,302,5,0
+Johnson University,Knoxville,TN,37998,2,0.9798,1107,14920,14920,808,5,0
+King University,Bristol,TN,37620-2699,2,0.5141,1084,28572,28572,1736,5,0
+Lane College,Jackson,TN,38301-4598,2,0.4847,845,10690,10690,1420,5,0
+Le Moyne-Owen College,Memphis,TN,38126-6595,2,1,845,11196,11196,862,5,0
+Lee University,Cleveland,TN,37311,2,0.8504,1176,16730,16730,4265,5,0
+Lincoln Memorial University,Harrogate,TN,37752-9900,2,0.6534,1098,21410,21410,1821,5,0
+Martin Methodist College,Pulaski,TN,38478-2799,2,0.987,1045,23800,23800,845,5,0
+Maryville College,Maryville,TN,37804-5907,2,0.4927,1138,34196,34196,1151,5,0
+Memphis College of Art,Memphis,TN,38104-2764,2,0.5404,1125,33130,33130,277,5,0
+University of Memphis,Memphis,TN,38152,1,0.8482,1106,9317,21029,15901,5,11712
+Middle Tennessee State University,Murfreesboro,TN,37132,1,0.5935,1124,8612,26348,18600,5,17736
+O'More College of Design,Franklin,TN,37064,2,0.3146,1030,29880,29880,148,5,0
+Rhodes College,Memphis,TN,38112-1690,2,0.5105,1362,46504,46504,1975,5,0
+Tennessee Wesleyan University,Athens,TN,37303,2,0.5991,1059,23800,23800,928,5,0
+The University of Tennessee-Chattanooga,Chattanooga,TN,37403-2598,1,0.8279,1164,8664,24782,10097,5,16118
+The University of Tennessee-Knoxville,Knoxville,TN,37996,1,0.7697,1280,12970,31390,22151,5,18420
+The University of Tennessee-Martin,Martin,TN,38238,1,0.6151,1125,9236,14996,5522,5,5760
+Tennessee Technological University,Cookeville,TN,38505-0001,1,0.644,1192,8513,24377,9084,5,15864
+Trevecca Nazarene University,Nashville,TN,37210,2,0.7038,1121,25100,25100,2112,5,0
+Tusculum University,Greeneville,TN,37743,2,0.8864,1029,23700,23700,1484,5,0
+Union University,Jackson,TN,38305-3697,2,0.5998,1243,31510,31510,2099,5,0
+Vanderbilt University,Nashville,TN,37240,2,0.1085,1515,47664,47664,6856,5,0
+Abilene Christian University,Abilene,TX,79699,2,0.5806,1145,33330,33330,3655,6,0
+Angelo State University,San Angelo,TX,76909,1,0.7359,1003,7201,17161,5726,6,9960
+Austin College,Sherman,TX,75090-4400,2,0.5216,1255,38800,38800,1214,6,0
+Baylor University,Waco,TX,76798,2,0.3895,1320,43790,43790,14284,6,0
+Concordia University Texas,Austin,TX,78726,2,0.8878,1063,30600,30600,1703,6,0
+Texas A & M University-Corpus Christi,Corpus Christi,TX,78412-5503,1,0.6046,983,8750,18925,10170,6,10175
+Dallas Baptist University,Dallas,TX,75211-9299,2,0.3942,1122,27480,27480,3053,6,0
+Dallas Christian College,Dallas,TX,75234-7299,2,0.4009,1026,18734,18734,228,6,0
+University of Dallas,Irving,TX,75062-4736,2,0.4745,1278,38716,38716,1440,6,0
+East Texas Baptist University,Marshall,TX,75670-1498,2,0.5442,1045,25470,25470,1298,6,0
+Texas A&M University-Texarkana,Texarkana,TX,75503,1,0.5385,1071,6963,18375,1593,6,11412
+Texas A & M University-Commerce,Commerce,TX,75428-3011,1,0.3454,1050,8434,20884,8473,6,12450
+Hardin-Simmons University,Abilene,TX,79698-0001,2,0.8177,1074,27440,27440,1670,6,0
+Houston Baptist University,Houston,TX,77074-3298,2,0.6901,1114,31730,31730,2302,6,0
+University of Houston-Clear Lake,Houston,TX,77058-1002,1,0.7225,1119,6718,19270,5781,6,12552
+University of Houston-Downtown,Houston,TX,77002-1014,1,0.8408,997,6470,16430,12310,6,9960
+University of Houston,Houston,TX,77204-2018,1,0.6111,1202,9706,22066,35985,6,12360
+Howard Payne University,Brownwood,TX,76801-2794,2,0.5917,1036,27690,27690,919,6,0
+Huston-Tillotson University,Austin,TX,78702-2795,2,0.2981,947,14346,14346,1052,6,0
+University of the Incarnate Word,San Antonio,TX,78209,2,0.9385,1028,29990,29990,5807,6,0
+Lamar University,Beaumont,TX,77705,1,0.8165,1045,8314,18274,8928,6,9960
+Texas A & M International University,Laredo,TX,78041-1900,1,0.4959,996,7143,17411,6780,6,10268
+LeTourneau University,Longview,TX,75602,2,0.4708,1190,29320,29320,1802,6,0
+Lubbock Christian University,Lubbock,TX,79407-2099,2,0.9407,1091,21794,21794,1439,6,0
+University of Mary Hardin-Baylor,Belton,TX,76513-2599,2,0.7884,1108,27600,27600,3275,6,0
+McMurry University,Abilene,TX,79697,2,0.4335,1015,26887,26887,1031,6,0
+Midwestern State University,Wichita Falls,TX,76308-2099,1,0.814,1034,8694,10644,5329,6,1950
+University of North Texas,Denton,TX,76203-1277,1,0.7241,1167,10544,20504,31448,6,9960
+Our Lady of the Lake University,San Antonio,TX,78207-4689,2,0.913,1000,28192,28192,1320,6,0
+The University of Texas Rio Grande Valley,Edinburg,TX,78539-2999,1,0.8048,1020,7587,17547,24142,6,9960
+Paul Quinn College,Dallas,TX,75241,2,0.5431,843,8495,8495,515,6,0
+Prairie View A & M University,Prairie View,TX,77446,1,0.7893,956,9959,23488,7975,6,13529
+Rice University,Houston,TX,77005-1827,2,0.1586,1535,45608,45608,3970,6,0
+Saint Edward's University,Austin,TX,78704-6489,2,0.8418,1186,43300,43300,3930,6,0
+University of St Thomas,Houston,TX,77006-4696,2,0.8094,1160,32660,32660,1765,6,0
+Sam Houston State University,Huntsville,TX,77340,1,0.7439,1068,8062,18022,18416,6,9960
+Schreiner University,Kerrville,TX,78028-5697,2,0.9236,1062,26900,26900,1185,6,0
+St. Mary's University,San Antonio,TX,78228,2,0.799,1139,29300,29300,2310,6,0
+Southern Methodist University,Dallas,TX,75275-0221,2,0.4877,1382,52498,52498,6427,6,0
+Southwestern Assemblies of God University,Waxahachie,TX,75165,2,0.2788,1021,19994,19994,1730,6,0
+Southwestern University,Georgetown,TX,78626,2,0.4314,1230,40560,40560,1387,6,0
+Stephen F Austin State University,Nacogdoches,TX,75961,1,0.6543,1077,7716,17676,10655,6,9960
+Texas State University,San Marcos,TX,78666,1,0.7298,1121,9985,21605,34180,6,11620
+Southwestern Adventist University,Keene,TX,76059,2,0.6237,1040,20732,20732,780,6,0
+Sul Ross State University,Alpine,TX,79832,1,0.9963,946,8072,20522,2208,6,12450
+Tarleton State University,Stephenville,TX,76401-0000,1,0.5038,1042,7367,17111,11283,6,9744
+Texas A & M University-Kingsville,Kingsville,TX,78363,1,0.8413,1021,8462,22102,5694,6,13640
+Texas A & M University-College Station,College Station,TX,77843-1248,1,0.7054,1277,11234,36606,52568,6,25372
+The University of Texas at Arlington,Arlington,TX,76013,1,0.7122,1163,9952,25152,32955,6,15200
+The University of Texas at Austin,Austin,TX,78712,1,0.3649,1359,10398,36744,39965,6,26346
+The University of Texas at Dallas,Richardson,TX,75080-3021,1,0.7603,1340,11528,29656,18375,6,18128
+The University of Texas at El Paso,El Paso,TX,79968-0691,1,1,1011,7851,21596,21216,6,13745
+The University of Texas at Tyler,Tyler,TX,75799-6699,1,0.6499,1160,7822,20872,6699,6,13050
+Texas Christian University,Fort Worth,TX,76129,2,0.4108,1285,44760,44760,8983,6,0
+Texas Lutheran University,Seguin,TX,78155-5999,2,0.4853,1068,29960,29960,1341,6,0
+The University of Texas of the Permian Basin,Odessa,TX,79762-0001,1,0.8946,1025,5782,6622,3730,6,840
+The University of Texas at San Antonio,San Antonio,TX,78249-1644,1,0.7946,1122,7969,19168,25709,6,11199
+Texas Southern University,Houston,TX,77004,1,0.6666,846,9173,21623,7967,6,12450
+Texas Tech University,Lubbock,TX,79409-5005,1,0.6918,1176,8860,18652,30330,6,9792
+Texas Wesleyan University,Fort Worth,TX,76105-1536,2,0.3427,1049,27800,27800,1656,6,0
+Texas Woman's University,Denton,TX,76204,1,0.8571,1002,7486,17446,9417,6,9960
+Trinity University,San Antonio,TX,78212-7200,2,0.3844,1353,41344,41344,2393,6,0
+Wayland Baptist University,Plainview,TX,79072,2,0.9876,1009,18510,18510,3549,6,0
+West Texas A & M University,Canyon,TX,79016-0001,1,0.6136,1069,7846,9117,7383,6,1271
+Brigham Young University-Provo,Provo,UT,84602,2,0.524,1364,5460,5460,31233,7,0
+Brigham Young University-Hawaii,Laie,HI,96762-1294,2,0.3677,1182,5400,5400,2855,8,0
+Southern Utah University,Cedar City,UT,84720,1,0.758,1156,6676,20288,6849,7,13612
+Utah State University,Logan,UT,84322-1400,1,0.8908,1177,7870,21520,21473,7,13650
+University of Utah,Salt Lake City,UT,84112-9008,1,0.6615,1234,8884,28127,23402,7,19243
+Westminster College,Salt Lake City,UT,84105,2,0.9271,1187,33860,33860,2002,7,0
+Castleton University,Castleton,VT,5735,1,0.8154,1025,11970,27522,1757,1,15552
+Champlain College,Burlington,VT,5401,2,0.7504,1210,39818,39818,3771,1,0
+Northern Vermont University,Johnson,VT,05656-9464,1,0.8695,1022,11730,24690,1317,1,12960
+Lyndon State College,Lyndonville,VT,05851-0919,1,0.9727,1034,11730,23898,1011,1,12168
+Middlebury College,Middlebury,VT,5753,2,0.171,1446,52496,52496,2532,1,0
+College of St Joseph,Rutland,VT,05701-3899,2,0.5411,1003,24000,24000,220,1,0
+University of Vermont,Burlington,VT,05405-0160,1,0.672,1280,17740,41356,10513,1,23616
+Averett University,Danville,VA,24541,2,0.6102,959,33350,33350,908,5,0
+Bluefield College,Bluefield,VA,24605,2,0.9112,986,24800,24800,874,5,0
+Bridgewater College,Bridgewater,VA,22812-1599,2,0.5198,1073,33820,33820,1874,5,0
+College of William and Mary,Williamsburg,VA,23187-8795,1,0.3592,1406,22044,43670,6243,5,21626
+Regent University,Virginia Beach,VA,23464,2,0.783,1081,17288,17288,4087,5,0
+Jefferson College of Health Sciences,Roanoke,VA,24013,2,0.3922,1058,25850,25850,771,5,0
+Emory & Henry College,Emory,VA,24327-0947,2,0.7223,1089,33700,33700,977,5,0
+Eastern Mennonite University,Harrisonburg,VA,22802-2462,2,0.5373,1102,35800,35800,1089,5,0
+Ferrum College,Ferrum,VA,24088-9000,2,0.7193,962,33025,33025,1122,5,0
+George Mason University,Fairfax,VA,22030-4444,1,0.8132,1210,11924,34370,24395,5,22446
+Hampden-Sydney College,Hampden-Sydney,VA,23943-0128,2,0.5505,1165,43940,43940,1046,5,0
+Hampton University,Hampton,VA,23668-0099,2,0.362,1083,25441,25441,3786,5,0
+Hollins University,Roanoke,VA,24020,2,0.4838,1212,38285,38285,628,5,0
+James Madison University,Harrisonburg,VA,22807,1,0.752,1194,10830,27230,19666,5,16400
+Liberty University,Lynchburg,VA,24515,2,0.2979,1157,21310,21310,45364,5,0
+Longwood University,Farmville,VA,23909,1,0.9183,1049,12720,27660,4230,5,14940
+University of Lynchburg,Lynchburg,VA,24501-3113,2,0.7455,1089,37690,37690,1979,5,0
+Mary Baldwin University,Staunton,VA,24401,2,0.947,1093,31110,31110,1058,5,0
+University of Mary Washington,Fredericksburg,VA,22401-5300,1,0.735,1178,12128,27374,4366,5,15246
+Marymount University,Arlington,VA,22207-4299,2,0.9226,1058,30876,30876,2241,5,0
+Norfolk State University,Norfolk,VA,23504-8000,1,0.9013,946,9036,20478,4641,5,11442
+Old Dominion University,Norfolk,VA,23529,1,0.8572,1089,10050,27900,19364,5,17850
+Randolph-Macon College,Ashland,VA,23005-5505,2,0.6223,1152,40000,40000,1439,5,0
+Randolph College,Lynchburg,VA,24503-1555,2,0.8644,1079,38155,38155,651,5,0
+University of Richmond,University of Richmond,VA,23173,2,0.3297,1394,50910,50910,3165,5,0
+Roanoke College,Salem,VA,24153-3794,2,0.6719,1154,42819,42819,1990,5,0
+Shenandoah University,Winchester,VA,22601-5195,2,0.8325,1115,31920,31920,2055,5,0
+Southern Virginia University,Buena Vista,VA,24416,2,0.5616,992,15900,15900,877,5,0
+Sweet Briar College,Sweet Briar,VA,24595-9998,2,0.928,1117,37155,37155,281,5,0
+The University of Virginia's College at Wise,Wise,VA,24293-4400,1,0.7751,1028,9825,27055,1249,5,17230
+Virginia Polytechnic Institute and State University,Blacksburg,VA,24061-0131,1,0.7006,1284,13230,31014,27120,5,17784
+Virginia Commonwealth University,Richmond,VA,23284-2512,1,0.839,1168,13624,33656,22393,5,20032
+University of Virginia-Main Campus,Charlottesville,VA,22903-2628,1,0.2735,1415,16853,47273,16207,5,30420
+Virginia Military Institute,Lexington,VA,24450-0304,1,0.5314,1204,18214,43902,1722,5,25688
+Virginia State University,Petersburg,VA,23806,1,0.9111,914,8726,19572,4265,5,10846
+Virginia Union University,Richmond,VA,23220,2,0.4392,922,17448,17448,1211,5,0
+Virginia Wesleyan University,Virginia Beach,VA,23455,2,0.6988,1063,36660,36660,1369,5,0
+Washington and Lee University,Lexington,VA,24450-2116,2,0.22,1449,50170,50170,1819,5,0
+Central Washington University,Ellensburg,WA,98926-7501,1,0.8634,1012,7903,22010,11468,8,14107
+Eastern Washington University,Cheney,WA,99004-2496,1,0.962,995,7109,23862,10500,8,16753
+The Evergreen State College,Olympia,WA,98505-0001,1,0.9628,1095,7591,25051,3560,8,17460
+Gonzaga University,Spokane,WA,99258-0001,2,0.6485,1295,41330,41330,5119,8,0
+Northwest University,Kirkland,WA,98083-0579,2,0.9744,1122,30320,30320,911,8,0
+Pacific Lutheran University,Tacoma,WA,98447-0003,2,0.7539,1162,40722,40722,2672,8,0
+Saint Martin's University,Lacey,WA,98503-7500,2,0.9751,1081,35656,35656,1259,8,0
+Seattle Pacific University,Seattle,WA,98119-1997,2,0.9087,1173,40893,40893,2900,8,0
+Seattle University,Seattle,WA,98122-4340,2,0.738,1250,42885,42885,4547,8,0
+Washington State University,Pullman,WA,99164-5910,1,0.7306,1127,11391,25817,24797,8,14426
+University of Washington-Seattle Campus,Seattle,WA,98195-4550,1,0.4642,1331,10974,35538,30295,8,24564
+Western Washington University,Bellingham,WA,98225-9008,1,0.8479,1190,8183,22695,14876,8,14512
+Whitman College,Walla Walla,WA,99362,2,0.5173,1329,49780,49780,1468,8,0
+Whitworth University,Spokane,WA,99251,2,0.8901,1217,42186,42186,2227,8,0
+Alderson Broaddus University,Philippi,WV,26416-2035,2,0.4063,1028,26610,26610,935,5,0
+Appalachian Bible College,Mount Hope,WV,25880-9557,2,0.5895,1096,14290,14290,157,5,0
+Bethany College,Bethany,WV,26032,2,0.9404,1012,28454,28454,597,5,0
+Bluefield State College,Bluefield,WV,24701,1,0.8146,994,6728,13032,1363,5,6304
+University of Charleston,Charleston,WV,25304,2,0.6449,1014,30400,30400,1810,5,0
+Concord University,Athens,WV,24712,1,0.9019,1038,7732,16812,1830,5,9080
+Davis & Elkins College,Elkins,WV,26241-3996,2,0.4161,1007,28992,28992,791,5,0
+Fairmont State University,Fairmont,WV,26554-2470,1,0.7061,1044,6950,14666,3488,5,7716
+Marshall University,Huntington,WV,25755,1,0.9019,1099,7798,17856,8554,5,10058
+Ohio Valley University,Vienna,WV,26105-8000,2,0.2859,1043,21250,21250,424,5,0
+Shepherd University,Shepherdstown,WV,25443,1,0.8913,1074,7328,17869,2956,5,10541
+West Virginia State University,Institute,WV,25112-1000,1,0.9758,1007,7546,16550,1905,5,9004
+West Liberty University,West Liberty,WV,26074,1,0.7176,1024,7380,15020,1994,5,7640
+West Virginia University Institute of Technology,Beckley,WV,25801,1,0.5291,1165,6960,17544,1256,5,10584
+West Virginia Wesleyan College,Buckhannon,WV,26201-2994,2,0.7064,1091,30752,30752,1304,5,0
+West Virginia University,Morgantown,WV,26506,1,0.719,1159,8376,23616,21703,5,15240
+Wheeling Jesuit University,Wheeling,WV,26003,2,0.514,1063,28110,28110,694,5,0
+Bellin College,Green Bay,WI,54311,2,0.8889,1195,20500,20500,354,3,0
+Cardinal Stritch University,Milwaukee,WI,53217-3985,2,0.7835,1044,28844,28844,1284,3,0
+Carroll University,Waukesha,WI,53186,2,0.7082,1163,31144,31144,2895,3,0
+Carthage College,Kenosha,WI,53140-1994,2,0.6787,1179,41950,41950,2723,3,0
+Concordia University-Wisconsin,Mequon,WI,53097-2402,2,0.6319,1145,28600,28600,3533,3,0
+Edgewood College,Madison,WI,53711-1997,2,0.7111,1145,28500,28500,1521,3,0
+Lakeland University,Plymouth,WI,53073,2,0.5166,1008,27760,27760,1835,3,0
+Lawrence University,Appleton,WI,54911,2,0.6135,1343,46101,46101,1441,3,0
+Maranatha Baptist University,Watertown,WI,53094,2,0.73,1132,14910,14910,686,3,0
+Marian University,Fond Du Lac,WI,54935-4699,2,0.6758,1010,27400,27400,1495,3,0
+Marquette University,Milwaukee,WI,53233,2,0.8933,1262,39900,39900,8093,3,0
+Milwaukee School of Engineering,Milwaukee,WI,53202-3109,2,0.6284,1305,39429,39429,2605,3,0
+Mount Mary University,Milwaukee,WI,53222-4597,2,0.5599,990,29510,29510,676,3,0
+Ripon College,Ripon,WI,54971-0248,2,0.6753,1145,41835,41835,740,3,0
+Saint Norbert College,De Pere,WI,54115-2099,2,0.7922,1199,36593,36593,2041,3,0
+University of Wisconsin Colleges,Madison,WI,53708,1,0.7946,1025,5172,12743,9321,3,7571
+Viterbo University,La Crosse,WI,54601-8804,2,0.6145,1162,27150,27150,1767,3,0
+University of Wisconsin-Whitewater,Whitewater,WI,53190-1790,1,0.7035,1105,7662,16235,10543,3,8573
+University of Wisconsin-Eau Claire,Eau Claire,WI,54701,1,0.7567,1165,8816,16736,10070,3,7920
+University of Wisconsin-Green Bay,Green Bay,WI,54311-7001,1,0.7553,1125,7878,15728,5503,3,7850
+University of Wisconsin-La Crosse,La Crosse,WI,54601-9959,1,0.7337,1185,9096,17765,9436,3,8669
+Wisconsin Lutheran College,Milwaukee,WI,53226-4699,2,0.9025,1145,29140,29140,982,3,0
+University of Wisconsin-Oshkosh,Oshkosh,WI,54901,1,0.6309,1105,7587,15160,9162,3,7573
+University of Wisconsin-Parkside,Kenosha,WI,53144,1,0.6077,1045,7389,15378,4056,3,7989
+University of Wisconsin-Stout,Menomonie,WI,54751,1,0.8718,1105,9456,17423,7955,3,7967
+University of Wisconsin-Superior,Superior,WI,54880-4500,1,0.7618,1045,8109,15682,2241,3,7573
+University of Wisconsin-Madison,Madison,WI,53706-1380,1,0.5381,1361,10533,34783,29930,3,24250
+University of Wisconsin-Milwaukee,Milwaukee,WI,53211,1,0.7248,1125,9565,20844,19436,3,11279
+University of Wisconsin-Platteville,Platteville,WI,53818-3099,1,0.7971,1165,7536,15386,7496,3,7850
+University of Wisconsin-River Falls,River Falls,WI,54022-5001,1,0.7452,1125,8013,15586,5515,3,7573
+University of Wisconsin-Stevens Point,Stevens Point,WI,54481-3897,1,0.8356,1125,8209,16476,7768,3,8267
+University of Wyoming,Laramie,WY,82071,1,0.9682,1195,5217,16827,9623,7,11610
+University of Puerto Rico-Aguadilla,Aguadilla,PR,00604-6150,1,0.7098,1049,2082,4070,3385,9,1988
+University of the Virgin Islands,Charlotte Amalie,VI,00802-9990,1,0.9844,913,5235,14496,1763,9,9261
+Stanford University,Stanford,CA,94305,2,0.0473,1489,49617,49617,7056,8,0
+Purdue University-Main Campus,West Lafayette,IN,47907-2040,1,0.5747,1293,9992,28794,31887,3,18802
+St. John's College,Santa Fe,NM,87505-4599,2,0.6316,1283,52320,52320,322,6,0
+New College of Florida,Sarasota,FL,34243-2109,1,0.6896,1296,6916,29944,835,5,23028
+California State University-San Marcos,San Marcos,CA,92096-0001,1,0.5676,1041,7653,19533,14516,8,11880
+University of Washington-Bothell Campus,Bothell,WA,98011-8246,1,0.8011,1129,10911,35475,5329,8,24564
+University of Washington-Tacoma Campus,Tacoma,WA,98402-3100,1,0.8385,1083,11046,35610,4412,8,24564
+Watkins College of Art Design & Film,Nashville,TN,37228,2,0.4213,1104,23700,23700,199,5,0
+Soka University of America,Aliso Viejo,CA,92656-8081,2,0.3722,1318,31776,31776,412,8,0
+Arizona State University-West,Glendale,AZ,85306,1,0.7965,1132,10301,26038,3563,6,15737
+California State University-Monterey Bay,Seaside,CA,93955-8001,1,0.532,1068,7043,18923,6557,8,11880
+Southeast Missouri Hospital College of Nursing and Health Sciences,Cape Girardeau,MO,63703-4507,2,0.7647,1105,17580,17580,204,4,0
+Arizona State University-Polytechnic,Mesa,AZ,85212,1,0.7628,1193,10301,26038,4224,6,15737
+Florida Gulf Coast University,Fort Myers,FL,33965-6565,1,0.6426,1141,6118,25162,13636,5,19044
+University of Connecticut-Waterbury Campus,Waterbury,CT,6702,1,0.9588,1086,12838,34906,851,1,22068
+University of Connecticut-Avery Point,Groton,CT,06340-6097,1,0.9416,1111,12838,34906,619,1,22068
+University of Connecticut-Stamford,Stamford,CT,06901-2315,1,0.8232,1085,12848,34916,1670,1,22068
+The King's University,Southlake,TX,76092,2,0.519,1100,14400,14400,398,6,0
+Oregon State University-Cascades Campus,Bend,OR,97702,1,0.6753,1131,9774,28749,917,8,18975
+Franklin W Olin College of Engineering,Needham,MA,02492-1200,2,0.1337,1522,51936,51936,345,1,0
+University of California-Merced,Merced,CA,95343-5603,1,0.6979,1114,13598,41612,7375,8,28014
+Ave Maria University,Ave Maria,FL,34142-9505,2,0.4212,1142,19970,19970,1052,5,0
+University of South Florida-St Petersburg,St. Petersburg,FL,33701-9807,1,0.3993,1165,5821,16735,4162,5,10914
+Arizona State University-Downtown Phoenix,Phoenix,AZ,85004,1,0.7721,1165,10792,27372,8898,6,16580
+Visible Music College,Memphis,TN,38103,2,1,984,19500,19500,123,5,0
+University of South Florida-Sarasota-Manatee,Sarasota,FL,34243-2049,1,0.393,1177,5587,16501,1868,5,10914
+The King's College,New York,NY,10004,2,0.409,1246,35400,35400,533,2,0
+University of Minnesota-Rochester,Rochester,MN,55904,1,0.513,1186,13352,13352,459,4,0
+Compass College of Cinematic Arts,Grand Rapids,MI,49503,2,0.7945,1051,15300,15300,134,3,0
+Texas A&M University-San Antonio,San Antonio,TX,78224,1,0.3464,981,8216,20404,5376,6,12188
+John Paul the Great Catholic University,Escondido,CA,92025,2,0.9502,1126,24900,24900,260,8,0
+University of Connecticut-Hartford Campus,Hartford,CT,6103,1,0.9597,1101,12828,34896,1244,1,22068
+Pennsylvania State University-World Campus,University Park,PA,16802-1503,1,0.6679,1106,13988,13988,8108,2,0
+Augusta University,Augusta,GA,30912,1,0.7459,1006,8604,23606,4978,5,15002
+Middle Georgia State University,Macon,GA,31206,1,0.9397,954,3924,11092,6609,5,7168
+University of North Georgia,Dahlonega,GA,30597,1,0.7807,1058,4421,12834,17067,5,8413
+Florida Polytechnic University,Lakeland,FL,33805-8531,1,0.5531,1272,4940,4940,1438,5,0
+University of Florida-Online,Gainesville,FL,32611,1,0.6802,1235,3876,16580,2735,5,12704
+University of North Texas at Dallas,Dallas,TX,75241,1,0.7397,978,7848,20088,2663,6,12240
+Kennesaw State University,Kennesaw,GA,30144,1,0.6063,1163,6347,17329,32309,5,10982
+Milligan College,Milligan College,TN,37682,2,0.5776,1184,32500,32500,806,5,0
+Emory University-Oxford College,Oxford,GA,30054,2,0.2894,1420,48502,48502,979,5,0
+Husson University,Bangor,ME,04401-2929,2,0.8627,1048,17561,17561,2652,1,0
+Piedmont International University,Winston-Salem,NC,27101,2,0.3633,919,9480,9480,336,5,0
+Purdue University Northwest,Hammond,IN,46323,1,0.3467,1082,7582,17129,8665,3,9547
