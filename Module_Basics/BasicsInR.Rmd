@@ -18,6 +18,7 @@ options(htmltools.dir.version = FALSE)
 library(tidyverse)
 library(palmerpenguins)
 library(flair)
+library(here)
 ```
 
 ```{r xaringan-themer, include=FALSE}
@@ -67,7 +68,7 @@ class: center, middle
 
 
 ```{r, out.width = "35%", echo = FALSE, fig.align='center'}
-knitr::include_graphics("BadOldCodeTweet.PNG")
+knitr::include_graphics(here("Module_Basics", "BadOldCodeTweet.PNG"))
 ```
 ---
 
@@ -206,11 +207,14 @@ Hunter, 32, Goldenrod
 
 Option 1:  Base R
 
+```{r read, echo = FALSE, eval = FALSE}
+read.csv()
+```
+
+
 ```{r, echo = FALSE}
-decorate('
-  read.csv(...)
-',
-eval = FALSE) %>% 
+decorate("read",
+         eval = FALSE) %>%
     flair_rx('\\.(?=c)') %>%
   flair_funs(color = "teal")
 ```
@@ -224,7 +228,7 @@ decorate('
   read_csv(...)
 ',
 eval = FALSE) %>% 
-    flair_fixed('_') %>%
+    flair("_") %>%
   flair_funs(color = "teal")
 ```
 
@@ -239,8 +243,8 @@ decorate('
   install.packages("readr")
 ',
 eval = FALSE) %>% 
-    flair_fixed('"') %>%
-    flair_fixed("readr", color = "cornflowerblue") %>%
+    flair('"') %>%
+    flair("readr", color = "cornflowerblue") %>%
   flair_funs(color = "teal")
 ```
 
@@ -259,8 +263,8 @@ decorate('
   dat <- read_csv("/data/my_data.csv")
   ', 
   eval = FALSE) %>%
-  flair_fixed("read_csv", color = "teal") %>%
-  flair_fixed("my_data.csv")
+  flair("read_csv", color = "teal") %>%
+  flair("my_data.csv")
 ```
 
 The `here` package contains some very handy functions for obtaining paths and locations of files relative to a project's root folder!
@@ -273,8 +277,8 @@ decorate('
   dat <- read_csv("/Users/kbodwin/Dropbox/Data/my_data.csv")
   ',
   eval = FALSE)  %>%
-  flair_fixed("read_csv", color = "teal") %>%
-  flair_fixed("my_data.csv")
+  flair("read_csv", color = "teal") %>%
+  flair("my_data.csv")
 ```
 
 ## If the file is on the web:
@@ -285,8 +289,8 @@ decorate('
   dat <- read_csv("www.kelly-bodwin.com/my_data.csv")
   ',
   eval = FALSE)  %>%
-  flair_fixed("read_csv", color = "teal") %>%
-  flair_fixed("my_data.csv")
+  flair("read_csv", color = "teal") %>%
+  flair("my_data.csv")
 ```
 
 ---
@@ -300,7 +304,7 @@ class: center, middle, invert
 
 ```{r, echo = FALSE}
 decorate('penguins %>% summary()', eval = FALSE) %>% 
-  flair_fixed("%>%") %>% 
+  flair("%>%") %>% 
   flair_funs(color = "teal")
 ```
 
@@ -357,7 +361,7 @@ The **bill length** is mapped to the **x-axis**, the **bill depth** is mapped to
 **Step One:** Specify the dataset
 
 ```{r, echo = FALSE}
-decorate('ggplot(data = penguins)', eval = FALSE) %>% flair_fixed("data = penguins")
+decorate('ggplot(data = penguins)', eval = FALSE) %>% flair("data = penguins")
 ```
 
 

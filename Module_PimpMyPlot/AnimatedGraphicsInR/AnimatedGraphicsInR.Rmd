@@ -21,6 +21,7 @@ library(flair)
 library(lubridate)
 library(gganimate)
 library(gifski)
+library(here)
 ```
 
 ```{r xaringan-themer, include=FALSE}
@@ -29,7 +30,7 @@ solarized_light()
 ```
 
 ```{r, include = FALSE}
-oscars <- read_csv("../../data/Oscars-demographics-DFE.csv")
+oscars <- read_csv(here("data", "Oscars-demographics-DFE.csv"))
 
 oscars <- oscars %>%
   select(-matches("^_")) %>%
@@ -151,9 +152,11 @@ anim <- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
                     transition_length = 2,
                     state_length = 1)
 
-anim +
+anim <- anim +
   enter_fade() +
   exit_shrink()
+
+animate(anim, nframes = 10, fps = 5)
 ```
 
 
