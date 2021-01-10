@@ -1,0 +1,559 @@
+---
+title: "Intro to the Tidyverse"
+subtitle: "Week 2"
+
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(tidyverse)
+library(flair)
+library(palmerpenguins)
+```
+
+```{r xaringan-themer, include=FALSE}
+library(xaringanthemer)
+style_duo(
+  primary_color = "#26116c",
+  secondary_color = "#fd5e53",
+  title_slide_text_color = "#fff8e7",
+  header_font_google = google_font("Roboto"),
+  text_font_google   = google_font("Roboto Condensed"),
+  code_font_google   = google_font("Droid Mono")
+)
+```
+
+class: center, middle
+
+# R History lesson:
+# What is the `tidyverse`?
+
+---
+# The tidyverse
+
+The `tidyverse` is a collection of packages that follow a (somewhat) consistent philosophy and structure.
+
+The term `base R` is sometimes used as an alternative, to refer to only R's built-in packages.
+
+A brief history:
+
+--
+
+**2008:** `plyr` and `ggplot` released as part of **Hadley Wickham**'s doctoral dissertation.
+
+--
+
+**2012:** The pipe (`%>%`) is created.  
+
+*(While the pipe itself is not technically tidyverse, the tidyverse is built around its use.)*
+
+--
+
+**2014:** `dplyr` released; Wickham hired as Chief Scientist at **RStudio**
+
+--
+
+**Today:** A paid team of 20-ish developers maintains a huge number of packages.  (https://www.tidyverse.org/)
+
+---
+# The tidyverse
+
+* One philosophy of the **tidyverse** is building **pipe-friendly** functions.
+
+* Another philosophy is using **English verbs** as function names instead of symbols or abbreviations.
+
+* Some consider this more accessible/readable
+
+```{r, eval = FALSE}
+penguins %>%
+  filter(species == "Adelie")
+```
+
+```{r, eval = FALSE}
+
+penguins[penguins$species == "Adelie",]
+```
+
+
+---
+# The tidyverse
+
+**Pros:**
+
+* Fairly consistent behavior of functions
+
+    + Predictable **input** and **output** types
+    + *"opinionated"*
+    + More on this later
+    
+--
+
+* Semi-guaranteed maintenance of packages
+
+(because RStudio pays developers!)
+
+--
+
+* More available and polished documentation and tutorials
+
+--
+
+* Welcoming community
+
+---
+# The tidyverse
+
+**Cons:**
+
+* Sometimes less flexible for complex tasks
+
+--
+
+* Generally slower, especially on big data
+
+--
+
+* Updates frequently -> sometimes this makes your old code unrunnable.
+
+--
+
+* Some people object to **RStudio**'s strong influence over an open-source community.
+
+---
+class: center, middle
+
+# Should you use the tidyverse???
+
+--
+
+Even the most die-hard tidyverse fanatics use base R and other packages quite frequently.
+
+--
+
+Above all, the best code approach is the one you enjoy the most and that gets the job done!
+
+--
+
+You are free to use whatever package(s) you want in this class!
+
+--
+
+However, most of my lessons and examples will be in the **tidyverse**.
+
+
+---
+
+class: center, middle, invert
+
+# Cleaning and transforming data
+
+<img src="https://d33wubrfki0l68.cloudfront.net/071952491ec4a6a532a3f70ecfa2507af4d341f9/c167c/images/hex-dplyr.png" width=300>
+
+
+---
+class: center, middle, inverse
+
+# Prerequisite:  The Pipe  `%>%`
+
+---
+# Prerequisite: The Pipe
+
+* Part of the `magrittr` package (installs with the tidyverse)
+
+---
+
+```{r, echo=FALSE, out.width = '70%', fig.align = "center"}
+knitr::include_graphics(here::here("Images", "other", "ceci_pipe.jpeg"))
+```
+
+---
+```{r, echo=FALSE, out.width = '50%', fig.align = "center"}
+knitr::include_graphics(here::here("Images", "other", "magrittr_hex.png"))
+```
+
+---
+# Prerequisite: The Pipe
+
+* Part of the `magrittr` package (installs with the tidyverse)
+
+--
+
+* Idea:  The **data** is the primary object, so it should come first in your code.
+
+--
+
+* Idea:  Code should read **like a sentence**
+
+--
+
+```{r, echo=FALSE, fig.align = "center"}
+knitr::include_graphics(here::here("Images", "other", "diagram_sentence.jpg"))
+```
+
+
+---
+# The Pipe
+
+```{r, eval = FALSE}
+dr_bodwin %>%
+  do_a_dance()
+```
+--
+
+```{r, eval = FALSE}
+dr_bodwin %>%
+  put_on("cool hat") %>%
+  do_a_dance(type = "macarena")
+```
+
+---
+
+```{r pipe, echo=FALSE, out.width = "30%", fig.align = "center"}
+knitr::include_graphics(here::here("Images", "silly_gifs", "pipe.png"))
+```
+
+---
+
+# The Pipe
+
+```{r, echo = FALSE}
+decorate('penguins %>% summary()', eval = FALSE) %>% 
+  flair("%>%") %>% 
+  flair_funs(color = "teal")
+```
+
+is the same as
+
+```{r, echo = FALSE}
+decorate('summary(penguins)', eval = FALSE) %>% 
+  flair_funs(color = "teal")
+```
+
+---
+# The Pipe
+
+What do you think the following will do?
+
+```{r, eval = FALSE}
+penguins %>%
+  filter(species == "Adelie") %>%
+  arrange(body_mass_g)
+```
+
+---
+# The Pipe
+
+What do you think the following will do?
+
+```{r}
+penguins %>%
+  filter(species == "Adelie") %>%
+  arrange(body_mass_g)
+```
+
+---
+# Today's Data: Cereal
+
+* Download `Practice.Rmd` from the class website.
+
+* Run the first two chunks to load up the `cereal` dataset.
+
+* Get a feel for the data - what does it contain?
+
+
+*(This is not graded or turned in - it is just for you to follow along with lecture.)*
+
+
+---
+
+# Summarizing
+
+```{r, echo = FALSE}
+decorate('
+penguins %>%
+  summary()
+  ') %>% flair("y(")
+```
+
+---
+# Cleaning
+
+Oh no!  There was one row of the dataset with missing values.
+
+--
+
+There is no magic answer for how to handle missing values; one solution is to simply drop them from the data.
+
+*Consider - why might this sometimes be a bad idea?*
+
+--
+
+```{r}
+penguins <- 
+  penguins %>%
+  drop_na()
+
+penguins %>% summary()
+  
+```
+
+
+---
+# Summarizing specifics
+
+```{r, echo = FALSE}
+decorate('
+penguins %>%
+  summarize(mean_mass = mean(body_mass_g))
+  ') %>% 
+  flair("ize(") %>% 
+  flair("mean", color = "teal") %>%
+  flair("body_mass_g", color = "cornflowerblue")
+```
+
+--
+
+* What are the **required** arguments of `summarize`?  
+
+* Are there any optional arguments?
+
+---
+
+# Many variables?  Many summary statistics?
+## No problemo
+
+```{r, echo = FALSE}
+decorate('
+penguins %>%
+  summarize(across(c(body_mass_g, flipper_length_mm),
+            list(mean, median)))
+  ') %>% 
+  flair("across") %>%
+  flair_rx("(mean)|(median)", color = "teal") %>%
+  flair_rx("(body_mass_g)|(flipper_length_mm)", color = "cornflowerblue") %>%
+  flair_rx("list", color = "darkred")
+```
+---
+class: center, middle, inverse
+
+# Your Turn!
+
+---
+class: center, middle
+# In `Practice.Rmd`, find the following:
+
+* Mean, Median, and standard deviation of the sugar content of cereals
+
+* Total calories if I ate one serving of every single cereal in the dataset.
+
+---
+# Making new variables
+
+Verb: `mutate()`
+
+The dataset gets *mutated* to include a new variable.
+
+```{r, echo = FALSE}
+decorate('
+penguins %>%
+  mutate(
+    bill_size = bill_length_mm * bill_depth_mm
+  ) %>%
+  summary()
+  ') %>%
+  flair("mutate") %>%
+  flair("bill_size", color = "teal")
+```
+
+---
+
+Cool, let's look at our new variable!
+
+```{r, error = TRUE}
+penguins %>%
+  summarize(mean_bill = sd(bill_size))
+```
+
+--
+
+OH NO!
+
+**What happened here?**
+
+---
+
+class: center, middle
+
+# We calculated a new variable, but didn't save our changes.
+
+---
+
+```{r, echo = FALSE}
+decorate('
+penguins <- penguins %>%
+          mutate(
+            bill_size = bill_length_mm * bill_depth_mm
+          )
+          
+penguins %>%
+  summarize(mean_bill = sd(bill_size))
+') %>% 
+  flair("penguins <- ")
+
+
+```
+
+---
+# Ordering
+
+Verb: `arrange()`
+
+We **arrange** the dataset in order of a particular variable.
+
+```{r}
+penguins %>% 
+  arrange(body_mass_g)
+```
+
+---
+
+## Related: `top_n`
+
+```{r}
+penguins %>%
+  top_n(3, body_mass_g)
+```
+
+---
+
+# Quick check in!
+
+Remember,
+
+```{r, eval = FALSE}
+penguins %>%
+  top_n(3, body_mass_g)
+```
+
+is the same as
+
+```{r, eval = FALSE}
+top_n(penguins, 3, body_mass_g)
+```
+
+or
+
+```{r, eval = FALSE}
+top_n(x = penguins, n = 3, wt = body_mass_g)
+```
+
+---
+
+# Selecting
+
+Verb: `select()`
+
+We **select** which variables we would like to remain in the dataset.
+
+```{r}
+penguins %>%
+  select(species, body_mass_g) %>%
+  arrange(body_mass_g)
+```
+
+---
+
+# Filtering
+
+Verb: `filter()`
+
+We **filter** to the rows (observations) we would like to keep in the dataset.
+
+```{r, eval = FALSE}
+penguins_new %>%
+  select(species, body_mass_g) %>%
+  filter(species == "Adelie") %>%
+  arrange(body_mass_g)
+```
+
+---
+
+# Plotting: The pipe is your friend
+
+Want a histogram of body mass for just *Adelie* species penguins?  Pipe it through `filter()` first!
+
+```{r, message = FALSE, fig.height=4}
+penguins %>%
+  filter(species == "Adelie") %>%
+  ggplot(aes(x = body_mass_g)) +
+    geom_histogram(bins = 20)
+```
+
+---
+class: center, middle, inverse
+
+# Your Turn!
+
+---
+
+## In `Practice.Rmd`, make a new dataset called `kellogg_calories`, with the following changes:
+
+1. There is a new variable called `cal_per_cup` which shows the number of calories in each cup of cereal.
+
+2. The dataset only includes this new variable, the name of the cereal, and the brand of the cereal.
+
+3. The dataset only includes Kellogg brand cereals
+
+4. The cereals in the dataset are ordered from most to least calories per cup.
+
+**Try to do all these in one sequence of pipes!**
+
+5. Then choose one of the four main plot types (histogram, barplot, boxplot, scatterplot), make an interesting visualization from your `kellog_calories` dataset.
+
+---
+class:center,middle,inverse
+
+# Grouping and summarizing
+---
+# `group_by`
+
+* We have learned how to use the `summarize` functions to get information.
+
+* What if you want to summarize your data within categories?
+
+```{r}
+penguins %>%
+  group_by(species) %>%
+  summarize(mean(body_mass_g))
+
+```
+---
+# Warning!
+
+## You should **always** have a `summarize` after a `group_by`!!!
+
+(There are other ways to use it, but wait until you are very familiar with `dplyr` to try that.)
+
+---
+class: center, middle, inverse
+
+# Your Turn!
+
+---
+# Grouping and summarizing
+
+* Find the average calories per serving for each manufacturer.
+
+* Find the average sugar per serving for hot versus cold cereals.
+
+---
+

@@ -21,6 +21,7 @@ library(tidyverse)
 
 ## Read in Colleges Data
 
+More information about this colleges dataset can be found at ![https://collegescorecard.ed.gov/data/documentation](https://collegescorecard.ed.gov/data/documentation/)
 
 ```{r import_data}
 colleges <- read_csv("../data/colleges_clean.csv")

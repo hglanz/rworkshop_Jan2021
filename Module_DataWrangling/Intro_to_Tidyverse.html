@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Intro to the Tidyverse</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Intro to the Tidyverse
+## Week 2
+
+---
+
+
+
+
+
+
+class: center, middle
+
+# R History lesson:
+# What is the `tidyverse`?
+
+---
+# The tidyverse
+
+The `tidyverse` is a collection of packages that follow a (somewhat) consistent philosophy and structure.
+
+The term `base R` is sometimes used as an alternative, to refer to only R's built-in packages.
+
+A brief history:
+
+--
+
+**2008:** `plyr` and `ggplot` released as part of **Hadley Wickham**'s doctoral dissertation.
+
+--
+
+**2012:** The pipe (`%&gt;%`) is created.  
+
+*(While the pipe itself is not technically tidyverse, the tidyverse is built around its use.)*
+
+--
+
+**2014:** `dplyr` released; Wickham hired as Chief Scientist at **RStudio**
+
+--
+
+**Today:** A paid team of 20-ish developers maintains a huge number of packages.  (https://www.tidyverse.org/)
+
+---
+# The tidyverse
+
+* One philosophy of the **tidyverse** is building **pipe-friendly** functions.
+
+* Another philosophy is using **English verbs** as function names instead of symbols or abbreviations.
+
+* Some consider this more accessible/readable
+
+
+```r
+penguins %&gt;%
+  filter(species == "Adelie")
+```
+
+
+```r
+penguins[penguins$species == "Adelie",]
+```
+
+
+---
+# The tidyverse
+
+**Pros:**
+
+* Fairly consistent behavior of functions
+
+    + Predictable **input** and **output** types
+    + *"opinionated"*
+    + More on this later
+    
+--
+
+* Semi-guaranteed maintenance of packages
+
+(because RStudio pays developers!)
+
+--
+
+* More available and polished documentation and tutorials
+
+--
+
+* Welcoming community
+
+---
+# The tidyverse
+
+**Cons:**
+
+* Sometimes less flexible for complex tasks
+
+--
+
+* Generally slower, especially on big data
+
+--
+
+* Updates frequently -&gt; sometimes this makes your old code unrunnable.
+
+--
+
+* Some people object to **RStudio**'s strong influence over an open-source community.
+
+---
+class: center, middle
+
+# Should you use the tidyverse???
+
+--
+
+Even the most die-hard tidyverse fanatics use base R and other packages quite frequently.
+
+--
+
+Above all, the best code approach is the one you enjoy the most and that gets the job done!
+
+--
+
+You are free to use whatever package(s) you want in this class!
+
+--
+
+However, most of my lessons and examples will be in the **tidyverse**.
+
+
+---
+
+class: center, middle, invert
+
+# Cleaning and transforming data
+
+&lt;img src="https://d33wubrfki0l68.cloudfront.net/071952491ec4a6a532a3f70ecfa2507af4d341f9/c167c/images/hex-dplyr.png" width=300&gt;
+
+
+---
+class: center, middle, inverse
+
+# Prerequisite:  The Pipe  `%&gt;%`
+
+---
+# Prerequisite: The Pipe
+
+* Part of the `magrittr` package (installs with the tidyverse)
+
+---
+
+&lt;img src="C:/Users/kbodwin/Dropbox/Teaching/STAT-331-Online/Images/other/ceci_pipe.jpeg" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+&lt;img src="C:/Users/kbodwin/Dropbox/Teaching/STAT-331-Online/Images/other/magrittr_hex.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+# Prerequisite: The Pipe
+
+* Part of the `magrittr` package (installs with the tidyverse)
+
+--
+
+* Idea:  The **data** is the primary object, so it should come first in your code.
+
+--
+
+* Idea:  Code should read **like a sentence**
+
+--
+
+&lt;img src="C:/Users/kbodwin/Dropbox/Teaching/STAT-331-Online/Images/other/diagram_sentence.jpg" style="display: block; margin: auto;" /&gt;
+
+
+---
+# The Pipe
+
+
+```r
+dr_bodwin %&gt;%
+  do_a_dance()
+```
+--
+
+
+```r
+dr_bodwin %&gt;%
+  put_on("cool hat") %&gt;%
+  do_a_dance(type = "macarena")
+```
+
+---
+
+&lt;img src="C:/Users/kbodwin/Dropbox/Teaching/STAT-331-Online/Images/silly_gifs/pipe.png" width="30%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# The Pipe
+
+
+&lt;code class ='r hljs remark-code'&gt;penguins &lt;span style='background-color:#ffff7f'&gt;%&gt;%&lt;/span&gt; &lt;span style='color:teal'&gt;summary&lt;/span&gt;()&lt;/code&gt;
+
+is the same as
+
+
+&lt;code class ='r hljs remark-code'&gt;&lt;span style='color:teal'&gt;summary&lt;/span&gt;(penguins)&lt;/code&gt;
+
+---
+# The Pipe
+
+What do you think the following will do?
+
+
+```r
+penguins %&gt;%
+  filter(species == "Adelie") %&gt;%
+  arrange(body_mass_g)
+```
+
+---
+# The Pipe
+
+What do you think the following will do?
+
+
+```r
+penguins %&gt;%
+  filter(species == "Adelie") %&gt;%
+  arrange(body_mass_g)
+```
+
+```
+## # A tibble: 152 x 7
+##    species island bill_length_mm bill_depth_mm flipper_length_~ body_mass_g
+##    &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt;
+##  1 Adelie  Biscoe           36.5          16.6              181        2850
+##  2 Adelie  Biscoe           36.4          17.1              184        2850
+##  3 Adelie  Biscoe           34.5          18.1              187        2900
+##  4 Adelie  Dream            33.1          16.1              178        2900
+##  5 Adelie  Torge~           38.6          17                188        2900
+##  6 Adelie  Biscoe           37.9          18.6              193        2925
+##  7 Adelie  Dream            37.5          18.9              179        2975
+##  8 Adelie  Dream            37            16.9              185        3000
+##  9 Adelie  Dream            37.3          16.8              192        3000
+## 10 Adelie  Torge~           35.9          16.6              190        3050
+## # ... with 142 more rows, and 1 more variable: sex &lt;fct&gt;
+```
+
+---
+# Today's Data: Cereal
+
+* Download `Practice.Rmd` from the class website.
+
+* Run the first two chunks to load up the `cereal` dataset.
+
+* Get a feel for the data - what does it contain?
+
+
+*(This is not graded or turned in - it is just for you to follow along with lecture.)*
+
+
+---
+
+# Summarizing
+
+
+&lt;code class ='r hljs remark-code'&gt;penguins %&gt;%&lt;br&gt;&amp;nbsp;&amp;nbsp;summar&lt;span style='background-color:#ffff7f'&gt;y(&lt;/span&gt;)&lt;/code&gt;
+
+```
+
+##       species          island    bill_length_mm  bill_depth_mm  
+##  Adelie   :152   Biscoe   :168   Min.   :32.10   Min.   :13.10  
+##  Chinstrap: 68   Dream    :124   1st Qu.:39.23   1st Qu.:15.60  
+##  Gentoo   :124   Torgersen: 52   Median :44.45   Median :17.30  
+##                                  Mean   :43.92   Mean   :17.15  
+##                                  3rd Qu.:48.50   3rd Qu.:18.70  
+##                                  Max.   :59.60   Max.   :21.50  
+##                                  NA's   :2       NA's   :2      
+##  flipper_length_mm  body_mass_g       sex     
+##  Min.   :172.0     Min.   :2700   female:165  
+##  1st Qu.:190.0     1st Qu.:3550   male  :168  
+##  Median :197.0     Median :4050   NA's  : 11  
+##  Mean   :200.9     Mean   :4202               
+##  3rd Qu.:213.0     3rd Qu.:4750               
+##  Max.   :231.0     Max.   :6300               
+##  NA's   :2         NA's   :2
+
+```
+
+---
+# Cleaning
+
+Oh no!  There was one row of the dataset with missing values.
+
+--
+
+There is no magic answer for how to handle missing values; one solution is to simply drop them from the data.
+
+*Consider - why might this sometimes be a bad idea?*
+
+--
+
+
+```r
+penguins &lt;- 
+  penguins %&gt;%
+  drop_na()
+
+penguins %&gt;% summary()
+```
+
+```
+##       species          island    bill_length_mm  bill_depth_mm  
+##  Adelie   :146   Biscoe   :163   Min.   :32.10   Min.   :13.10  
+##  Chinstrap: 68   Dream    :123   1st Qu.:39.50   1st Qu.:15.60  
+##  Gentoo   :119   Torgersen: 47   Median :44.50   Median :17.30  
+##                                  Mean   :43.99   Mean   :17.16  
+##                                  3rd Qu.:48.60   3rd Qu.:18.70  
+##                                  Max.   :59.60   Max.   :21.50  
+##  flipper_length_mm  body_mass_g       sex     
+##  Min.   :172       Min.   :2700   female:165  
+##  1st Qu.:190       1st Qu.:3550   male  :168  
+##  Median :197       Median :4050               
+##  Mean   :201       Mean   :4207               
+##  3rd Qu.:213       3rd Qu.:4775               
+##  Max.   :231       Max.   :6300
+```
+
+
+---
+# Summarizing specifics
+
+
+&lt;code class ='r hljs remark-code'&gt;penguins %&gt;%&lt;br&gt;&amp;nbsp;&amp;nbsp;summar&lt;span style='background-color:#ffff7f'&gt;ize(&lt;/span&gt;&lt;span style='color:teal'&gt;mean&lt;/span&gt;_mass = &lt;span style='color:teal'&gt;mean&lt;/span&gt;(&lt;span style='color:cornflowerblue'&gt;body_mass_g&lt;/span&gt;))&lt;/code&gt;
+
+```
+
+## # A tibble: 1 x 1
+##   mean_mass
+##       &lt;dbl&gt;
+## 1     4207.
+
+```
+
+--
+
+* What are the **required** arguments of `summarize`?  
+
+* Are there any optional arguments?
+
+---
+
+# Many variables?  Many summary statistics?
+## No problemo
+
+
+&lt;code class ='r hljs remark-code'&gt;penguins %&gt;%&lt;br&gt;&amp;nbsp;&amp;nbsp;summarize(&lt;span style='background-color:#ffff7f'&gt;across&lt;/span&gt;(c(&lt;span style='color:cornflowerblue'&gt;body_mass_g&lt;/span&gt;, &lt;span style='color:cornflowerblue'&gt;flipper_length_mm&lt;/span&gt;),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style='color:darkred'&gt;list&lt;/span&gt;(&lt;span style='color:teal'&gt;mean&lt;/span&gt;, &lt;span style='color:teal'&gt;median&lt;/span&gt;)))&lt;/code&gt;
+
+```
+
+## # A tibble: 1 x 4
+##   body_mass_g_1 body_mass_g_2 flipper_length_mm_1 flipper_length_mm_2
+##           &lt;dbl&gt;         &lt;int&gt;               &lt;dbl&gt;               &lt;int&gt;
+## 1         4207.          4050                201.                 197
+
+```
+---
+class: center, middle, inverse
+
+# Your Turn!
+
+---
+class: center, middle
+# In `Practice.Rmd`, find the following:
+
+* Mean, Median, and standard deviation of the sugar content of cereals
+
+* Total calories if I ate one serving of every single cereal in the dataset.
+
+---
+# Making new variables
+
+Verb: `mutate()`
+
+The dataset gets *mutated* to include a new variable.
+
+
+&lt;code class ='r hljs remark-code'&gt;penguins %&gt;%&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;mutate&lt;/span&gt;(&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style='color:teal'&gt;bill_size&lt;/span&gt; = bill_length_mm * bill_depth_mm&lt;br&gt;&amp;nbsp;&amp;nbsp;) %&gt;%&lt;br&gt;&amp;nbsp;&amp;nbsp;summary()&lt;/code&gt;
+
+```
+
+##       species          island    bill_length_mm  bill_depth_mm  
+##  Adelie   :146   Biscoe   :163   Min.   :32.10   Min.   :13.10  
+##  Chinstrap: 68   Dream    :123   1st Qu.:39.50   1st Qu.:15.60  
+##  Gentoo   :119   Torgersen: 47   Median :44.50   Median :17.30  
+##                                  Mean   :43.99   Mean   :17.16  
+##                                  3rd Qu.:48.60   3rd Qu.:18.70  
+##                                  Max.   :59.60   Max.   :21.50  
+##  flipper_length_mm  body_mass_g       sex        bill_size     
+##  Min.   :172       Min.   :2700   female:165   Min.   : 497.6  
+##  1st Qu.:190       1st Qu.:3550   male  :168   1st Qu.: 669.6  
+##  Median :197       Median :4050                Median : 731.6  
+##  Mean   :201       Mean   :4207                Mean   : 752.7  
+##  3rd Qu.:213       3rd Qu.:4775                3rd Qu.: 808.5  
+##  Max.   :231       Max.   :6300                Max.   :1127.4
+
+```
+
+---
+
+Cool, let's look at our new variable!
+
+
+```r
+penguins %&gt;%
+  summarize(mean_bill = sd(bill_size))
+```
+
+```
+## Error: Problem with `summarise()` input `mean_bill`.
+## x object 'bill_size' not found
+## i Input `mean_bill` is `sd(bill_size)`.
+```
+
+--
+
+OH NO!
+
+**What happened here?**
+
+---
+
+class: center, middle
+
+# We calculated a new variable, but didn't save our changes.
+
+---
+
+
+&lt;code class ='r hljs remark-code'&gt;&lt;span style='background-color:#ffff7f'&gt;penguins &lt;- &lt;/span&gt;penguins %&gt;%&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mutate(&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;bill_size = bill_length_mm * bill_depth_mm&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;br&gt;penguins %&gt;%&lt;br&gt;&amp;nbsp;&amp;nbsp;summarize(mean_bill = sd(bill_size))&lt;/code&gt;
+
+```
+
+## # A tibble: 1 x 1
+##   mean_bill
+##       &lt;dbl&gt;
+## 1      116.
+
+```
+
+---
+# Ordering
+
+Verb: `arrange()`
+
+We **arrange** the dataset in order of a particular variable.
+
+
+```r
+penguins %&gt;% 
+  arrange(body_mass_g)
+```
+
+```
+## # A tibble: 333 x 8
+##    species island bill_length_mm bill_depth_mm flipper_length_~ body_mass_g
+##    &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt;
+##  1 Chinst~ Dream            46.9          16.6              192        2700
+##  2 Adelie  Biscoe           36.5          16.6              181        2850
+##  3 Adelie  Biscoe           36.4          17.1              184        2850
+##  4 Adelie  Biscoe           34.5          18.1              187        2900
+##  5 Adelie  Dream            33.1          16.1              178        2900
+##  6 Adelie  Torge~           38.6          17                188        2900
+##  7 Chinst~ Dream            43.2          16.6              187        2900
+##  8 Adelie  Biscoe           37.9          18.6              193        2925
+##  9 Adelie  Dream            37            16.9              185        3000
+## 10 Adelie  Dream            37.3          16.8              192        3000
+## # ... with 323 more rows, and 2 more variables: sex &lt;fct&gt;, bill_size &lt;dbl&gt;
+```
+
+---
+
+## Related: `top_n`
+
+
+```r
+penguins %&gt;%
+  top_n(3, body_mass_g)
+```
+
+```
+## # A tibble: 4 x 8
+##   species island bill_length_mm bill_depth_mm flipper_length_~ body_mass_g sex  
+##   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+## 1 Gentoo  Biscoe           49.2          15.2              221        6300 male 
+## 2 Gentoo  Biscoe           59.6          17                230        6050 male 
+## 3 Gentoo  Biscoe           51.1          16.3              220        6000 male 
+## 4 Gentoo  Biscoe           48.8          16.2              222        6000 male 
+## # ... with 1 more variable: bill_size &lt;dbl&gt;
+```
+
+---
+
+# Quick check in!
+
+Remember,
+
+
+```r
+penguins %&gt;%
+  top_n(3, body_mass_g)
+```
+
+is the same as
+
+
+```r
+top_n(penguins, 3, body_mass_g)
+```
+
+or
+
+
+```r
+top_n(x = penguins, n = 3, wt = body_mass_g)
+```
+
+---
+
+# Selecting
+
+Verb: `select()`
+
+We **select** which variables we would like to remain in the dataset.
+
+
+```r
+penguins %&gt;%
+  select(species, body_mass_g) %&gt;%
+  arrange(body_mass_g)
+```
+
+```
+## # A tibble: 333 x 2
+##    species   body_mass_g
+##    &lt;fct&gt;           &lt;int&gt;
+##  1 Chinstrap        2700
+##  2 Adelie           2850
+##  3 Adelie           2850
+##  4 Adelie           2900
+##  5 Adelie           2900
+##  6 Adelie           2900
+##  7 Chinstrap        2900
+##  8 Adelie           2925
+##  9 Adelie           3000
+## 10 Adelie           3000
+## # ... with 323 more rows
+```
+
+---
+
+# Filtering
+
+Verb: `filter()`
+
+We **filter** to the rows (observations) we would like to keep in the dataset.
+
+
+```r
+penguins_new %&gt;%
+  select(species, body_mass_g) %&gt;%
+  filter(species == "Adelie") %&gt;%
+  arrange(body_mass_g)
+```
+
+---
+
+# Plotting: The pipe is your friend
+
+Want a histogram of body mass for just *Adelie* species penguins?  Pipe it through `filter()` first!
+
+
+```r
+penguins %&gt;%
+  filter(species == "Adelie") %&gt;%
+  ggplot(aes(x = body_mass_g)) +
+    geom_histogram(bins = 20)
+```
+
+![](Intro_to_Tidyverse_files/figure-html/unnamed-chunk-26-1.png)&lt;!-- --&gt;
+
+---
+class: center, middle, inverse
+
+# Your Turn!
+
+---
+
+## In `Practice.Rmd`, make a new dataset called `kellogg_calories`, with the following changes:
+
+1. There is a new variable called `cal_per_cup` which shows the number of calories in each cup of cereal.
+
+2. The dataset only includes this new variable, the name of the cereal, and the brand of the cereal.
+
+3. The dataset only includes Kellogg brand cereals
+
+4. The cereals in the dataset are ordered from most to least calories per cup.
+
+**Try to do all these in one sequence of pipes!**
+
+5. Then choose one of the four main plot types (histogram, barplot, boxplot, scatterplot), make an interesting visualization from your `kellog_calories` dataset.
+
+---
+class:center,middle,inverse
+
+# Grouping and summarizing
+---
+# `group_by`
+
+* We have learned how to use the `summarize` functions to get information.
+
+* What if you want to summarize your data within categories?
+
+
+```r
+penguins %&gt;%
+  group_by(species) %&gt;%
+  summarize(mean(body_mass_g))
+```
+
+```
+## `summarise()` ungrouping output (override with `.groups` argument)
+```
+
+```
+## # A tibble: 3 x 2
+##   species   `mean(body_mass_g)`
+##   &lt;fct&gt;                   &lt;dbl&gt;
+## 1 Adelie                  3706.
+## 2 Chinstrap               3733.
+## 3 Gentoo                  5092.
+```
+---
+# Warning!
+
+## You should **always** have a `summarize` after a `group_by`!!!
+
+(There are other ways to use it, but wait until you are very familiar with `dplyr` to try that.)
+
+---
+class: center, middle, inverse
+
+# Your Turn!
+
+---
+# Grouping and summarizing
+
+* Find the average calories per serving for each manufacturer.
+
+* Find the average sugar per serving for hot versus cold cereals.
+
+---
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
