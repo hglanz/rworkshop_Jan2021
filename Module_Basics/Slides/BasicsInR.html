@@ -204,11 +204,6 @@ class: center, middle
 
 ---
 
-
-```
-## Warning: Removed 2 rows containing missing values (geom_point).
-```
-
 ![](BasicsInR_files/figure-html/unnamed-chunk-10-1.png)&lt;!-- --&gt;
 
 The **bill length** is mapped to the **x-axis**, the **bill depth** is mapped to the **y-axis**, and the **species** is mapped to the **color**.
@@ -231,7 +226,9 @@ The **bill length** is mapped to the **x-axis**, the **bill depth** is mapped to
 **Step One:** Choose the type of plot
 
 
-&lt;code class ='r hljs remark-code'&gt;ggplot(penguins, aes(y = bill_depth_mm, x = species))&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;+ geom_&lt;span style="background-color:#ffff7f"&gt;boxplot&lt;/span&gt;()&lt;/code&gt;
+```r
+ggplot(penguins, aes(y = bill_depth_mm, x = species)) + geom_boxplot()
+```
 
 
 *(near-infinite customization!)*
@@ -304,7 +301,7 @@ A:  Options in the **aesthetic** related to **variables**.  Other options are "g
 ```
 
 
-![](BasicsInR_files/figure-html/unnamed-chunk-37-1.png)&lt;!-- --&gt;
+![](BasicsInR_files/figure-html/unnamed-chunk-36-1.png)&lt;!-- --&gt;
 
 ---
 A:  Options in the **aesthetic** related to **variables**.  Other options are "global".
@@ -319,7 +316,7 @@ A:  Options in the **aesthetic** related to **variables**.  Other options are "g
 ```
 
 
-![](BasicsInR_files/figure-html/unnamed-chunk-38-1.png)&lt;!-- --&gt;
+![](BasicsInR_files/figure-html/unnamed-chunk-37-1.png)&lt;!-- --&gt;
 
 ---
 
@@ -353,7 +350,7 @@ We can create multipanel figures with the `facet_wrap()` function
 ```
 
 
-![](BasicsInR_files/figure-html/unnamed-chunk-39-1.png)&lt;!-- --&gt;
+![](BasicsInR_files/figure-html/unnamed-chunk-38-1.png)&lt;!-- --&gt;
 
 
 
@@ -368,10 +365,6 @@ You can name them and change them later
 p &lt;- ggplot(penguins, aes(x = bill_length_mm))
 
 p + geom_histogram() + ggtitle("Histogram")
-```
-
-```
-## Warning: Removed 2 rows containing non-finite values (stat_bin).
 ```
 
 ![](BasicsInR_files/figure-html/unnamed-chunk-22-1.png)&lt;!-- --&gt;
@@ -394,7 +387,6 @@ class: center, middle, invert
 # YOUR TURN
 
 ---
-class: center, middle
 
 ## In the provided R Markdown file (basics_activity.Rmd), do the following to practice what we've seen so far
 
@@ -409,9 +401,6 @@ With the colleges_clean dataset, create a
 * side-by-side boxplot of in-state tuition for public and private schools
 
 * multipanel histogram of in-state tuition for public and private schools
-
-
----
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

@@ -14,7 +14,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE, message = FALSE)
+options(htmltools.dir.version = FALSE, message = FALSE, warning = FALSE)
 knitr::opts_chunk$set(message = FALSE)
 library(tidyverse)
 library(palmerpenguins)
@@ -258,7 +258,7 @@ class: center, middle
 
 ---
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, warning=FALSE}
 ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
   geom_point()
 
@@ -285,10 +285,8 @@ decorate('ggplot(penguins, aes(y = bill_depth_mm, x = species))', eval = FALSE) 
 
 **Step One:** Choose the type of plot
 
-```{r, echo = FALSE}
-decorate('
-ggplot(penguins, aes(y = bill_depth_mm, x = species))
-    + geom_boxplot()', eval = FALSE) %>% flair_rx("boxplot")
+```{r, eval = FALSE}
+ggplot(penguins, aes(y = bill_depth_mm, x = species)) + geom_boxplot()
 ```
 
 
@@ -338,14 +336,14 @@ ggplot(penguins, aes(y = bill_depth_mm, x = bill_length_mm)
 
 Q: What is the difference between the following?
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, warning = FALSE}
 decorate('
 ggplot(penguins, aes(x = bill_length_mm, fill = species)) + 
   geom_histogram()',
 eval = FALSE) %>% flair_rx("fill = [:alpha:]*")
 ```
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, warning = FALSE}
 decorate('
 ggplot(penguins, aes(x = bill_length_mm)) + 
   geom_histogram(fill = "cornflowerblue")',
@@ -357,7 +355,7 @@ eval = FALSE) %>% flair_rx('fill = "[:alpha:]*"')
 A:  Options in the **aesthetic** related to **variables**.  Other options are "global".
 
 
-```{r, echo = FALSE, message = FALSE}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 decorate('
 ggplot(penguins, aes(x = bill_length_mm, fill = species)) + 
   geom_histogram()') %>% flair_rx("fill = [:alpha:]*")
@@ -366,7 +364,7 @@ ggplot(penguins, aes(x = bill_length_mm, fill = species)) +
 ---
 A:  Options in the **aesthetic** related to **variables**.  Other options are "global".
 
-```{r, echo = FALSE, message = FALSE}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 decorate('
 ggplot(penguins, aes(x = bill_length_mm)) + 
   geom_histogram(fill = "cornflowerblue")') %>% flair_rx("fill = [:alpha:]*")
@@ -394,7 +392,7 @@ ggplot(penguins, aes(x = bill_length_mm)) +
 
 We can create multipanel figures with the `facet_wrap()` function
 
-```{r, echo = FALSE, message = FALSE}
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.width = 3, fig.height = 3}
 decorate('
 penguins %>%
   ggplot(aes(x = bill_length_mm, y = bill_depth_mm)) +
@@ -410,7 +408,7 @@ penguins %>%
 
 You can name them and change them later
 
-```{r, message = FALSE, fig.height=4}
+```{r, message = FALSE, fig.height=4, warning = FALSE}
 p <- ggplot(penguins, aes(x = bill_length_mm))
 
 p + geom_histogram() + ggtitle("Histogram")
@@ -420,7 +418,7 @@ p + geom_histogram() + ggtitle("Histogram")
 
 # Saving your plot
 
-```{r, eval = FALSE}
+```{r, eval = FALSE, warning = FALSE}
 ggsave(here("Module_Basics", "my_filename.png"))
 ```
 
@@ -433,7 +431,6 @@ class: center, middle, invert
 # YOUR TURN
 
 ---
-class: center, middle
 
 ## In the provided R Markdown file (basics_activity.Rmd), do the following to practice what we've seen so far
 
@@ -448,6 +445,3 @@ With the colleges_clean dataset, create a
 * side-by-side boxplot of in-state tuition for public and private schools
 
 * multipanel histogram of in-state tuition for public and private schools
-
-
----
