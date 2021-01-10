@@ -15,6 +15,7 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE, message = FALSE)
+knitr::opts_chunk$set(message = FALSE)
 library(tidyverse)
 library(palmerpenguins)
 library(flair)
