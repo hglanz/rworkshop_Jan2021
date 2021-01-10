@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Special Data Types</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Kelly Bodwin and Hunter Glanz" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Special Data Types
+## Module 3
+### Kelly Bodwin and Hunter Glanz
+
+---
+
+
+
+
+
+
+
+
+
+---
+# YOUR TURN
+
+## This time, create your own **R Markdown** file from scratch!
+
+* You can do this via File &gt; New File &gt; R Markdown
+
+* Don't forget to load your libraries (e.g. `library(tidyverse)`)
+
+* Read in the `colleges` dataset yourself.
+
+* Feel free to copy-paste from previous ones.
+
+---
+class: center, middle
+# Factors
+
+&lt;img src="https://ih1.redbubble.net/image.329889705.2507/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.u1.jpg" width=300&gt;
+
+---
+
+# Factors
+
+Common tasks:
+
+* Turn a `character` or `numeric` into a factor
+
+* Make a factor by "binning" a numeric variable
+
+* Rename or reorder the `levels` of a factor
+
+
+The packages `forcats`  ("for categoricals") gives nice shortcuts for manipulating categorical variables.
+
+
+(`forcats` loads with the `tidyverse`)
+
+---
+# Turn strings to factors
+
+
+```r
+x &lt;- c("apple", "dog", "banana", "cat", "banana", "Queen Elizabeth", "dog")
+
+x
+```
+
+```
+## [1] "apple"           "dog"             "banana"          "cat"            
+## [5] "banana"          "Queen Elizabeth" "dog"
+```
+
+```r
+x &lt;- factor(x)
+
+x
+```
+
+```
+## [1] apple           dog             banana          cat            
+## [5] banana          Queen Elizabeth dog            
+## Levels: apple banana cat dog Queen Elizabeth
+```
+
+
+---
+# Recoding
+
+
+```r
+x &lt;- fct_recode(x, fruit = "apple", fruit = "banana", pet = "dog", pet ="cat")
+
+x
+```
+
+```
+## [1] fruit           pet             fruit           pet            
+## [5] fruit           Queen Elizabeth pet            
+## Levels: fruit pet Queen Elizabeth
+```
+
+---
+# `case_when()`
+
+A catchall shortcut for making categorical variables is `case_when`.
+
+
+```r
+penguins %&gt;%
+  mutate(
+    body_mass = case_when(
+      body_mass_g &lt; 4050 ~ "Small",
+      body_mass_g &gt; 4050 &amp; body_mass_g &lt; 5000 ~ "Medium",
+      TRUE ~ "Chonker"
+    )
+  ) %&gt;%
+    select(body_mass, body_mass_g)
+```
+
+```
+## # A tibble: 344 x 2
+##    body_mass body_mass_g
+##    &lt;chr&gt;           &lt;int&gt;
+##  1 Small            3750
+##  2 Small            3800
+##  3 Small            3250
+##  4 Chonker            NA
+##  5 Small            3450
+##  6 Small            3650
+##  7 Small            3625
+##  8 Medium           4675
+##  9 Small            3475
+## 10 Medium           4250
+## # ... with 334 more rows
+```
+
+---
+# Try the following.  What did it do?
+
+
+```r
+colleges &lt;- 
+  colleges %&gt;%
+  mutate(
+    CONTROL = factor(CONTROL),
+    Type = fct_recode(CONTROL, Public = "1", Private = "2")
+  )
+```
+
+---
+# Try the following.  What did it do?
+
+
+```r
+colleges &lt;- 
+  colleges %&gt;%
+  mutate(
+    CONTROL = factor(CONTROL),
+    Type = fct_recode(CONTROL, Public = "1", Private = "2")
+  )
+  
+colleges %&gt;% select(CONTROL, Type)
+```
+
+```
+## # A tibble: 1,310 x 2
+##    CONTROL Type   
+##    &lt;fct&gt;   &lt;fct&gt;  
+##  1 1       Public 
+##  2 1       Public 
+##  3 1       Public 
+##  4 1       Public 
+##  5 1       Public 
+##  6 1       Public 
+##  7 1       Public 
+##  8 2       Private
+##  9 2       Private
+## 10 2       Private
+## # ... with 1,300 more rows
+```
+
+---
+# Forcats
+
+We will not practice every single function in the `forcats` package.
+
+Find the `forcats` "cheatsheet" at https://resources.rstudio.com/rstudio-developed/factors,
+or in your *cheatseets* folder.
+
+In your groups, try to answer the following:
+
+* What is the difference between `fct_relevel()` and `fct_recode()`?
+
+* What is the difference between `fct_collapse()` and `fct_lump()`?
+
+* What is the difference between `fct_reorder()` and `fct_inorder()`?
+
+*Hint: Make up a couple of factors, and see what happens when you use these functions on them.*
+
+---
+# Why do we care?
+
+Suppose we wanted to look at the tuitions of all states:
+
+
+```r
+colleges %&gt;%
+  ggplot(aes(x = TUITIONFEE_IN, y = STABBR)) +
+  geom_boxplot()
+```
+
+![](Factors_and_Strings_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
+
+---
+# Why do we care?
+
+Ew.  Maybe we can order by size?
+
+
+```r
+colleges %&gt;%
+  mutate(
+    State = fct_reorder(STABBR, TUITIONFEE_IN)
+  ) %&gt;%
+  ggplot(aes(x = TUITIONFEE_IN, y = State)) +
+  geom_boxplot()
+```
+
+![](Factors_and_Strings_files/figure-html/unnamed-chunk-7-1.png)&lt;!-- --&gt;
+
+
+
+
+
+
+---
+class: center, middle
+
+# YOUR TURN
+
+## Make a **column plot** of the top 20 median in-state tuitions of all **public schools** states, with the columns ordered high to low.
+
+
+---
+class: center, middle
+# Strings
+
+&lt;img src="https://stringr.tidyverse.org/logo.png" width=300&gt;
+
+---
+
+# Strings
+
+A **string** is a bunch of **characters**.
+
+Don't confuse a **string** (many characters, one object) with a **character vector** (vector of strings)
+
+
+
+```r
+my_string &lt;- "Hi, my name is Bond!"
+
+my_vector &lt;- c("Hi", "my", "name", "is", "Bond")
+
+my_string
+```
+
+```
+## [1] "Hi, my name is Bond!"
+```
+
+```r
+my_vector
+```
+
+```
+## [1] "Hi"   "my"   "name" "is"   "Bond"
+```
+
+---
+# Strings
+
+Common tasks:
+
+* Find which strings contain a particular pattern
+
+* Remove or replace a pattern
+
+* Edit a string (for example, make it lowercase)
+
+
+The packages `stringr` is very useful for strings!
+
+(`stringr` loads with the `tidyverse`)
+
+---
+
+# Find patterns
+
+
+```r
+my_vector &lt;- c("Hello,", "my name is", "Bond", "James Bond")
+
+str_detect(my_vector, "Bond")
+str_locate(my_vector, "Bond")
+str_match(my_vector, "Bond")
+str_extract(my_vector, "Bond")
+str_subset(my_vector, "Bond")
+```
+
+---
+class: center, middle, invert
+
+# Exercise: What's the difference?
+
+For each of these functions, try to figure out:
+
+a) The **object structure** of the output.
+
+b) The **data type** of the output.
+
+c) A brief explanation of what they do.
+
+
+```r
+str_detect(my_vector, "Bond")
+str_locate(my_vector, "Bond")
+str_extract(my_vector, "Bond")
+str_subset(my_vector, "Bond")
+str_match(my_vector, "Bond")
+```
+
+---
+# Answers
+
+
+```r
+my_vector &lt;- c("Hello,", "my name is", "Bond", "James Bond")
+str_detect(my_vector, "Bond")
+```
+
+```
+## [1] FALSE FALSE  TRUE  TRUE
+```
+
+--
+
+Returns a **logical vector** (`TRUE`/`FALSE`) indicating if the pattern was found in that element of the original vector.
+
+---
+# Answers
+
+
+```r
+my_vector &lt;- c("Hello,", "my name is", "Bond", "James Bond")
+str_match(my_vector, "Bond")
+```
+
+```
+##      [,1]  
+## [1,] NA    
+## [2,] NA    
+## [3,] "Bond"
+## [4,] "Bond"
+```
+
+--
+
+Returns a **character matrix** with either `NA` or the pattern, depending on if the pattern was found.
+
+---
+# Answers
+
+
+```r
+my_vector &lt;- c("Hello,", "my name is", "Bond", "James Bond")
+str_extract(my_vector, "Bond")
+```
+
+```
+## [1] NA     NA     "Bond" "Bond"
+```
+
+--
+
+Returns a **character vector** with either `NA` or the pattern, depending on if the pattern was found.
+
+
+---
+# Answers
+
+
+```r
+my_vector &lt;- c("Hello,", "my name is", "Bond", "James Bond")
+str_locate(my_vector, "Bond")
+```
+
+```
+##      start end
+## [1,]    NA  NA
+## [2,]    NA  NA
+## [3,]     1   4
+## [4,]     7  10
+```
+
+--
+
+Returns a **data frame** with two **numeric variables** giving either `NA` or the start and end position of the pattern.
+
+---
+# Answers
+
+
+```r
+my_vector &lt;- c("Hello,", "my name is", "Bond", "James Bond")
+str_subset(my_vector, "Bond")
+```
+
+```
+## [1] "Bond"       "James Bond"
+```
+
+--
+
+Returns a **data frame** with two **numeric variables** giving either `NA` or the start and end position of the pattern.
+
+
+---
+
+# Replace/Remove patterns
+
+
+
+```r
+my_vector &lt;- c("Hello,", "my name is", "Bond", "James Bond")
+str_remove(my_vector, "Bond")
+```
+
+```
+## [1] "Hello,"     "my name is" ""           "James "
+```
+
+```r
+str_replace(my_vector, "Bond", replacement = "Franco")
+```
+
+```
+## [1] "Hello,"       "my name is"   "Franco"       "James Franco"
+```
+
+--
+
+*Ask yourself:*  What is the output?
+
+---
+
+# Make edits
+
+
+```r
+my_string &lt;- "Hello, my name is Bond, James Bond."
+
+str_to_lower(my_string)
+```
+
+```
+## [1] "hello, my name is bond, james bond."
+```
+
+```r
+str_to_upper(my_string)
+```
+
+```
+## [1] "HELLO, MY NAME IS BOND, JAMES BOND."
+```
+
+---
+# Stringr
+
+Of course, we will not practice every single function in the `stringr` package.
+
+Refer to the `stringr` cheatsheet:  https://stringr.tidyverse.org/,
+or in the *cheatsheets* folder.
+
+Use it to answer the following:
+
+
+* What is the difference between `length()` and `str_length()`?
+
+* What is the difference between `str_replace()` and `str_replace_all()`?
+
+* What is the difference between `str_trim()` and `str_trunc()`?
+
+* What is the difference between `str_sub()` and `str_subset()`?
+
+* What does the `collapse` argument do in `str_c()`?
+
+
+---
+class: center, middle, inverse
+
+# Your Turn
+
+Using your *colleges* dataset, answer these questions:
+
+* How exactly does Cal Poly's name appear in this dataset?
+
+* How many colleges have the word "University" in their name?
+
+* Which college has the *longest* name?  The *shortest* name?
+
+---
+
+# Hints
+
+*Hint 1:* The code below will not be quite correct.  Why?
+    
+
+```r
+str_count(colleges$INSTNM, "University")
+```
+---
+# Hints
+
+*Hint 2:*  The `str_*` functions need the first argument to be a **vector of strings**, not a **dataset**.  You might want to use them *inside* functions like `filter` or `mutate`.
+
+
+```r
+colleges %&gt;%
+  mutate(
+    is_CA = str_detect(INSTNM, "California")
+  )
+```
+
+---
+# Solutions
+
+
+
+
+---
+# Solutions
+
+
+
+
+---
+# Solutions
+
+
+```r
+colleges %&gt;%
+  mutate(
+    name_length = str_length(INSTNM)
+  )
+```
+
+```
+## # A tibble: 1,310 x 14
+##    INSTNM CITY  STABBR ZIP   CONTROL ADM_RATE SAT_AVG TUITIONFEE_IN
+##    &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt; &lt;fct&gt;      &lt;dbl&gt;   &lt;dbl&gt;         &lt;dbl&gt;
+##  1 Alaba~ Norm~ AL     35762 1          0.903     929          9857
+##  2 Unive~ Birm~ AL     3529~ 1          0.918    1195          8328
+##  3 Unive~ Hunt~ AL     35899 1          0.812    1322         10280
+##  4 Alaba~ Mont~ AL     3610~ 1          0.979     935         11068
+##  5 The U~ Tusc~ AL     3548~ 1          0.533    1278         10780
+##  6 Aubur~ Mont~ AL     3611~ 1          0.825    1083          8020
+##  7 Aubur~ Aubu~ AL     36849 1          0.839    1282         10968
+##  8 Birmi~ Birm~ AL     35254 2          0.619    1231         35804
+##  9 Faulk~ Mont~ AL     3610~ 2          0.510    1031         20970
+## 10 Hunti~ Mont~ AL     3610~ 2          0.560    1085         26400
+## # ... with 1,300 more rows, and 6 more variables: TUITIONFEE_OUT &lt;dbl&gt;,
+## #   UGDS &lt;dbl&gt;, REGION &lt;dbl&gt;, TUITION_DIFF &lt;dbl&gt;, Type &lt;fct&gt;, name_length &lt;int&gt;
+```
+
+---
+# Solutions
+
+
+
+---
+class: center, middle, inverse
+
+# Your Turn!
+
+---
+
+# What's in a name?
+
+*Claim:*
+
+Many public universities contain the word "State" in their name, such as **California Polytechnic State University**.
+
+*Research Question:*
+
+Suppose we did not know which universities were private versus public.  Can you make an argument showing that colleges with "State" in the name have larger In-State vs Out-of-State tuition differences than those without?
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

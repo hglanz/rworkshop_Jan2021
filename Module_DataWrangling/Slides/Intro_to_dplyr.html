@@ -323,11 +323,9 @@ penguins %&gt;%
 ## No problemo
 
 
-```r
-penguins %&gt;%
-  summarize_at(vars(body_mass_g, flipper_length_mm),
-            list(avg_mean = mean, avg_med = median))
-```
+
+&lt;code class ='r hljs remark-code'&gt;penguins %&gt;%&lt;br&gt;&amp;nbsp;&amp;nbsp;summarize_&lt;span style="background-color:#ffff7f"&gt;_at&lt;/span&gt;(&lt;span style="background-color:pink"&gt;vars&lt;/span&gt;(&lt;span style="color:cornflowerblue"&gt;body_mass_g&lt;/span&gt;, &lt;span style="color:cornflowerblue"&gt;flipper_length_mm&lt;/span&gt;),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style="color:darkred"&gt;list&lt;/span&gt;(avg_&lt;span style="color:teal"&gt;mean&lt;/span&gt; = &lt;span style="color:teal"&gt;mean&lt;/span&gt;, avg_med = &lt;span style="color:teal"&gt;median&lt;/span&gt;))&lt;/code&gt;
+
 
 ```
 ## # A tibble: 1 x 4
@@ -336,9 +334,49 @@ penguins %&gt;%
 ## 1              4207.                  201.              4050                 197
 ```
 
+---
+# Summarizing a Categorical Variable
+
+(bonus function!)
 
 
-&lt;code class ='r hljs remark-code'&gt;penguins %&gt;%&lt;br&gt;&amp;nbsp;&amp;nbsp;summarize_&lt;span style="background-color:#ffff7f"&gt;_at&lt;/span&gt;(&lt;span style="background-color:pink"&gt;vars&lt;/span&gt;(&lt;span style="color:cornflowerblue"&gt;body_mass_g&lt;/span&gt;, &lt;span style="color:cornflowerblue"&gt;flipper_length_mm&lt;/span&gt;),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style="color:darkred"&gt;list&lt;/span&gt;(avg_&lt;span style="color:teal"&gt;mean&lt;/span&gt; = &lt;span style="color:teal"&gt;mean&lt;/span&gt;, avg_med = &lt;span style="color:teal"&gt;median&lt;/span&gt;))&lt;/code&gt;
+```r
+colleges %&gt;%
+  count(CONTROL)
+```
+
+```
+## # A tibble: 2 x 2
+##   CONTROL     n
+##     &lt;dbl&gt; &lt;int&gt;
+## 1       1   511
+## 2       2   799
+```
+
+```r
+colleges %&gt;%
+  count(STABBR, CONTROL)
+```
+
+```
+## # A tibble: 101 x 3
+##    STABBR CONTROL     n
+##    &lt;chr&gt;    &lt;dbl&gt; &lt;int&gt;
+##  1 AK           1     1
+##  2 AL           1    14
+##  3 AL           2    10
+##  4 AR           1     7
+##  5 AR           2     9
+##  6 AZ           1     4
+##  7 AZ           2     3
+##  8 CA           1    26
+##  9 CA           2    46
+## 10 CO           1    13
+## # ... with 91 more rows
+```
+
+
+
 ---
 class: center, middle, inverse
 
@@ -663,7 +701,7 @@ penguins %&gt;%
     geom_histogram(bins = 20)
 ```
 
-![](Intro_to_dplyr_files/figure-html/unnamed-chunk-25-1.png)&lt;!-- --&gt;
+![](Intro_to_dplyr_files/figure-html/unnamed-chunk-26-1.png)&lt;!-- --&gt;
 
 ---
 
@@ -680,7 +718,7 @@ penguins %&gt;%
     geom_col()
 ```
 
-![](Intro_to_dplyr_files/figure-html/unnamed-chunk-26-1.png)&lt;!-- --&gt;
+![](Intro_to_dplyr_files/figure-html/unnamed-chunk-27-1.png)&lt;!-- --&gt;
 
 ---
 
@@ -694,7 +732,7 @@ penguins %&gt;%
 &lt;code class ='r hljs remark-code'&gt;penguins %&gt;%&lt;br&gt;&amp;nbsp;&amp;nbsp;group_by(species) %&gt;%&lt;br&gt;&amp;nbsp;&amp;nbsp;summarize(&lt;span style="background-color:#ffff7f"&gt;avg_mass&lt;/span&gt; = mean(body_mass_g)) %&gt;%&lt;br&gt;&amp;nbsp;&amp;nbsp;ggplot(aes(x = species, y = &lt;span style="background-color:#ffff7f"&gt;avg_mass&lt;/span&gt;)) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;geom_col()&lt;/code&gt;
 
 
-![](Intro_to_dplyr_files/figure-html/unnamed-chunk-35-1.png)&lt;!-- --&gt;
+![](Intro_to_dplyr_files/figure-html/unnamed-chunk-36-1.png)&lt;!-- --&gt;
 
 ---
 

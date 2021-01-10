@@ -303,6 +303,20 @@ penguins %>%
             list(avg_mean = mean, avg_med = median))
 ```
 
+---
+# Summarizing a Categorical Variable
+
+(bonus function!)
+
+```{r}
+colleges %>%
+  count(CONTROL)
+
+colleges %>%
+  count(STABBR, CONTROL)
+
+```
+
 
 
 ---
