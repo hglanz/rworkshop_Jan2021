@@ -1,0 +1,66 @@
+---
+title: "Exploration of Colleges Data"
+output:
+  html_document: default
+  pdf_document: default
+---
+## Setup
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r libraries}
+library(tidyverse)
+library(here)
+```
+
+```{r read_data}
+colleges <- read_csv(here("data", "colleges_clean.csv"))
+```
+
+
+## Wrangling
+
+```{r summarize}
+#### Write code to show the mean and median and sd of in-state tution
+
+
+```
+
+```{r summarize2}
+#### Write code to show the total undergrads in all institutions
+
+```
+
+
+```{r pipeline}
+#### Write code to create the variable "tuition_diff" here
+
+
+#### Write code to include only only relevant columns, and only colleges from the three states of interest
+
+
+#### Write code to sort the dataset by tuition difference
+
+
+#### Combine all steps into one pipeline
+  
+```
+
+## Grouping and summarizing
+
+* Find the average in-state tuition for public versus private schools.
+
+* Find the average in-state tuition in NY, CA, and TX.
+
+
+## Wrangling to Plot
+
+Make the best plot you can to address the research question:
+
+> Who has bigger in-state vs out-state difference: CA, Texas, or New York?
+
+For bonus points, consider Public and Private school differences as well.
+

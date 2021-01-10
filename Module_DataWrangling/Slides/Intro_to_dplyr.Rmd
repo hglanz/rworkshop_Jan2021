@@ -1,6 +1,7 @@
 ---
-title: "Intro to the Tidyverse"
-subtitle: "Week 2"
+title: "Data Wrangling"
+subtitle: "Module 2"
+author: "Kelly Bodwin and Hunter Glanz"
 
 output:
   xaringan::moon_reader:
@@ -15,9 +16,11 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(message = FALSE)
 library(tidyverse)
 library(flair)
 library(palmerpenguins)
+library(here)
 ```
 
 ```{r xaringan-themer, include=FALSE}
@@ -31,6 +34,11 @@ style_duo(
   code_font_google   = google_font("Droid Mono")
 )
 ```
+
+```{r, include = FALSE}
+colleges <- read_csv(here("data", "colleges_clean.csv"))
+```
+
 
 class: center, middle
 
@@ -93,7 +101,6 @@ penguins[penguins$species == "Adelie",]
 
     + Predictable **input** and **output** types
     + *"opinionated"*
-    + More on this later
     
 --
 
@@ -141,13 +148,6 @@ Even the most die-hard tidyverse fanatics use base R and other packages quite fr
 
 Above all, the best code approach is the one you enjoy the most and that gets the job done!
 
---
-
-You are free to use whatever package(s) you want in this class!
-
---
-
-However, most of my lessons and examples will be in the **tidyverse**.
 
 
 ---
@@ -158,34 +158,25 @@ class: center, middle, invert
 
 <img src="https://d33wubrfki0l68.cloudfront.net/071952491ec4a6a532a3f70ecfa2507af4d341f9/c167c/images/hex-dplyr.png" width=300>
 
-
----
-class: center, middle, inverse
-
-# Prerequisite:  The Pipe  `%>%`
-
----
-# Prerequisite: The Pipe
-
-* Part of the `magrittr` package (installs with the tidyverse)
-
 ---
 
-```{r, echo=FALSE, out.width = '70%', fig.align = "center"}
-knitr::include_graphics(here::here("Images", "other", "ceci_pipe.jpeg"))
-```
+# Motivation
 
----
-```{r, echo=FALSE, out.width = '50%', fig.align = "center"}
-knitr::include_graphics(here::here("Images", "other", "magrittr_hex.png"))
-```
-
----
-# Prerequisite: The Pipe
-
-* Part of the `magrittr` package (installs with the tidyverse)
+Suppose we wanted to study college tuition in the large states of New York, California, and Texas only.  Let's make boxplots.
 
 --
+
+```{r}
+colleges %>%
+  ggplot(aes(x = TUITIONFEE_IN, y = STABBR)) +
+  geom_boxplot()
+```
+
+
+
+---
+# Recall: The Pipe
+
 
 * Idea:  The **data** is the primary object, so it should come first in your code.
 
@@ -193,33 +184,6 @@ knitr::include_graphics(here::here("Images", "other", "magrittr_hex.png"))
 
 * Idea:  Code should read **like a sentence**
 
---
-
-```{r, echo=FALSE, fig.align = "center"}
-knitr::include_graphics(here::here("Images", "other", "diagram_sentence.jpg"))
-```
-
-
----
-# The Pipe
-
-```{r, eval = FALSE}
-dr_bodwin %>%
-  do_a_dance()
-```
---
-
-```{r, eval = FALSE}
-dr_bodwin %>%
-  put_on("cool hat") %>%
-  do_a_dance(type = "macarena")
-```
-
----
-
-```{r pipe, echo=FALSE, out.width = "30%", fig.align = "center"}
-knitr::include_graphics(here::here("Images", "silly_gifs", "pipe.png"))
-```
 
 ---
 
@@ -239,7 +203,7 @@ decorate('summary(penguins)', eval = FALSE) %>%
 ```
 
 ---
-# The Pipe
+# Readable code
 
 What do you think the following will do?
 
@@ -250,7 +214,7 @@ penguins %>%
 ```
 
 ---
-# The Pipe
+# Readable code
 
 What do you think the following will do?
 
@@ -260,22 +224,10 @@ penguins %>%
   arrange(body_mass_g)
 ```
 
----
-# Today's Data: Cereal
-
-* Download `Practice.Rmd` from the class website.
-
-* Run the first two chunks to load up the `cereal` dataset.
-
-* Get a feel for the data - what does it contain?
-
-
-*(This is not graded or turned in - it is just for you to follow along with lecture.)*
-
 
 ---
 
-# Summarizing
+# Summary
 
 ```{r, echo = FALSE}
 decorate('
@@ -302,7 +254,8 @@ penguins <-
   penguins %>%
   drop_na()
 
-penguins %>% summary()
+penguins %>% 
+  summary()
   
 ```
 
@@ -331,17 +284,27 @@ penguins %>%
 # Many variables?  Many summary statistics?
 ## No problemo
 
+
 ```{r, echo = FALSE}
-decorate('
-penguins %>%
-  summarize(across(c(body_mass_g, flipper_length_mm),
-            list(mean, median)))
-  ') %>% 
-  flair("across") %>%
+decorate('penguins %>%
+  summarize__at(vars(body_mass_g, flipper_length_mm),
+            list(avg_mean = mean, avg_med = median))',
+  eval = FALSE) %>% 
+  flair("_at") %>%
+  flair("vars", background = "pink") %>%
   flair_rx("(mean)|(median)", color = "teal") %>%
   flair_rx("(body_mass_g)|(flipper_length_mm)", color = "cornflowerblue") %>%
   flair_rx("list", color = "darkred")
 ```
+
+```{r summ_at, echo = FALSE}
+penguins %>%
+  summarize_at(vars(body_mass_g, flipper_length_mm),
+            list(avg_mean = mean, avg_med = median))
+```
+
+
+
 ---
 class: center, middle, inverse
 
@@ -349,11 +312,11 @@ class: center, middle, inverse
 
 ---
 class: center, middle
-# In `Practice.Rmd`, find the following:
+# In `dplyr_activity.Rmd`, find the following:
 
-* Mean, Median, and standard deviation of the sugar content of cereals
+* Mean, Median, and standard deviation of the in-state tuitions of colleges
 
-* Total calories if I ate one serving of every single cereal in the dataset.
+* Total number of students (`UGDS`) in all colleges in this dataset.
 
 ---
 # Making new variables
@@ -393,7 +356,7 @@ OH NO!
 
 class: center, middle
 
-# We calculated a new variable, but didn't save our changes.
+# We calculated a new variable, but didn't reassign our dataset object
 
 ---
 
@@ -422,6 +385,18 @@ We **arrange** the dataset in order of a particular variable.
 ```{r}
 penguins %>% 
   arrange(body_mass_g)
+```
+
+---
+# Ordering
+
+Verb: `arrange()`
+
+... or maybe we want it in **descending** (high to low) order.
+
+```{r}
+penguins %>% 
+  arrange(desc(body_mass_g))
 ```
 
 ---
@@ -485,18 +460,6 @@ penguins_new %>%
   arrange(body_mass_g)
 ```
 
----
-
-# Plotting: The pipe is your friend
-
-Want a histogram of body mass for just *Adelie* species penguins?  Pipe it through `filter()` first!
-
-```{r, message = FALSE, fig.height=4}
-penguins %>%
-  filter(species == "Adelie") %>%
-  ggplot(aes(x = body_mass_g)) +
-    geom_histogram(bins = 20)
-```
 
 ---
 class: center, middle, inverse
@@ -505,19 +468,19 @@ class: center, middle, inverse
 
 ---
 
-## In `Practice.Rmd`, make a new dataset called `kellogg_calories`, with the following changes:
+## In `dplyr_activity.Rmd`, make a new dataset called `colleges_limited`, with the following changes:
 
-1. There is a new variable called `cal_per_cup` which shows the number of calories in each cup of cereal.
+1. There is a new variable called `tuition_diff` which shows the difference between In-State and Out-of-State tuition for each college.
 
-2. The dataset only includes this new variable, the name of the cereal, and the brand of the cereal.
+2. The dataset only includes this new variable, the name of the college, whether the college is private or public, and the state the college is in.
 
-3. The dataset only includes Kellogg brand cereals
+3. The dataset only includes California, Texas, and New York schools.
 
-4. The cereals in the dataset are ordered from most to least calories per cup.
+4. The institutions in the dataset are ordered from largest to smallest tuition difference.
 
 **Try to do all these in one sequence of pipes!**
 
-5. Then choose one of the four main plot types (histogram, barplot, boxplot, scatterplot), make an interesting visualization from your `kellog_calories` dataset.
+Bonus question: How much can we change the order of steps in the pipeline to get the same result?
 
 ---
 class:center,middle,inverse
@@ -533,7 +496,7 @@ class:center,middle,inverse
 ```{r}
 penguins %>%
   group_by(species) %>%
-  summarize(mean(body_mass_g))
+  summarize(avg_mass = mean(body_mass_g))
 
 ```
 ---
@@ -541,7 +504,9 @@ penguins %>%
 
 ## You should **always** have a `summarize` after a `group_by`!!!
 
-(There are other ways to use it, but wait until you are very familiar with `dplyr` to try that.)
+--
+
+(There are other ways to use it, but wait until you are very familiar with `dplyr` to try that.  Weird stuff happens.)
 
 ---
 class: center, middle, inverse
@@ -551,9 +516,71 @@ class: center, middle, inverse
 ---
 # Grouping and summarizing
 
-* Find the average calories per serving for each manufacturer.
+* Find the average in-state tuition for public versus private schools.
 
-* Find the average sugar per serving for hot versus cold cereals.
+* Find the average in-state tuition in NY, CA, and TX.
 
 ---
+
+# Plotting: The pipe is your friend
+
+Want a histogram of body mass for just *Adelie* species penguins?  Pipe it through `filter()` first!
+
+```{r, message = FALSE, fig.height=4}
+penguins %>%
+  filter(species == "Adelie") %>%
+  ggplot(aes(x = body_mass_g)) +
+    geom_histogram(bins = 20)
+```
+
+---
+
+# Plotting: The pipe is your friend
+
+Want to make a column plot showing the sizes of the penguins by species?  Pipe it through `group_by()` and `summarize()` first!
+
+```{r, message = FALSE, fig.height=4}
+penguins %>%
+  group_by(species) %>%
+  summarize(avg_mass = mean(body_mass_g)) %>%
+  ggplot(aes(x = species, y = avg_mass)) +
+    geom_col()
+```
+
+---
+
+# Plotting: The pipe is your friend
+
+**Notice:** The new variable name `avg_mass`
+
+```{r pipe_plot, include = FALSE}
+penguins %>%
+  group_by(species) %>%
+  summarize(avg_mass = mean(body_mass_g)) %>%
+  ggplot(aes(x = species, y = avg_mass)) +
+    geom_col()
+```
+
+```{r, echo = FALSE}
+decorate('pipe_plot') %>%
+  flair("avg_mass")
+```
+
+---
+
+---
+class: center, middle, inverse
+
+# Your Turn!
+
+---
+# Wrangling to Plot
+
+Make the best plot you can to address the research question:
+
+> Who has bigger in-state vs out-state difference: CA, Texas, or New York?
+
+For bonus points, consider Public and Private school differences as well.
+
+
 

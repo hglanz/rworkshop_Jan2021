@@ -22,7 +22,14 @@ library(flair)
 
 ```{r xaringan-themer, include=FALSE}
 library(xaringanthemer)
-solarized_light()
+style_duo(
+  primary_color = "#26116c",
+  secondary_color = "#fd5e53",
+  title_slide_text_color = "#fff8e7",
+  header_font_google = google_font("Roboto"),
+  text_font_google   = google_font("Roboto Condensed"),
+  code_font_google   = google_font("Droid Mono")
+)
 ```
 
 
