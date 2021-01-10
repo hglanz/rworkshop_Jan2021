@@ -1,7 +1,6 @@
 ---
-title: "Data Wrangling"
-subtitle: "Module 2"
-author: "Kelly Bodwin and Hunter Glanz"
+title: "Welcome"
+subtitle: "Fundamentals of the Tidyverse, Jan 2021"
 
 output:
   xaringan::moon_reader:
@@ -35,10 +34,131 @@ style_duo(
 )
 ```
 
-```{r, include = FALSE}
-colleges <- read_csv(here("data", "colleges_clean.csv"))
+class: center, middle
+
+# Your Instructors
+
+class: center, middle
+
+---
+
+# rstudio::global
+
+---
+
+# Data for Black Lives
+
+---
+
+# R History lesson:
+# What is the `tidyverse`?
+
+---
+# The tidyverse
+
+The `tidyverse` is a collection of packages that follow a (somewhat) consistent philosophy and structure.
+
+The term `base R` is sometimes used as an alternative, to refer to only R's built-in packages.
+
+A brief history:
+
+--
+
+**2008:** `plyr` and `ggplot` released as part of **Hadley Wickham**'s doctoral dissertation.
+
+--
+
+**2012:** The pipe (`%>%`) is created.  
+
+*(While the pipe itself is not technically tidyverse, the tidyverse is built around its use.)*
+
+--
+
+**2014:** `dplyr` released; Wickham hired as Chief Scientist at **RStudio**
+
+--
+
+**Today:** A paid team of 20-ish developers maintains a huge number of packages.  (https://www.tidyverse.org/)
+
+---
+# The tidyverse
+
+* One philosophy of the **tidyverse** is building **pipe-friendly** functions.
+
+* Another philosophy is using **English verbs** as function names instead of symbols or abbreviations.
+
+* Some consider this more accessible/readable
+
+```{r, eval = FALSE}
+penguins %>%
+  filter(species == "Adelie")
 ```
 
+```{r, eval = FALSE}
+
+penguins[penguins$species == "Adelie",]
+```
+
+
+---
+# The tidyverse
+
+**Pros:**
+
+* Fairly consistent behavior of functions
+
+    + Predictable **input** and **output** types
+    + *"opinionated"*
+    
+--
+
+* Semi-guaranteed maintenance of packages
+
+(because RStudio pays developers!)
+
+--
+
+* More available and polished documentation and tutorials
+
+--
+
+* Welcoming community
+
+---
+# The tidyverse
+
+**Cons:**
+
+* Sometimes less flexible for complex tasks
+
+--
+
+* Generally slower, especially on big data
+
+--
+
+* Updates frequently -> sometimes this makes your old code unrunnable.
+
+--
+
+* Some people object to **RStudio**'s strong influence over an open-source community.
+
+---
+class: center, middle
+
+# Should you use the tidyverse???
+
+--
+
+Even the most die-hard tidyverse fanatics use base R and other packages quite frequently.
+
+--
+
+Above all, the best code approach is the one you enjoy the most and that gets the job done!
+
+
+
+---
 
 class: center, middle, invert
 
