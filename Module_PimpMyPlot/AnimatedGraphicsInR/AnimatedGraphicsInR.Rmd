@@ -1,0 +1,252 @@
+---
+title: "Animated Graphics in R"
+subtitle: "Module 4"  
+author: "Hunter Glanz & Kelly Bodwin"
+
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(tidyverse)
+library(palmerpenguins)
+library(flair)
+library(lubridate)
+library(gganimate)
+library(gifski)
+```
+
+```{r xaringan-themer, include=FALSE}
+library(xaringanthemer)
+solarized_light()
+```
+
+```{r, include = FALSE}
+oscars <- read_csv("../../data/Oscars-demographics-DFE.csv")
+
+oscars <- oscars %>%
+  select(-matches("^_")) %>%
+  select(-contains("gold")) %>%
+  select(-contains("confidence")) %>%
+  separate(date_of_birth,
+           into = c("Day", "Month", "Year"),
+           sep = "-") %>%
+  mutate(
+    Year = as.numeric(Year),
+    Year = case_when(
+      Year < 100 ~ Year + 1900,
+      TRUE ~ Year
+    ),
+    Birthdate = ymd(paste(Year, Month, Day)),
+    Date_of_award = ymd(paste(year_of_award, "Feb", "01")),
+    Age_at_Award = interval(Birthdate, Date_of_award)/years(1),
+    Award_Gender = case_when(
+      str_detect(award, "Actress") ~ "Female",
+      str_detect(award, "Actor") ~ "Male",
+      TRUE ~ "Ungendered"
+    ),
+    Decade_of_Award = round(year_of_award, digits = -1)
+  )
+
+```
+
+## gganimate
+
+There are many, many ways to "spice up" your plots.  We will focus in on one: making your plot animated!
+
+The best package for this, if you are using `ggplot` already, is `gganimate`.
+
+*Note:* `gganimate` plot objects can sometimes take a long time to render.  One way to make it quicker is to change the number of frames in your gif.  Another trick is to use the [cache chunk option](https://bookdown.org/yihui/rmarkdown-cookbook/cache.html) in R Markdown, so that you don't re-render the images every time you knit your file.
+
+---
+
+## Our Dataset
+
+A dataset concerning the race, religion, age, and other demographic details of all Oscar winners since 1928 the following categories:
+
+* Best Actor
+* Best Actress
+* Best Supporting Actor
+* Best Supporting Actress
+* Best Director
+
+---
+
+## From Static to Animated
+
+* The `transition_states()` function splits up plot data by a discrete variable and animates between the different states
+
+```{r}
+p <- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point()
+
+anim <- p +
+  transition_states(species,
+                    transition_length = 2,
+                    state_length = 1)
+
+anim
+```
+
+---
+
+## Controlling the Movement
+
+* *Easing* is the concept for how to display the intermediary data between the states specified in `transition_states()`.
+
+* The default is linear, but there are other choices if you prefer
+
+```{r}
+anim +
+  ease_aes("cubic-in-out") # slow start and end for a smoother look
+```
+
+---
+
+## Annotating the Graphs
+
+* Of course you will often want the axes, title, or other labels to change as the graph changes!
+
+```{r}
+anim +
+  ggtitle('Now showing {closest_state}',
+          subtitle = 'Frame {frame} of {nframes}')
+```
+
+---
+
+## Object Permanence
+
+* The penguin data animation here can be a bit confusing because we don't have the same number of penguins of each species. So watching one species morph into another isn't quite accurate.
+
+* So instead of the data for each species "morphing" into the next, it may be more clear to eliminate the transition
+
+```{r}
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point(aes(colour = species)) +
+  transition_states(species,
+                    transition_length = 2,
+                    state_length = 1)
+```
+
+---
+
+## Sweet Sweet Style
+
+* While the new transitions between species may be more accurate, we don't want to completely give up the spice and excitement!
+
+* So let's add some back in...
+
+```{r}
+anim <- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point(aes(colour = species), size = 2) +
+  transition_states(species,
+                    transition_length = 2,
+                    state_length = 1)
+
+anim +
+  enter_fade() +
+  exit_shrink()
+```
+
+
+---
+
+## **Fill in the blanks**
+
+
+```{r trans_state, include = FALSE, eval = FALSE}
+p1 <- oscars %>%
+  filter(Award_Gender != "Ungendered") %>%
+  ggplot(aes(y = Age_at_Award, x = award, fill = Award_Gender)) +
+  geom_boxplot() +
+  ggtitle("Age of Academy Award Winners ({closest_state})") + 
+  xlab("Year of Award") +
+  ylab("Age at Award") +
+  transition_states(Award_Gender) +
+  shadow_mark(alpha = 0.3)
+
+animate(p1, nframes = 10, fps = 5)
+```
+
+---
+
+## The Result
+
+```{r trans_state_res, include = FALSE}
+p1 <- oscars %>%
+  filter(Award_Gender != "Ungendered") %>%
+  ggplot(aes(y = Age_at_Award, x = award, fill = Award_Gender)) +
+  geom_boxplot() +
+  ggtitle("Age of Academy Award Winners ({closest_state})") + 
+  xlab("Year of Award") +
+  ylab("Age at Award") +
+  transition_states(Award_Gender) +
+  shadow_mark(alpha = 0.3)
+
+animate(p1, nframes = 10, fps = 5)
+```
+
+---
+
+## **Fill in the blanks**
+
+```{r trans_year, include = FALSE, eval = FALSE}
+p2 <- oscars %>%
+  filter(Award_Gender != "Ungendered") %>%
+  ggplot(aes(x = Age_at_Award, fill = Award_Gender)) +
+  geom_density(alpha = 0.5) +
+  ggtitle("Age of Academy Award Winners ({frame_time}s)") + 
+  xlab("Year of Award") +
+  ylab("Age at Award") +
+  transition_time(Decade_of_Award)
+
+animate(p2, nframes = 9, fps = 1)
+```
+
+---
+
+## The Result
+
+```{r trans_year_res, include = FALSE}
+p2 <- oscars %>%
+  filter(Award_Gender != "Ungendered") %>%
+  ggplot(aes(x = Age_at_Award, fill = Award_Gender)) +
+  geom_density(alpha = 0.5) +
+  ggtitle("Age of Academy Award Winners ({frame_time}s)") + 
+  xlab("Year of Award") +
+  ylab("Age at Award") +
+  transition_time(Decade_of_Award)
+
+animate(p2, nframes = 9, fps = 1)
+```
+
+---
+
+## A Few More Options
+
+```{r, echo = FALSE, cache = TRUE}
+decorate("trans_state") %>%
+  mask("closest_state", background = "#fdff32") %>%
+  mask("states", background = "#fdff32") %>%
+  mask("shadow_mark", background = "#fdff32") %>%
+  mask("p1 ", background = "#fdff32") %>%
+  mask("nframes", background = "#fdff32") %>%
+  mask("fps", background = "#fdff32")
+
+
+decorate("trans_year") %>%
+  mask("p2 ", background = "#fdff32") %>%
+  mask("transition_time", background = "#fdff32") %>%
+  mask("frame_time", background = "#fdff32") %>%
+  mask("nframes", background = "#fdff32") %>%
+  mask("fps", background = "#fdff32")
+
+```
