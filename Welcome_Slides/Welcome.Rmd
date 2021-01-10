@@ -38,15 +38,52 @@ class: center, middle
 
 # Your Instructors
 
-class: center, middle
+
+![](./hunter.jpg)
+
+Prof. Hunter Glanz
 
 ---
+class: center, middle
+# Your Instructors
 
-# rstudio::global
+![](./kelly.jpg)
+
+
+Prof. Kelly Bodwin
+
+---
+# Acknowledgements
+
+# rstudio::global  (global.rstudio.com)
+
+--
+
+# Guest Lecturer:  Prof. Allison Theobold  (@mtstatistics)
+
+--
+
+# Our amazing TAs:  
+
+* Lisa Lendway: @lisalendway
+
+* Haoxue Fan:  @haoxue_fan
+
+* Brendon Kaufman:  @Trabendo_daze
+
+* Ted Laderas: @tladeras
+
+* Sushmita Gopalan:  @SushGopalan
+
+* Jannik
 
 ---
 
 # Data for Black Lives
+
+# https://d4bl.org/
+
+# $782.09 donated!!!
 
 ---
 
@@ -155,454 +192,3 @@ Even the most die-hard tidyverse fanatics use base R and other packages quite fr
 --
 
 Above all, the best code approach is the one you enjoy the most and that gets the job done!
-
-
-
----
-
-class: center, middle, invert
-
-# Cleaning and transforming data
-
-<img src="https://d33wubrfki0l68.cloudfront.net/071952491ec4a6a532a3f70ecfa2507af4d341f9/c167c/images/hex-dplyr.png" width=300>
-
----
-
-# Motivation
-
-Suppose we wanted to study college tuition in the large states of New York, California, and Texas only.  Let's make boxplots.
-
---
-
-```{r}
-colleges %>%
-  ggplot(aes(x = TUITIONFEE_IN, y = STABBR)) +
-  geom_boxplot()
-```
-
-
-
----
-# Recall: The Pipe
-
-
-* Idea:  The **data** is the primary object, so it should come first in your code.
-
---
-
-* Idea:  Code should read **like a sentence**
-
-
----
-
-# The Pipe
-
-```{r, echo = FALSE}
-decorate('penguins %>% summary()', eval = FALSE) %>% 
-  flair("%>%") %>% 
-  flair_funs(color = "teal")
-```
-
-is the same as
-
-```{r, echo = FALSE}
-decorate('summary(penguins)', eval = FALSE) %>% 
-  flair_funs(color = "teal")
-```
-
----
-# Readable code
-
-What do you think the following will do?
-
-```{r, eval = FALSE}
-penguins %>%
-  filter(species == "Adelie") %>%
-  arrange(body_mass_g)
-```
-
----
-# Readable code
-
-What do you think the following will do?
-
-```{r}
-penguins %>%
-  filter(species == "Adelie") %>%
-  arrange(body_mass_g)
-```
-
-
----
-
-# Summary
-
-```{r, echo = FALSE}
-decorate('
-penguins %>%
-  summary()
-  ') %>% flair("y(")
-```
-
----
-# Cleaning
-
-Oh no!  There was one row of the dataset with missing values.
-
---
-
-There is no magic answer for how to handle missing values; one solution is to simply drop them from the data.
-
-*Consider - why might this sometimes be a bad idea?*
-
---
-
-```{r}
-penguins <- 
-  penguins %>%
-  drop_na()
-
-penguins %>% 
-  summary()
-  
-```
-
-
----
-# Summarizing specifics
-
-```{r, echo = FALSE}
-decorate('
-penguins %>%
-  summarize(mean_mass = mean(body_mass_g))
-  ') %>% 
-  flair("ize(") %>% 
-  flair("mean", color = "teal") %>%
-  flair("body_mass_g", color = "cornflowerblue")
-```
-
---
-
-* What are the **required** arguments of `summarize`?  
-
-* Are there any optional arguments?
-
----
-
-# Many variables?  Many summary statistics?
-## No problemo
-
-
-```{r, echo = FALSE}
-decorate('penguins %>%
-  summarize__at(vars(body_mass_g, flipper_length_mm),
-            list(avg_mean = mean, avg_med = median))',
-  eval = FALSE) %>% 
-  flair("_at") %>%
-  flair("vars", background = "pink") %>%
-  flair_rx("(mean)|(median)", color = "teal") %>%
-  flair_rx("(body_mass_g)|(flipper_length_mm)", color = "cornflowerblue") %>%
-  flair_rx("list", color = "darkred")
-```
-
-```{r summ_at, echo = FALSE}
-penguins %>%
-  summarize_at(vars(body_mass_g, flipper_length_mm),
-            list(avg_mean = mean, avg_med = median))
-```
-
----
-# Summarizing a Categorical Variable
-
-(bonus function!)
-
-```{r}
-colleges %>%
-  count(CONTROL)
-
-colleges %>%
-  count(STABBR, CONTROL)
-
-```
-
-
-
----
-class: center, middle, inverse
-
-# Your Turn!
-
----
-class: center, middle
-# In `dplyr_activity.Rmd`, find the following:
-
-* Mean, Median, and standard deviation of the in-state tuitions of colleges
-
-* Total number of students (`UGDS`) in all colleges in this dataset.
-
----
-# Making new variables
-
-Verb: `mutate()`
-
-The dataset gets *mutated* to include a new variable.
-
-```{r, echo = FALSE}
-decorate('
-penguins %>%
-  mutate(
-    bill_size = bill_length_mm * bill_depth_mm
-  ) %>%
-  summary()
-  ') %>%
-  flair("mutate") %>%
-  flair("bill_size", color = "teal")
-```
-
----
-
-Cool, let's look at our new variable!
-
-```{r, error = TRUE}
-penguins %>%
-  summarize(mean_bill = sd(bill_size))
-```
-
---
-
-OH NO!
-
-**What happened here?**
-
----
-
-class: center, middle
-
-# We calculated a new variable, but didn't reassign our dataset object
-
----
-
-```{r, echo = FALSE}
-decorate('
-penguins <- penguins %>%
-          mutate(
-            bill_size = bill_length_mm * bill_depth_mm
-          )
-          
-penguins %>%
-  summarize(mean_bill = sd(bill_size))
-') %>% 
-  flair("penguins <- ")
-
-
-```
-
----
-# Ordering
-
-Verb: `arrange()`
-
-We **arrange** the dataset in order of a particular variable.
-
-```{r}
-penguins %>% 
-  arrange(body_mass_g)
-```
-
----
-# Ordering
-
-Verb: `arrange()`
-
-... or maybe we want it in **descending** (high to low) order.
-
-```{r}
-penguins %>% 
-  arrange(desc(body_mass_g))
-```
-
----
-
-## Related: `top_n`
-
-```{r}
-penguins %>%
-  top_n(3, body_mass_g)
-```
-
----
-
-# Quick check in!
-
-Remember,
-
-```{r, eval = FALSE}
-penguins %>%
-  top_n(3, body_mass_g)
-```
-
-is the same as
-
-```{r, eval = FALSE}
-top_n(penguins, 3, body_mass_g)
-```
-
-or
-
-```{r, eval = FALSE}
-top_n(x = penguins, n = 3, wt = body_mass_g)
-```
-
----
-
-# Selecting
-
-Verb: `select()`
-
-We **select** which variables we would like to remain in the dataset.
-
-```{r}
-penguins %>%
-  select(species, body_mass_g) %>%
-  arrange(body_mass_g)
-```
-
----
-
-# Filtering
-
-Verb: `filter()`
-
-We **filter** to the rows (observations) we would like to keep in the dataset.
-
-```{r, eval = FALSE}
-penguins_new %>%
-  select(species, body_mass_g) %>%
-  filter(species == "Adelie") %>%
-  arrange(body_mass_g)
-```
-
-
----
-class: center, middle, inverse
-
-# Your Turn!
-
----
-
-## In `dplyr_activity.Rmd`, make a new dataset called `colleges_limited`, with the following changes:
-
-1. There is a new variable called `tuition_diff` which shows the difference between In-State and Out-of-State tuition for each college.
-
-2. The dataset only includes this new variable, the name of the college, whether the college is private or public, and the state the college is in.
-
-3. The dataset only includes California, Texas, and New York schools.
-
-4. The institutions in the dataset are ordered from largest to smallest tuition difference.
-
-**Try to do all these in one sequence of pipes!**
-
-Bonus question: How much can we change the order of steps in the pipeline to get the same result?
-
----
-class:center,middle,inverse
-
-# Grouping and summarizing
----
-# `group_by`
-
-* We have learned how to use the `summarize` functions to get information.
-
-* What if you want to summarize your data within categories?
-
-```{r}
-penguins %>%
-  group_by(species) %>%
-  summarize(avg_mass = mean(body_mass_g))
-
-```
----
-# Warning!
-
-## You should **always** have a `summarize` after a `group_by`!!!
-
---
-
-(There are other ways to use it, but wait until you are very familiar with `dplyr` to try that.  Weird stuff happens.)
-
----
-class: center, middle, inverse
-
-# Your Turn!
-
----
-# Grouping and summarizing
-
-* Find the average in-state tuition for public versus private schools.
-
-* Find the average in-state tuition in NY, CA, and TX.
-
----
-
-# Plotting: The pipe is your friend
-
-Want a histogram of body mass for just *Adelie* species penguins?  Pipe it through `filter()` first!
-
-```{r, message = FALSE, fig.height=4}
-penguins %>%
-  filter(species == "Adelie") %>%
-  ggplot(aes(x = body_mass_g)) +
-    geom_histogram(bins = 20)
-```
-
----
-
-# Plotting: The pipe is your friend
-
-Want to make a column plot showing the sizes of the penguins by species?  Pipe it through `group_by()` and `summarize()` first!
-
-```{r, message = FALSE, fig.height=4}
-penguins %>%
-  group_by(species) %>%
-  summarize(avg_mass = mean(body_mass_g)) %>%
-  ggplot(aes(x = species, y = avg_mass)) +
-    geom_col()
-```
-
----
-
-# Plotting: The pipe is your friend
-
-**Notice:** The new variable name `avg_mass`
-
-```{r pipe_plot, include = FALSE}
-penguins %>%
-  group_by(species) %>%
-  summarize(avg_mass = mean(body_mass_g)) %>%
-  ggplot(aes(x = species, y = avg_mass)) +
-    geom_col()
-```
-
-```{r, echo = FALSE}
-decorate('pipe_plot') %>%
-  flair("avg_mass")
-```
-
----
-
----
-class: center, middle, inverse
-
-# Your Turn!
-
----
-# Wrangling to Plot
-
-Make the best plot you can to address the research question:
-
-> Who has bigger in-state vs out-state difference: CA, Texas, or New York?
-
-For bonus points, consider Public and Private school differences as well.
-
-
-
