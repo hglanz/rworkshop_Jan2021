@@ -24,119 +24,6 @@ class: center, middle, inverse, title-slide
 
 
 
-class: center, middle
-
-# R History lesson:
-# What is the `tidyverse`?
-
----
-# The tidyverse
-
-The `tidyverse` is a collection of packages that follow a (somewhat) consistent philosophy and structure.
-
-The term `base R` is sometimes used as an alternative, to refer to only R's built-in packages.
-
-A brief history:
-
---
-
-**2008:** `plyr` and `ggplot` released as part of **Hadley Wickham**'s doctoral dissertation.
-
---
-
-**2012:** The pipe (`%&gt;%`) is created.  
-
-*(While the pipe itself is not technically tidyverse, the tidyverse is built around its use.)*
-
---
-
-**2014:** `dplyr` released; Wickham hired as Chief Scientist at **RStudio**
-
---
-
-**Today:** A paid team of 20-ish developers maintains a huge number of packages.  (https://www.tidyverse.org/)
-
----
-# The tidyverse
-
-* One philosophy of the **tidyverse** is building **pipe-friendly** functions.
-
-* Another philosophy is using **English verbs** as function names instead of symbols or abbreviations.
-
-* Some consider this more accessible/readable
-
-
-```r
-penguins %&gt;%
-  filter(species == "Adelie")
-```
-
-
-```r
-penguins[penguins$species == "Adelie",]
-```
-
-
----
-# The tidyverse
-
-**Pros:**
-
-* Fairly consistent behavior of functions
-
-    + Predictable **input** and **output** types
-    + *"opinionated"*
-    
---
-
-* Semi-guaranteed maintenance of packages
-
-(because RStudio pays developers!)
-
---
-
-* More available and polished documentation and tutorials
-
---
-
-* Welcoming community
-
----
-# The tidyverse
-
-**Cons:**
-
-* Sometimes less flexible for complex tasks
-
---
-
-* Generally slower, especially on big data
-
---
-
-* Updates frequently -&gt; sometimes this makes your old code unrunnable.
-
---
-
-* Some people object to **RStudio**'s strong influence over an open-source community.
-
----
-class: center, middle
-
-# Should you use the tidyverse???
-
---
-
-Even the most die-hard tidyverse fanatics use base R and other packages quite frequently.
-
---
-
-Above all, the best code approach is the one you enjoy the most and that gets the job done!
-
-
-
----
-
 class: center, middle, invert
 
 # Cleaning and transforming data
@@ -158,7 +45,7 @@ colleges %&gt;%
   geom_boxplot()
 ```
 
-![](Intro_to_dplyr_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+![](Intro_to_dplyr_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
 
 
 
@@ -701,7 +588,7 @@ penguins %&gt;%
     geom_histogram(bins = 20)
 ```
 
-![](Intro_to_dplyr_files/figure-html/unnamed-chunk-26-1.png)&lt;!-- --&gt;
+![](Intro_to_dplyr_files/figure-html/unnamed-chunk-24-1.png)&lt;!-- --&gt;
 
 ---
 
@@ -718,7 +605,7 @@ penguins %&gt;%
     geom_col()
 ```
 
-![](Intro_to_dplyr_files/figure-html/unnamed-chunk-27-1.png)&lt;!-- --&gt;
+![](Intro_to_dplyr_files/figure-html/unnamed-chunk-25-1.png)&lt;!-- --&gt;
 
 ---
 
@@ -732,7 +619,7 @@ penguins %&gt;%
 &lt;code class ='r hljs remark-code'&gt;penguins %&gt;%&lt;br&gt;&amp;nbsp;&amp;nbsp;group_by(species) %&gt;%&lt;br&gt;&amp;nbsp;&amp;nbsp;summarize(&lt;span style="background-color:#ffff7f"&gt;avg_mass&lt;/span&gt; = mean(body_mass_g)) %&gt;%&lt;br&gt;&amp;nbsp;&amp;nbsp;ggplot(aes(x = species, y = &lt;span style="background-color:#ffff7f"&gt;avg_mass&lt;/span&gt;)) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;geom_col()&lt;/code&gt;
 
 
-![](Intro_to_dplyr_files/figure-html/unnamed-chunk-36-1.png)&lt;!-- --&gt;
+![](Intro_to_dplyr_files/figure-html/unnamed-chunk-34-1.png)&lt;!-- --&gt;
 
 ---
 
